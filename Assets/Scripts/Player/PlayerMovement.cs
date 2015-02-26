@@ -77,6 +77,7 @@ public class PlayerMovement : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter(Collider other){
+		Debug.Log ("am in here?");
 		if (other.gameObject.tag == "Chemical"){
 			updateScales();
 			growing = true;
