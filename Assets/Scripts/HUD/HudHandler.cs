@@ -30,4 +30,8 @@ public class HudHandler : MonoBehaviour {
 		timeText.text = answer;
 
 	}
+
+	public void changeHealth(float change) {
+		healthBarSlider.value = healthBarSlider.value + change;
+	}
 }

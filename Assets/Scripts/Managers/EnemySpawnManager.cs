@@ -15,7 +15,7 @@ public class EnemySpawnManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		lastCopter = 0.0f;
-		spawnInterval = Random.Range (3, 5);
+		spawnInterval = Random.Range (5, 20);
 	}
 	
 	// Update is called once per frame
@@ -23,7 +23,7 @@ public class EnemySpawnManager : MonoBehaviour {
 	
 		// spawn a helicopter
 		if (Time.time - lastCopter > spawnInterval){
-			int spawn = Random.Range(0, 5);
+			int spawn = Random.Range(0, 7);
 			copter = Instantiate(helicopter, SpawnPoints[spawn].transform.position, Quaternion.identity) as GameObject;
 			helicopterEnemy enemy = copter.GetComponent(typeof(helicopterEnemy)) as helicopterEnemy;
 

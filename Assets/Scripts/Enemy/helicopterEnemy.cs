@@ -45,7 +45,6 @@ public class helicopterEnemy : MonoBehaviour {
 
 		// everywhere we go, we need to drop a bomb there...
 		if (Time.time - lastBomb > bombInterval) {
-			Debug.Log ("DROPPED BOMB");
 
 			float distance = 2;
 			Instantiate(bomb, this.transform.position + (-this.transform.up * distance), Quaternion.identity);
