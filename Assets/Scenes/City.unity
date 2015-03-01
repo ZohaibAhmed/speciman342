@@ -7798,7 +7798,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &726689628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11505,6 +11505,9 @@ GameObject:
   - 92: {fileID: 1067723804}
   - 124: {fileID: 1067723803}
   - 81: {fileID: 1067723802}
+  - 114: {fileID: 1067723808}
+  - 114: {fileID: 1067723809}
+  - 54: {fileID: 1067723810}
   - 114: {fileID: 1067723807}
   m_Layer: 0
   m_Name: Main Camera
@@ -11586,11 +11589,63 @@ MonoBehaviour:
   m_GameObject: {fileID: 1067723801}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3b5940e04fdd4c19b68bd14d7de422c, type: 3}
+  m_Script: {fileID: 11500000, guid: a8d266f606c6d48da8ff04665885a493, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1390814539}
   cam: {fileID: 1067723805}
+  distance: 6
+  yMinLimit: -20
+  yMaxLimit: 80
+  ySpeed: 120
+--- !u!114 &1067723808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1067723801}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27acebc9ad1110f6d00074c88d76c639, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1390814543}
+  distance: 10
+  xSpeed: 250
+  ySpeed: 120
+  yMinLimit: -20
+  yMaxLimit: 80
+--- !u!114 &1067723809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1067723801}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 885b1972ad11a921d000d37b8d76c639, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1390814543}
+  distance: 10
+  height: 5
+  heightDamping: 2
+  rotationDamping: 3
+--- !u!54 &1067723810
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1067723801}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1073888089
 GameObject:
   m_ObjectHideFlags: 0
@@ -13985,11 +14040,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 2
-  turningSpeed: 2
+  turningSpeed: 250
   attackRange: 1.5
   growthFactor: 1.25
   chemicalSpawnManager: {fileID: 1841436573}
-  cameraFollow: {fileID: 1067723807}
+  cameraFollow: {fileID: 0}
 --- !u!143 &1390814545
 CharacterController:
   m_ObjectHideFlags: 0
@@ -15235,7 +15290,7 @@ RectTransform:
   - {fileID: 15458128}
   - {fileID: 1531073555}
   m_Father: {fileID: 0}
-  m_RootOrder: 28
+  m_RootOrder: 21
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -21232,7 +21287,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 29
+  m_RootOrder: 22
 --- !u!1 &2063152984
 GameObject:
   m_ObjectHideFlags: 0

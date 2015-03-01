@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour {
 	int destructableMask;
 
 	public ChemicalSpawnManager chemicalSpawnManager;
-	public CameraFollow cameraFollow;
+	public CameraControl cameraFollow;
 
 	// Use this for initialization
 	void Start () {
@@ -51,7 +51,9 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 	void Move(){
-		this.transform.Rotate(new Vector3(0, Input.GetAxis("Horizontal"), 0) * this.turningSpeed);
+		//this.transform.Rotate(new Vector3(0, Input.GetAxis("Horizontal"), 0) * this.turningSpeed);
+		this.transform.Rotate(new Vector3(0, Input.GetAxis("Mouse X"), 0) * this.turningSpeed * 0.02f);
+		controller.Move(this.transform.right * Input.GetAxis("Horizontal") * this.movementSpeed) ;
 		controller.Move(this.transform.forward * Input.GetAxis("Vertical") * this.movementSpeed);
 	}
 
