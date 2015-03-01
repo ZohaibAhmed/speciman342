@@ -3,9 +3,10 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour {
 
-	public float movementSpeed = 1.0f;
-	public float turningSpeed = 1.0f;
+	public float movementSpeed = 2.0f;
+	public float turningSpeed = 2.0f;
 	public float attackRange = 1.5f;
+	public float growthFactor = 1.25f;
 
 	CharacterController controller;
 	Rigidbody playerRigidbody;
@@ -17,10 +18,8 @@ public class PlayerMovement : MonoBehaviour {
 	private Vector3 currentScale;
 	private Vector3 nextScale;
 
-	float oldCameraHorizontalDistance;
-	float newCameraHorizontalDistance;
-	float oldCameraVerticalDistance;
-	float newCameraVerticalDistance;
+	Vector3 oldCameraOffset;
+	Vector3 newCameraOffset;
 
 	int destructableMask;
 
@@ -68,7 +67,6 @@ public class PlayerMovement : MonoBehaviour {
 		
 		Vector3 position = new Vector3(transform.position.x, 0, transform.position.z);
 		if (Physics.Raycast(position, direction, out hit, attackRange, destructableMask)){
-			Debug.Log(hit.transform.lossyScale.y);
 			if (transform.lossyScale.y >= hit.transform.lossyScale.y){
 				chemicalSpawnManager.SpawnChemical(new Vector3(hit.transform.position.x, 0.5f, hit.transform.position.z));
 				Destroy(hit.transform.gameObject);
@@ -87,13 +85,12 @@ public class PlayerMovement : MonoBehaviour {
 	
 	void updateScales(){
 		currentScale = this.transform.localScale;
-		nextScale = new Vector3(this.transform.localScale.x, this.transform.localScale.y * 2, this.transform.localScale.z);
-		oldCameraHorizontalDistance = cameraFollow.horizontalDistance;
-		newCameraHorizontalDistance = oldCameraHorizontalDistance * 2;
-		oldCameraVerticalDistance = cameraFollow.verticalDistance;
-		newCameraVerticalDistance = oldCameraVerticalDistance * 2;
-		movementSpeed = movementSpeed + 0.5f;
-		turningSpeed = turningSpeed + 0.5f;
+		nextScale = new Vector3(this.transform.localScale.x, this.transform.localScale.y * growthFactor, this.transform.localScale.z);
+		//oldCameraOffset = cameraFollow.getOffset();
+		//newCameraOffset = oldCameraOffset * growthFactor;
+
+		movementSpeed = movementSpeed * growthFactor;
+		turningSpeed = turningSpeed * growthFactor;
 	}
 	
 	void Grow(){
@@ -113,8 +110,7 @@ public class PlayerMovement : MonoBehaviour {
 		Vector3 position = new Vector3(this.transform.position.x, newYPosition, this.transform.position.z);
 		this.transform.position = position;
 
-		cameraFollow.horizontalDistance = Mathf.Lerp(this.oldCameraHorizontalDistance, this.newCameraHorizontalDistance, perc);
-		cameraFollow.verticalDistance = Mathf.Lerp(this.oldCameraVerticalDistance, this.newCameraVerticalDistance, perc);
-
+		//Vector3 cameraOffset = Vector3.Lerp(this.oldCameraOffset, this.newCameraOffset, perc);
+		//cameraFollow.updateOffset(cameraOffset);
 	}
 }

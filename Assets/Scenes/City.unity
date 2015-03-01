@@ -74,6 +74,41 @@ NavMeshSettings:
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
   m_NavMesh: {fileID: 0}
+--- !u!1 &3359255
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 3359256}
+  m_Layer: 0
+  m_Name: Heli Spawn Points
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3359256
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 3359255}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 119751745}
+  - {fileID: 384962385}
+  - {fileID: 191781003}
+  - {fileID: 1308674548}
+  - {fileID: 1217320766}
+  - {fileID: 1623989953}
+  - {fileID: 1649146500}
+  - {fileID: 695748138}
+  m_Father: {fileID: 0}
+  m_RootOrder: 20
 --- !u!1 &3871114
 GameObject:
   m_ObjectHideFlags: 0
@@ -1107,7 +1142,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 119751745}
   m_Layer: 0
-  m_Name: Spawn Point 1
+  m_Name: Heli Spawn Point 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1123,8 +1158,8 @@ Transform:
   m_LocalPosition: {x: -35, y: 15, z: 9.60000038}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_Father: {fileID: 3359256}
+  m_RootOrder: 0
 --- !u!1 &121968513
 GameObject:
   m_ObjectHideFlags: 0
@@ -1845,7 +1880,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 191781003}
   m_Layer: 0
-  m_Name: Spawn Point 3
+  m_Name: Heli Spawn Point 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1861,8 +1896,8 @@ Transform:
   m_LocalPosition: {x: -35, y: 15, z: -6.30000019}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_Father: {fileID: 3359256}
+  m_RootOrder: 2
 --- !u!1 &193767553
 GameObject:
   m_ObjectHideFlags: 0
@@ -4408,7 +4443,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 384962385}
   m_Layer: 0
-  m_Name: Spawn Point 2
+  m_Name: Heli Spawn Point 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4424,8 +4459,8 @@ Transform:
   m_LocalPosition: {x: -35, y: 15, z: 21.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_Father: {fileID: 3359256}
+  m_RootOrder: 1
 --- !u!1 &394001726
 GameObject:
   m_ObjectHideFlags: 0
@@ -7381,7 +7416,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 695748138}
   m_Layer: 0
-  m_Name: Spawn Point 8
+  m_Name: Heli Spawn Point 8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7397,8 +7432,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 15, z: -31.2999992}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_Father: {fileID: 3359256}
+  m_RootOrder: 7
 --- !u!1 &699079311
 GameObject:
   m_ObjectHideFlags: 0
@@ -7763,7 +7798,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &726689628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7794,7 +7829,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 726689627}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.3818302, y: -1.24785614, z: 9.59362793}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -11515,7 +11550,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: .300000012
+  near clip plane: 1
   far clip plane: 1000
   field of view: 34
   orthographic: 0
@@ -11537,8 +11572,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1067723801}
-  m_LocalRotation: {x: .366501272, y: 0, z: 0, w: .930417538}
-  m_LocalPosition: {x: 0, y: 10, z: -8}
+  m_LocalRotation: {x: .128221005, y: 0, z: 0, w: .991745651}
+  m_LocalPosition: {x: 0, y: 3.25, z: -6.13999987}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -11554,9 +11589,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3b5940e04fdd4c19b68bd14d7de422c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalDistance: 8
-  verticalDistance: 10
   target: {fileID: 1390814539}
+  cam: {fileID: 1067723805}
 --- !u!1 &1073888089
 GameObject:
   m_ObjectHideFlags: 0
@@ -12574,7 +12608,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1217320766}
   m_Layer: 0
-  m_Name: Spawn Point 5
+  m_Name: Heli Spawn Point 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12590,8 +12624,8 @@ Transform:
   m_LocalPosition: {x: 30, y: 15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_Father: {fileID: 3359256}
+  m_RootOrder: 4
 --- !u!1 &1232052283
 GameObject:
   m_ObjectHideFlags: 0
@@ -13157,7 +13191,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1308674548}
   m_Layer: 0
-  m_Name: Spawn Point 4
+  m_Name: Heli Spawn Point 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13173,8 +13207,8 @@ Transform:
   m_LocalPosition: {x: 30, y: 15, z: 13.3000002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_Father: {fileID: 3359256}
+  m_RootOrder: 3
 --- !u!1 &1312384239
 GameObject:
   m_ObjectHideFlags: 0
@@ -13950,9 +13984,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd95bf656214f4327a15140f0a31ada4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 1
-  turningSpeed: 1
+  movementSpeed: 2
+  turningSpeed: 2
   attackRange: 1.5
+  growthFactor: 1.25
   chemicalSpawnManager: {fileID: 1841436573}
   cameraFollow: {fileID: 1067723807}
 --- !u!143 &1390814545
@@ -16165,7 +16200,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1623989953}
   m_Layer: 0
-  m_Name: Spawn Point 6
+  m_Name: Heli Spawn Point 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16181,8 +16216,8 @@ Transform:
   m_LocalPosition: {x: 30, y: 15, z: -11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_Father: {fileID: 3359256}
+  m_RootOrder: 5
 --- !u!1 &1636902477
 GameObject:
   m_ObjectHideFlags: 0
@@ -16480,7 +16515,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1649146500}
   m_Layer: 0
-  m_Name: Spawn Point 7
+  m_Name: Heli Spawn Point 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16496,8 +16531,8 @@ Transform:
   m_LocalPosition: {x: -20.3999996, y: 15, z: 31.2999992}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_Father: {fileID: 3359256}
+  m_RootOrder: 6
 --- !u!1 &1649862857
 GameObject:
   m_ObjectHideFlags: 0
@@ -18594,7 +18629,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1841436572}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .670848846, y: -.431519508, z: -.368783474}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
