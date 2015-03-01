@@ -12,8 +12,8 @@ GameObject:
   - 136: {fileID: 13652764}
   - 23: {fileID: 2352764}
   - 114: {fileID: 11432812}
-  - 143: {fileID: 14344682}
   - 54: {fileID: 5488466}
+  - 143: {fileID: 14344682}
   m_Layer: 0
   m_Name: Bomb
   m_TagString: Untagged
@@ -87,6 +87,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  dropZone: {fileID: 143058, guid: 71de178cc0a47412cb6f13b0a6edd298, type: 2}
+  dropZoneClone: {fileID: 0}
+  hud: {fileID: 0}
+  player: {fileID: 0}
 --- !u!136 &13652764
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -94,7 +98,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 152764}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: .5
   m_Height: 2
@@ -102,7 +106,7 @@ CapsuleCollider:
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!143 &14344682
 CharacterController:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 152764}
