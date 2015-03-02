@@ -31,7 +31,7 @@ public class PlayerControl : MonoBehaviour {
 
 	float bigHandsDuration = 0f;
 	float bigHandsDamage;
-	float bigHandsAttackRadiusMultiplier = 10;
+	float bigHandsAttackRadiusMultiplier = 100;
 	
 	Vector3 movement;
 
@@ -113,7 +113,6 @@ public class PlayerControl : MonoBehaviour {
 			Debug.Log("BIG HANDS");
 		} 
 		
-		Vector3 position = new Vector3(transform.position.x, 0, transform.position.z);
 		hits = Physics.CapsuleCastAll(transform.position - Vector3.up * transform.localScale.y / 2, 
 		                    transform.position + Vector3.up * transform.localScale.y / 2,
 		                    transform.lossyScale.x / 2, 
@@ -168,7 +167,7 @@ public class PlayerControl : MonoBehaviour {
 		newCameraDistance = oldCameraDistance + growthFactor;
 
 		movementSpeed = movementSpeed * growthFactor;
-		turningSpeed = turningSpeed * growthFactor;
+		//turningSpeed = turningSpeed * growthFactor;
 
 		attackDamage += 1;
 	}

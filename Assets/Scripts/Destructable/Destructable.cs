@@ -7,6 +7,7 @@ public class Destructable : MonoBehaviour {
 	public Transform explosion;
 	public Transform itemDrop; // the item to be dropped
 	public float dropProbability = 0.5f;
+	public int points = 100; // the number of points this will give
 
 	float maxHealth;
 	Color originalColor;
