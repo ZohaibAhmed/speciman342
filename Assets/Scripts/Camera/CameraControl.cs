@@ -16,7 +16,6 @@ public class CameraControl : MonoBehaviour {
 
 	public float ySpeed = 120.0f;
 
-	float x = 0.0f;
 	float y = 0.0f;
 
 	Vector3 offset;

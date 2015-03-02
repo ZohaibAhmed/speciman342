@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour {
 	public float turningSpeed = 2.0f;
 	public float attackRange = 1.5f;
 	public float growthFactor = 1.25f;
+	public float attackDamage = 1f;
 
 	CharacterController controller;
 	Rigidbody playerRigidbody;
@@ -40,7 +41,7 @@ public class PlayerMovement : MonoBehaviour {
 		Move ();
 
 		
-		if (Input.GetAxis("Fire1") > 0){
+		if (Input.GetButtonDown("Fire1")){
 			Attack ();
 		}
 		if (growing == true){
@@ -66,8 +67,9 @@ public class PlayerMovement : MonoBehaviour {
 		Vector3 position = new Vector3(transform.position.x, 0, transform.position.z);
 		if (Physics.Raycast(position, direction, out hit, attackRange, destructableMask)){
 			if (transform.lossyScale.y >= hit.transform.lossyScale.y){
-				chemicalSpawnManager.SpawnChemical(new Vector3(hit.transform.position.x, 0.5f, hit.transform.position.z));
-				Destroy(hit.transform.gameObject);
+				//chemicalSpawnManager.SpawnChemical(new Vector3(hit.transform.position.x, 0.5f, hit.transform.position.z));
+				Destructable other = hit.collider.GetComponent<Destructable>();
+				other.takeDamage(attackDamage);
 			}
 		}
 	}
