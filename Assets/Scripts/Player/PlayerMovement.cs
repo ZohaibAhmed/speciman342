@@ -18,13 +18,13 @@ public class PlayerMovement : MonoBehaviour {
 	private Vector3 currentScale;
 	private Vector3 nextScale;
 
-	Vector3 oldCameraOffset;
-	Vector3 newCameraOffset;
+	float oldCameraDistance;
+	float newCameraDistance;
 
 	int destructableMask;
 
 	public ChemicalSpawnManager chemicalSpawnManager;
-	public CameraControl cameraFollow;
+	public CameraControl cameraControl;
 
 	// Use this for initialization
 	void Start () {
@@ -61,11 +61,7 @@ public class PlayerMovement : MonoBehaviour {
 	void Attack(){
 		RaycastHit hit;
 		Vector3 direction = new Vector3(0, 0, 0);
-		if (Input.GetAxis("Vertical") == 0 && Input.GetAxis("Horizontal") == 0){
-			direction = transform.forward;
-		} else {
-			direction = direction + Input.GetAxis("Vertical") * new Vector3(0, 0, 1) + Input.GetAxis("Horizontal") * new Vector3(1, 0, 0);
-		}
+		direction = transform.forward;
 		
 		Vector3 position = new Vector3(transform.position.x, 0, transform.position.z);
 		if (Physics.Raycast(position, direction, out hit, attackRange, destructableMask)){
@@ -88,8 +84,9 @@ public class PlayerMovement : MonoBehaviour {
 	void updateScales(){
 		currentScale = this.transform.localScale;
 		nextScale = new Vector3(this.transform.localScale.x, this.transform.localScale.y * growthFactor, this.transform.localScale.z);
-		//oldCameraOffset = cameraFollow.getOffset();
-		//newCameraOffset = oldCameraOffset * growthFactor;
+
+		oldCameraDistance = cameraControl.distance;
+		newCameraDistance = oldCameraDistance * growthFactor;
 
 		movementSpeed = movementSpeed * growthFactor;
 		turningSpeed = turningSpeed * growthFactor;
@@ -112,7 +109,6 @@ public class PlayerMovement : MonoBehaviour {
 		Vector3 position = new Vector3(this.transform.position.x, newYPosition, this.transform.position.z);
 		this.transform.position = position;
 
-		//Vector3 cameraOffset = Vector3.Lerp(this.oldCameraOffset, this.newCameraOffset, perc);
-		//cameraFollow.updateOffset(cameraOffset);
+		cameraControl.distance = Mathf.Lerp(oldCameraDistance, newCameraDistance, perc);
 	}
 }

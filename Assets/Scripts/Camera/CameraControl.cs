@@ -46,10 +46,14 @@ public class CameraControl : MonoBehaviour {
 			float d = Vector3.Distance(transform.position, target.transform.position);
 			var relativePos = transform.position - (target.transform.position);
 			RaycastHit hit;
-			Debug.DrawRay(target.transform.position, relativePos, Color.green);
+			Debug.DrawRay(target.transform.position, relativePos.normalized * d, Color.green);
 			bool clipping =  Physics.Raycast(target.transform.position, relativePos, out hit, d);
-			if (clipping && hit.transform != target){ // make sure the hit is not with the target
-				Debug.DrawLine(target.transform.position, hit.point);
+			if (clipping && hit.transform != target && hit.collider.tag != "Player"){ // make sure the hit is not with the target
+
+				Debug.DrawLine(target.transform.position, hit.point, Color.red);
+				if (hit.collider.tag == "Bomb"){ // ignore bombs
+					return;
+				} 
 				transform.position = hit.point;
 				//transform.LookAt(target.transform);
 				float regularDistance = Vector3.Distance(normalPosition, target.transform.position);

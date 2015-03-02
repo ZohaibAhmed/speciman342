@@ -8599,6 +8599,33 @@ Transform:
   - {fileID: 537961799}
   m_Father: {fileID: 0}
   m_RootOrder: 17
+--- !u!1 &792143140
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 792143141}
+  m_Layer: 0
+  m_Name: Camera Target
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &792143141
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 792143140}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1390814543}
+  m_RootOrder: 0
 --- !u!1 &807090704
 GameObject:
   m_ObjectHideFlags: 0
@@ -11505,8 +11532,6 @@ GameObject:
   - 92: {fileID: 1067723804}
   - 124: {fileID: 1067723803}
   - 81: {fileID: 1067723802}
-  - 114: {fileID: 1067723808}
-  - 114: {fileID: 1067723809}
   - 54: {fileID: 1067723810}
   - 114: {fileID: 1067723807}
   m_Layer: 0
@@ -11592,45 +11617,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8d266f606c6d48da8ff04665885a493, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1390814539}
+  target: {fileID: 792143140}
   cam: {fileID: 1067723805}
   distance: 6
   yMinLimit: -20
   yMaxLimit: 80
   ySpeed: 120
---- !u!114 &1067723808
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1067723801}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27acebc9ad1110f6d00074c88d76c639, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 1390814543}
-  distance: 10
-  xSpeed: 250
-  ySpeed: 120
-  yMinLimit: -20
-  yMaxLimit: 80
---- !u!114 &1067723809
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1067723801}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 885b1972ad11a921d000d37b8d76c639, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 1390814543}
-  distance: 10
-  height: 5
-  heightDamping: 2
-  rotationDamping: 3
 --- !u!54 &1067723810
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14025,7 +14017,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: .800000012, y: 2, z: .800000012}
-  m_Children: []
+  m_Children:
+  - {fileID: 792143141}
   m_Father: {fileID: 0}
   m_RootOrder: 2
 --- !u!114 &1390814544
