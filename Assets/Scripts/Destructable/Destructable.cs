@@ -35,7 +35,7 @@ public class Destructable : MonoBehaviour {
 		}
 	}
 
-	void destruct(){
+	public void destruct(){
 		Instantiate(explosion, gameObject.transform.position, Quaternion.identity);
 		if (itemDrop){
 			Instantiate(itemDrop, gameObject.transform.position, Quaternion.identity);
