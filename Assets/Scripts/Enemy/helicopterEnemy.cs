@@ -1,10 +1,10 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class helicopterEnemy : MonoBehaviour {
 	public float Speed = 5;
 	public int spawnPoint;
-	public PlayerMovement player;
+	public PlayerControl player;
 
 	public GameObject ground;
 
@@ -18,7 +18,7 @@ public class helicopterEnemy : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		controller = this.GetComponent<CharacterController> ();
-		player = FindObjectOfType<PlayerMovement> ();
+		player = FindObjectOfType<PlayerControl> ();
 		lastBomb = 0.0f;
 		bombInterval = 2;
 	}

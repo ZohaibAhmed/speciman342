@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerMovement : MonoBehaviour {
+public class PlayerControl : MonoBehaviour {
 
 	public float movementSpeed = 2.0f;
 	public float turningSpeed = 2.0f;
@@ -28,6 +28,10 @@ public class PlayerMovement : MonoBehaviour {
 
 	float speedShoeDuration = 0f;
 	float speedShoeSpeed;
+
+	float bigHandsDuration = 0f;
+	float bigHandsDamage;
+	float bigHandsAttackRadiusMultiplier = 10;
 	
 	Vector3 movement;
 
@@ -64,6 +68,10 @@ public class PlayerMovement : MonoBehaviour {
 		if (speedShoeDuration > 0){
 			speedShoeDuration -= Time.deltaTime;
 		}
+
+		if (bigHandsDuration > 0){
+			bigHandsDuration -= Time.deltaTime;
+		}
 	}
 
 	void Move(float h, float v){
@@ -94,18 +102,36 @@ public class PlayerMovement : MonoBehaviour {
 
 
 	void Attack(){
-		RaycastHit hit;
-		Vector3 direction = new Vector3(0, 0, 0);
-		direction = transform.forward;
+		RaycastHit[] hits;
+		Vector3 direction = transform.forward;
+		float damageDealt = attackDamage;
+		float attackRadius = transform.lossyScale.x / 2;
+
+		if (bigHandsDuration > 0){
+			attackRadius =  attackRadius * bigHandsAttackRadiusMultiplier;
+			damageDealt = bigHandsDamage;
+			Debug.Log("BIG HANDS");
+		} 
 		
 		Vector3 position = new Vector3(transform.position.x, 0, transform.position.z);
-		if (Physics.Raycast(position, direction, out hit, attackRange, destructableMask)){
-			if (transform.lossyScale.y >= hit.transform.lossyScale.y){
+		hits = Physics.CapsuleCastAll(transform.position - Vector3.up * transform.localScale.y / 2, 
+		                    transform.position + Vector3.up * transform.localScale.y / 2,
+		                    transform.lossyScale.x / 2, 
+		                    direction,
+		                    attackRange,
+		                    destructableMask);
+		int i = 0;
+		while (i < hits.Length){
+			RaycastHit hit = hits[i];
+
+			if (bigHandsDuration > 0 || transform.lossyScale.y >= hit.transform.lossyScale.y){
 				//chemicalSpawnManager.SpawnChemical(new Vector3(hit.transform.position.x, 0.5f, hit.transform.position.z));
 				Destructable other = hit.collider.GetComponent<Destructable>();
-				other.takeDamage(attackDamage);
+				other.takeDamage(damageDealt);
 			}
+			i++;
 		}
+
 	}
 	
 	void OnTriggerEnter(Collider other){
@@ -116,6 +142,10 @@ public class PlayerMovement : MonoBehaviour {
 		} else if (other.gameObject.tag == "Speed Shoe"){
 			speedShoeSpeed = movementSpeed * 2;
 			speedShoeDuration = 30f;
+			Destroy (other.gameObject);
+		} else if (other.gameObject.tag == "Big Hands"){
+			bigHandsDamage = attackDamage * 2;
+			bigHandsDuration = 30f;
 			Destroy (other.gameObject);
 		}
 	}
@@ -139,6 +169,8 @@ public class PlayerMovement : MonoBehaviour {
 
 		movementSpeed = movementSpeed * growthFactor;
 		turningSpeed = turningSpeed * growthFactor;
+
+		attackDamage += 1;
 	}
 	
 	void Grow(){

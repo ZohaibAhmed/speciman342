@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class Bomb : MonoBehaviour {
@@ -8,7 +8,7 @@ public class Bomb : MonoBehaviour {
 	//CharacterController controller;
 
 	public HudHandler hud;
-	public PlayerMovement player;
+	public PlayerControl player;
 
 	// Use this for initialization
 	void Start () {
@@ -19,7 +19,7 @@ public class Bomb : MonoBehaviour {
 
 		dropZoneClone = Instantiate (dropZone, targetPosition, Quaternion.Euler(90.0f, 0.0f, 0.0f)) as GameObject;
 
-		player = FindObjectOfType<PlayerMovement> ();
+		player = FindObjectOfType<PlayerControl> ();
 		hud = FindObjectOfType<HudHandler> ();
 	}
 	
