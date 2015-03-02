@@ -123,7 +123,6 @@ public class PlayerMovement : MonoBehaviour {
 	void OnCollisionEnter(Collision collision){
 		int layerMask = 1 << collision.gameObject.layer;
 		if ((layerMask & destructableMask) > 0){
-			Debug.Log("correct layer");
 			if (transform.localScale.y >= collision.transform.lossyScale.y * 4){
 				Destructable destructable = collision.gameObject.GetComponent<Destructable>();
 				destructable.destruct();
