@@ -199,6 +199,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &13092524
 GameObject:
   m_ObjectHideFlags: 0
@@ -289,6 +290,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &15458127
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,6 +464,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &28302366
 GameObject:
   m_ObjectHideFlags: 0
@@ -552,6 +555,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &64829268
 GameObject:
   m_ObjectHideFlags: 0
@@ -642,6 +646,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1001 &80959406
 Prefab:
   m_ObjectHideFlags: 0
@@ -901,6 +906,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &93494501
 GameObject:
   m_ObjectHideFlags: 0
@@ -991,6 +997,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &107400460
 GameObject:
   m_ObjectHideFlags: 0
@@ -1081,6 +1088,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1001 &107765444
 Prefab:
   m_ObjectHideFlags: 0
@@ -1295,6 +1303,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &119751744
 GameObject:
   m_ObjectHideFlags: 0
@@ -1457,6 +1466,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &137550925
 GameObject:
   m_ObjectHideFlags: 0
@@ -1547,6 +1557,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &153504738
 GameObject:
   m_ObjectHideFlags: 0
@@ -1637,6 +1648,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &159277337
 GameObject:
   m_ObjectHideFlags: 0
@@ -1727,6 +1739,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &160682507
 GameObject:
   m_ObjectHideFlags: 0
@@ -1817,6 +1830,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &167692555
 GameObject:
   m_ObjectHideFlags: 0
@@ -1952,6 +1966,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &176304132
 GameObject:
   m_ObjectHideFlags: 0
@@ -2042,6 +2057,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &190396343
 GameObject:
   m_ObjectHideFlags: 0
@@ -2132,6 +2148,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &190530667
 GameObject:
   m_ObjectHideFlags: 0
@@ -2294,6 +2311,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &212327630
 GameObject:
   m_ObjectHideFlags: 0
@@ -2384,6 +2402,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &212764925
 GameObject:
   m_ObjectHideFlags: 0
@@ -2474,6 +2493,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &213376607
 GameObject:
   m_ObjectHideFlags: 0
@@ -2564,6 +2584,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &213607921
 GameObject:
   m_ObjectHideFlags: 0
@@ -2654,6 +2675,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &215366741
 GameObject:
   m_ObjectHideFlags: 0
@@ -2744,6 +2766,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &218492727
 GameObject:
   m_ObjectHideFlags: 0
@@ -2834,6 +2857,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &223152508
 GameObject:
   m_ObjectHideFlags: 0
@@ -2924,6 +2948,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &224122560
 GameObject:
   m_ObjectHideFlags: 0
@@ -3014,6 +3039,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &225996499
 GameObject:
   m_ObjectHideFlags: 0
@@ -3104,6 +3130,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &228034575
 GameObject:
   m_ObjectHideFlags: 0
@@ -3194,6 +3221,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &238014539
 GameObject:
   m_ObjectHideFlags: 0
@@ -3284,6 +3312,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &258820083
 GameObject:
   m_ObjectHideFlags: 0
@@ -3374,6 +3403,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &267838348
 GameObject:
   m_ObjectHideFlags: 0
@@ -3464,6 +3494,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &285532385
 GameObject:
   m_ObjectHideFlags: 0
@@ -3554,6 +3585,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &287264868
 GameObject:
   m_ObjectHideFlags: 0
@@ -3644,6 +3676,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &287804249
 GameObject:
   m_ObjectHideFlags: 0
@@ -3734,6 +3767,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &289045945
 GameObject:
   m_ObjectHideFlags: 0
@@ -3824,6 +3858,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1001 &290642663
 Prefab:
   m_ObjectHideFlags: 0
@@ -4038,6 +4073,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &304088807
 GameObject:
   m_ObjectHideFlags: 0
@@ -4128,6 +4164,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &310310942
 GameObject:
   m_ObjectHideFlags: 0
@@ -4218,6 +4255,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &312885547
 GameObject:
   m_ObjectHideFlags: 0
@@ -4371,6 +4409,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &316734865
 GameObject:
   m_ObjectHideFlags: 0
@@ -4461,6 +4500,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &325063557
 GameObject:
   m_ObjectHideFlags: 0
@@ -4551,6 +4591,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &341871977
 GameObject:
   m_ObjectHideFlags: 0
@@ -4641,6 +4682,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &347492966
 GameObject:
   m_ObjectHideFlags: 0
@@ -4731,6 +4773,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &349305651
 GameObject:
   m_ObjectHideFlags: 0
@@ -4821,6 +4864,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1001 &358854368
 Prefab:
   m_ObjectHideFlags: 0
@@ -4955,6 +4999,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &365829010
 GameObject:
   m_ObjectHideFlags: 0
@@ -5045,6 +5090,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &374570514
 GameObject:
   m_ObjectHideFlags: 0
@@ -5135,6 +5181,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &376429620
 GameObject:
   m_ObjectHideFlags: 0
@@ -5225,6 +5272,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &379844695
 GameObject:
   m_ObjectHideFlags: 0
@@ -5315,6 +5363,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &383997604
 GameObject:
   m_ObjectHideFlags: 0
@@ -5477,6 +5526,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &399320295
 GameObject:
   m_ObjectHideFlags: 0
@@ -5567,6 +5617,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &399485334
 GameObject:
   m_ObjectHideFlags: 0
@@ -5657,6 +5708,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &405446997
 GameObject:
   m_ObjectHideFlags: 0
@@ -5747,6 +5799,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &416489570
 GameObject:
   m_ObjectHideFlags: 0
@@ -5837,6 +5890,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &441293001
 GameObject:
   m_ObjectHideFlags: 0
@@ -5927,6 +5981,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &443147706
 GameObject:
   m_ObjectHideFlags: 0
@@ -6017,6 +6072,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &445756917
 GameObject:
   m_ObjectHideFlags: 0
@@ -6107,6 +6163,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &446268371
 GameObject:
   m_ObjectHideFlags: 0
@@ -6197,6 +6254,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &453299102
 GameObject:
   m_ObjectHideFlags: 0
@@ -6287,6 +6345,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &454315475
 GameObject:
   m_ObjectHideFlags: 0
@@ -6438,6 +6497,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &455349070
 GameObject:
   m_ObjectHideFlags: 0
@@ -6573,6 +6633,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &485476933
 GameObject:
   m_ObjectHideFlags: 0
@@ -6663,6 +6724,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &491660865
 GameObject:
   m_ObjectHideFlags: 0
@@ -6753,6 +6815,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &521930572
 GameObject:
   m_ObjectHideFlags: 0
@@ -6843,6 +6906,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &537651569
 GameObject:
   m_ObjectHideFlags: 0
@@ -6933,6 +6997,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &537961798
 GameObject:
   m_ObjectHideFlags: 0
@@ -7023,6 +7088,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &541135544
 GameObject:
   m_ObjectHideFlags: 0
@@ -7113,6 +7179,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &549943887
 GameObject:
   m_ObjectHideFlags: 0
@@ -7203,6 +7270,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &550878172
 GameObject:
   m_ObjectHideFlags: 0
@@ -7293,6 +7361,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &553221262
 GameObject:
   m_ObjectHideFlags: 0
@@ -7383,6 +7452,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &575849299
 GameObject:
   m_ObjectHideFlags: 0
@@ -7473,6 +7543,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &580862463
 GameObject:
   m_ObjectHideFlags: 0
@@ -7563,6 +7634,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &588307756
 GameObject:
   m_ObjectHideFlags: 0
@@ -7653,6 +7725,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &606633323
 GameObject:
   m_ObjectHideFlags: 0
@@ -7743,6 +7816,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &606638737
 GameObject:
   m_ObjectHideFlags: 0
@@ -7833,6 +7907,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &607823545
 GameObject:
   m_ObjectHideFlags: 0
@@ -7923,6 +7998,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &609525668
 GameObject:
   m_ObjectHideFlags: 0
@@ -8013,6 +8089,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &616626026
 GameObject:
   m_ObjectHideFlags: 0
@@ -8103,6 +8180,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &648917227
 GameObject:
   m_ObjectHideFlags: 0
@@ -8193,6 +8271,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &662861197
 GameObject:
   m_ObjectHideFlags: 0
@@ -8283,6 +8362,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1001 &665006482
 Prefab:
   m_ObjectHideFlags: 0
@@ -8497,6 +8577,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &666674312
 GameObject:
   m_ObjectHideFlags: 0
@@ -8587,6 +8668,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &675746536
 GameObject:
   m_ObjectHideFlags: 0
@@ -8677,6 +8759,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &688282950
 GameObject:
   m_ObjectHideFlags: 0
@@ -8767,6 +8850,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &690966141
 GameObject:
   m_ObjectHideFlags: 0
@@ -8857,6 +8941,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &695748137
 GameObject:
   m_ObjectHideFlags: 0
@@ -8974,6 +9059,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &699214490
 GameObject:
   m_ObjectHideFlags: 0
@@ -9125,6 +9211,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &715969880
 GameObject:
   m_ObjectHideFlags: 0
@@ -9215,6 +9302,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &721948725
 GameObject:
   m_ObjectHideFlags: 0
@@ -9305,6 +9393,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &726689627
 GameObject:
   m_ObjectHideFlags: 0
@@ -9446,6 +9535,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &735654961
 GameObject:
   m_ObjectHideFlags: 0
@@ -9536,6 +9626,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &736913747
 GameObject:
   m_ObjectHideFlags: 0
@@ -9626,6 +9717,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &737815296
 GameObject:
   m_ObjectHideFlags: 0
@@ -9716,6 +9808,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &741541891
 GameObject:
   m_ObjectHideFlags: 0
@@ -9806,6 +9899,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &749808004
 GameObject:
   m_ObjectHideFlags: 0
@@ -9896,6 +9990,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &753000421
 GameObject:
   m_ObjectHideFlags: 0
@@ -9986,6 +10081,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &764993649
 GameObject:
   m_ObjectHideFlags: 0
@@ -10076,6 +10172,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &765420656
 GameObject:
   m_ObjectHideFlags: 0
@@ -10166,6 +10263,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &779980650
 GameObject:
   m_ObjectHideFlags: 0
@@ -10256,6 +10354,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &782292649
 GameObject:
   m_ObjectHideFlags: 0
@@ -10499,6 +10598,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &809075208
 GameObject:
   m_ObjectHideFlags: 0
@@ -10589,6 +10689,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &810150868
 GameObject:
   m_ObjectHideFlags: 0
@@ -10679,6 +10780,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &813059000
 GameObject:
   m_ObjectHideFlags: 0
@@ -10769,6 +10871,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &816576862
 GameObject:
   m_ObjectHideFlags: 0
@@ -10859,6 +10962,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &816682593
 GameObject:
   m_ObjectHideFlags: 0
@@ -10949,6 +11053,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &847565387
 GameObject:
   m_ObjectHideFlags: 0
@@ -11039,6 +11144,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &859864647
 GameObject:
   m_ObjectHideFlags: 0
@@ -11129,6 +11235,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &861735016
 GameObject:
   m_ObjectHideFlags: 0
@@ -11219,6 +11326,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &866218063
 GameObject:
   m_ObjectHideFlags: 0
@@ -11309,6 +11417,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &866587790
 GameObject:
   m_ObjectHideFlags: 0
@@ -11432,6 +11541,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &884250150
 GameObject:
   m_ObjectHideFlags: 0
@@ -11567,6 +11677,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &888710773
 GameObject:
   m_ObjectHideFlags: 0
@@ -11657,6 +11768,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &892234694
 GameObject:
   m_ObjectHideFlags: 0
@@ -11792,6 +11904,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &907692457
 GameObject:
   m_ObjectHideFlags: 0
@@ -11927,6 +12040,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &946912474
 GameObject:
   m_ObjectHideFlags: 0
@@ -12017,6 +12131,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &955062127
 GameObject:
   m_ObjectHideFlags: 0
@@ -12107,6 +12222,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1001 &956155880
 Prefab:
   m_ObjectHideFlags: 0
@@ -12523,6 +12639,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &983408532
 GameObject:
   m_ObjectHideFlags: 0
@@ -12613,6 +12730,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1006171100
 GameObject:
   m_ObjectHideFlags: 0
@@ -12703,6 +12821,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1001 &1008529790
 Prefab:
   m_ObjectHideFlags: 0
@@ -12917,6 +13036,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1028551594
 GameObject:
   m_ObjectHideFlags: 0
@@ -13007,6 +13127,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1039103056
 GameObject:
   m_ObjectHideFlags: 0
@@ -13097,6 +13218,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1043597211
 GameObject:
   m_ObjectHideFlags: 0
@@ -13187,6 +13309,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1045600078
 GameObject:
   m_ObjectHideFlags: 0
@@ -13277,6 +13400,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1052446161
 GameObject:
   m_ObjectHideFlags: 0
@@ -13367,6 +13491,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1055085880
 GameObject:
   m_ObjectHideFlags: 0
@@ -13457,6 +13582,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1001 &1055155039
 Prefab:
   m_ObjectHideFlags: 0
@@ -13671,6 +13797,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1060480717
 GameObject:
   m_ObjectHideFlags: 0
@@ -13761,6 +13888,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1061251450
 GameObject:
   m_ObjectHideFlags: 0
@@ -13851,6 +13979,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1067723801
 GameObject:
   m_ObjectHideFlags: 0
@@ -14059,6 +14188,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1087352740
 GameObject:
   m_ObjectHideFlags: 0
@@ -14149,6 +14279,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1110834257
 GameObject:
   m_ObjectHideFlags: 0
@@ -14239,6 +14370,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1120652614
 GameObject:
   m_ObjectHideFlags: 0
@@ -14329,6 +14461,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1122938098
 GameObject:
   m_ObjectHideFlags: 0
@@ -14489,6 +14622,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1150061921
 GameObject:
   m_ObjectHideFlags: 0
@@ -14579,6 +14713,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1150593048
 GameObject:
   m_ObjectHideFlags: 0
@@ -14669,6 +14804,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1161140676
 GameObject:
   m_ObjectHideFlags: 0
@@ -14759,6 +14895,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1163992823
 GameObject:
   m_ObjectHideFlags: 0
@@ -14849,6 +14986,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1164523476
 GameObject:
   m_ObjectHideFlags: 0
@@ -14939,6 +15077,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1188834139
 GameObject:
   m_ObjectHideFlags: 0
@@ -15029,6 +15168,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1190315131
 GameObject:
   m_ObjectHideFlags: 0
@@ -15119,6 +15259,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1202571301
 GameObject:
   m_ObjectHideFlags: 0
@@ -15209,6 +15350,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1216736731
 GameObject:
   m_ObjectHideFlags: 0
@@ -15299,6 +15441,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1217320765
 GameObject:
   m_ObjectHideFlags: 0
@@ -15416,6 +15559,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1001 &1243502043
 Prefab:
   m_ObjectHideFlags: 0
@@ -15630,6 +15774,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1255973016
 GameObject:
   m_ObjectHideFlags: 0
@@ -15720,6 +15865,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1269125082
 GameObject:
   m_ObjectHideFlags: 0
@@ -15810,6 +15956,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1290086447
 GameObject:
   m_ObjectHideFlags: 0
@@ -16037,6 +16184,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1308338210
 GameObject:
   m_ObjectHideFlags: 0
@@ -16127,6 +16275,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1308674547
 GameObject:
   m_ObjectHideFlags: 0
@@ -16244,6 +16393,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1320696152
 GameObject:
   m_ObjectHideFlags: 0
@@ -16334,6 +16484,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1322289782
 GameObject:
   m_ObjectHideFlags: 0
@@ -16469,6 +16620,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1346787130
 GameObject:
   m_ObjectHideFlags: 0
@@ -16559,6 +16711,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1347606405
 GameObject:
   m_ObjectHideFlags: 0
@@ -16649,6 +16802,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1352974576
 GameObject:
   m_ObjectHideFlags: 0
@@ -16739,6 +16893,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1363323829
 GameObject:
   m_ObjectHideFlags: 0
@@ -16829,6 +16984,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1380032135
 GameObject:
   m_ObjectHideFlags: 0
@@ -16919,6 +17075,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1381315319
 GameObject:
   m_ObjectHideFlags: 0
@@ -17009,6 +17166,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1386534635
 GameObject:
   m_ObjectHideFlags: 0
@@ -17431,6 +17589,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1437263046
 GameObject:
   m_ObjectHideFlags: 0
@@ -17521,6 +17680,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1439469137
 GameObject:
   m_ObjectHideFlags: 0
@@ -17611,6 +17771,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1446475990
 GameObject:
   m_ObjectHideFlags: 0
@@ -17701,6 +17862,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1448156716
 GameObject:
   m_ObjectHideFlags: 0
@@ -17791,6 +17953,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1455354262
 GameObject:
   m_ObjectHideFlags: 0
@@ -17881,6 +18044,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1001 &1456470332
 Prefab:
   m_ObjectHideFlags: 0
@@ -18095,6 +18259,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1463527970
 GameObject:
   m_ObjectHideFlags: 0
@@ -18226,6 +18391,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1493004868
 GameObject:
   m_ObjectHideFlags: 0
@@ -18316,6 +18482,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1493754275
 GameObject:
   m_ObjectHideFlags: 0
@@ -18491,6 +18658,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1510402492
 GameObject:
   m_ObjectHideFlags: 0
@@ -18581,6 +18749,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1515346342
 GameObject:
   m_ObjectHideFlags: 0
@@ -18671,6 +18840,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1522011844
 GameObject:
   m_ObjectHideFlags: 0
@@ -18761,6 +18931,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1531073552
 GameObject:
   m_ObjectHideFlags: 0
@@ -18917,6 +19088,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1541824666
 GameObject:
   m_ObjectHideFlags: 0
@@ -19159,6 +19331,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1546569875
 GameObject:
   m_ObjectHideFlags: 0
@@ -19249,6 +19422,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1548299503
 GameObject:
   m_ObjectHideFlags: 0
@@ -19339,6 +19513,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1548819211
 GameObject:
   m_ObjectHideFlags: 0
@@ -19429,6 +19604,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1550824201
 GameObject:
   m_ObjectHideFlags: 0
@@ -19519,6 +19695,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1567746455
 GameObject:
   m_ObjectHideFlags: 0
@@ -19609,6 +19786,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1568263004
 GameObject:
   m_ObjectHideFlags: 0
@@ -19699,6 +19877,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1592248504
 GameObject:
   m_ObjectHideFlags: 0
@@ -19789,6 +19968,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1597521600
 GameObject:
   m_ObjectHideFlags: 0
@@ -19879,6 +20059,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1611046760
 GameObject:
   m_ObjectHideFlags: 0
@@ -20014,6 +20195,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1617169661
 GameObject:
   m_ObjectHideFlags: 0
@@ -20104,6 +20286,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1623989952
 GameObject:
   m_ObjectHideFlags: 0
@@ -20221,6 +20404,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1638789906
 GameObject:
   m_ObjectHideFlags: 0
@@ -20311,6 +20495,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1641666306
 GameObject:
   m_ObjectHideFlags: 0
@@ -20401,6 +20586,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1647815183
 GameObject:
   m_ObjectHideFlags: 0
@@ -20491,6 +20677,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1649146499
 GameObject:
   m_ObjectHideFlags: 0
@@ -20608,6 +20795,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1654456707
 GameObject:
   m_ObjectHideFlags: 0
@@ -20698,6 +20886,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1657498173
 GameObject:
   m_ObjectHideFlags: 0
@@ -20788,6 +20977,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1663086924
 GameObject:
   m_ObjectHideFlags: 0
@@ -20878,6 +21068,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1672839968
 GameObject:
   m_ObjectHideFlags: 0
@@ -20968,6 +21159,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1674460312
 GameObject:
   m_ObjectHideFlags: 0
@@ -21058,6 +21250,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1682319078
 GameObject:
   m_ObjectHideFlags: 0
@@ -21148,6 +21341,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1689660598
 GameObject:
   m_ObjectHideFlags: 0
@@ -21238,6 +21432,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1692239406
 GameObject:
   m_ObjectHideFlags: 0
@@ -21328,6 +21523,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1692955788
 GameObject:
   m_ObjectHideFlags: 0
@@ -21418,6 +21614,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1708004244
 GameObject:
   m_ObjectHideFlags: 0
@@ -21508,6 +21705,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1713240938
 GameObject:
   m_ObjectHideFlags: 0
@@ -21598,6 +21796,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1714671744
 GameObject:
   m_ObjectHideFlags: 0
@@ -21688,6 +21887,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1718597447
 GameObject:
   m_ObjectHideFlags: 0
@@ -21778,6 +21978,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1718661219
 GameObject:
   m_ObjectHideFlags: 0
@@ -21868,6 +22069,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1719846812
 GameObject:
   m_ObjectHideFlags: 0
@@ -21958,6 +22160,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1722939343
 GameObject:
   m_ObjectHideFlags: 0
@@ -22048,6 +22251,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1727996315
 GameObject:
   m_ObjectHideFlags: 0
@@ -22138,6 +22342,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1740051481
 GameObject:
   m_ObjectHideFlags: 0
@@ -22228,6 +22433,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1751652792
 GameObject:
   m_ObjectHideFlags: 0
@@ -22318,6 +22524,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1760602346
 GameObject:
   m_ObjectHideFlags: 0
@@ -22453,6 +22660,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1770416507
 GameObject:
   m_ObjectHideFlags: 0
@@ -22543,6 +22751,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1795712801
 GameObject:
   m_ObjectHideFlags: 0
@@ -22633,6 +22842,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1801121744
 GameObject:
   m_ObjectHideFlags: 0
@@ -22723,6 +22933,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1817441408
 GameObject:
   m_ObjectHideFlags: 0
@@ -22813,6 +23024,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1819429693
 GameObject:
   m_ObjectHideFlags: 0
@@ -22903,6 +23115,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1819981642
 GameObject:
   m_ObjectHideFlags: 0
@@ -22993,6 +23206,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1838621252
 GameObject:
   m_ObjectHideFlags: 0
@@ -23083,6 +23297,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1841436572
 GameObject:
   m_ObjectHideFlags: 0
@@ -23213,6 +23428,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1861057342
 GameObject:
   m_ObjectHideFlags: 0
@@ -23303,6 +23519,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1869763029
 GameObject:
   m_ObjectHideFlags: 0
@@ -23393,6 +23610,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1001 &1871726621
 Prefab:
   m_ObjectHideFlags: 0
@@ -23607,6 +23825,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1887851536
 GameObject:
   m_ObjectHideFlags: 0
@@ -23697,6 +23916,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1891423213
 GameObject:
   m_ObjectHideFlags: 0
@@ -23787,6 +24007,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1891737015
 GameObject:
   m_ObjectHideFlags: 0
@@ -23877,6 +24098,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1894407065
 GameObject:
   m_ObjectHideFlags: 0
@@ -23967,6 +24189,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1001 &1902120888
 Prefab:
   m_ObjectHideFlags: 0
@@ -24181,6 +24404,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1913020207
 GameObject:
   m_ObjectHideFlags: 0
@@ -24271,6 +24495,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1920002504
 GameObject:
   m_ObjectHideFlags: 0
@@ -24361,6 +24586,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1931350426
 GameObject:
   m_ObjectHideFlags: 0
@@ -24517,6 +24743,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1937861443
 GameObject:
   m_ObjectHideFlags: 0
@@ -24607,6 +24834,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1939805128
 GameObject:
   m_ObjectHideFlags: 0
@@ -24697,6 +24925,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1944714989
 GameObject:
   m_ObjectHideFlags: 0
@@ -24787,6 +25016,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1950099822
 GameObject:
   m_ObjectHideFlags: 0
@@ -24877,6 +25107,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1964837172
 GameObject:
   m_ObjectHideFlags: 0
@@ -24967,6 +25198,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1965243690
 GameObject:
   m_ObjectHideFlags: 0
@@ -25057,6 +25289,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1001 &1980017514
 Prefab:
   m_ObjectHideFlags: 0
@@ -25271,6 +25504,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &1987179089
 GameObject:
   m_ObjectHideFlags: 0
@@ -25361,6 +25595,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &2012183811
 GameObject:
   m_ObjectHideFlags: 0
@@ -25451,6 +25686,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &2012820676
 GameObject:
   m_ObjectHideFlags: 0
@@ -25541,6 +25777,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &2024729198
 GameObject:
   m_ObjectHideFlags: 0
@@ -25631,6 +25868,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &2024751855
 GameObject:
   m_ObjectHideFlags: 0
@@ -25721,6 +25959,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &2028237184
 GameObject:
   m_ObjectHideFlags: 0
@@ -25811,6 +26050,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &2044822670
 GameObject:
   m_ObjectHideFlags: 0
@@ -25901,6 +26141,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &2045339453
 GameObject:
   m_ObjectHideFlags: 0
@@ -25991,6 +26232,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &2047238841
 GameObject:
   m_ObjectHideFlags: 0
@@ -26081,6 +26323,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &2052830260
 GameObject:
   m_ObjectHideFlags: 0
@@ -26171,6 +26414,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &2056011035
 GameObject:
   m_ObjectHideFlags: 0
@@ -26334,6 +26578,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &2082178714
 GameObject:
   m_ObjectHideFlags: 0
@@ -26424,6 +26669,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &2091036096
 GameObject:
   m_ObjectHideFlags: 0
@@ -26514,6 +26760,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &2101586900
 GameObject:
   m_ObjectHideFlags: 0
@@ -26604,6 +26851,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &2104928670
 GameObject:
   m_ObjectHideFlags: 0
@@ -26694,6 +26942,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &2116644980
 GameObject:
   m_ObjectHideFlags: 0
@@ -26784,6 +27033,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &2128589926
 GameObject:
   m_ObjectHideFlags: 0
@@ -26874,6 +27124,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}
 --- !u!1 &2131320749
 GameObject:
   m_ObjectHideFlags: 0
@@ -26964,3 +27215,4 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  hud: {fileID: 0}

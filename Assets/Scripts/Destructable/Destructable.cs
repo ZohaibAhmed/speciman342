@@ -9,12 +9,15 @@ public class Destructable : MonoBehaviour {
 	public float dropProbability = 0.5f;
 	public int points = 100; // the number of points this will give
 
+	public HudHandler hud;
+
 	float maxHealth;
 	Color originalColor;
 
 	// Use this for initialization
 	void Start () {
 		maxHealth = health;
+		hud = FindObjectOfType<HudHandler> ();
 	}
 	
 	// Update is called once per frame
@@ -38,6 +41,9 @@ public class Destructable : MonoBehaviour {
 	}
 
 	public void destruct(){
+		// TODO: increment the score according to what we destroy?
+		hud.incrementPoints (10);
+
 		Instantiate(explosion, gameObject.transform.position, Quaternion.identity);
 		bool shouldDrop = Random.value < dropProbability;
 		if (itemDrop && shouldDrop){

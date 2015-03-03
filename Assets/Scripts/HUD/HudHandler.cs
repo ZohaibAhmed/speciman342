@@ -34,4 +34,11 @@ public class HudHandler : MonoBehaviour {
 	public void changeHealth(float change) {
 		healthBarSlider.value = healthBarSlider.value + change;
 	}
+
+	public void incrementPoints(int addPoints) {
+		int totalPoints = int.Parse(points.text);
+		int finalPoints = totalPoints + addPoints;
+
+		points.text = finalPoints.ToString ();
+	}
 }
