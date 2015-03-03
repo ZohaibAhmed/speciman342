@@ -13951,7 +13951,7 @@ MonoBehaviour:
   target: {fileID: 792143140}
   cam: {fileID: 1067723805}
   distance: 6
-  yMinLimit: -30
+  yMinLimit: -80
   yMaxLimit: 80
   ySpeed: 120
 --- !u!54 &1067723810
@@ -15897,6 +15897,7 @@ MonoBehaviour:
   yMinLimit: -80
   yMaxLimit: 80
   holder: {fileID: 1390814543}
+  firstPersonCamera: {fileID: 1386534637}
 --- !u!114 &1290086453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17261,7 +17262,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1391406745}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}

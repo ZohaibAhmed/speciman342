@@ -10,7 +10,6 @@ public class FirstPersonCamera : MonoBehaviour {
 	public float yMaxLimit = 80f;
 
 	float y = 0.0f;
-	float x = 0.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -33,5 +32,9 @@ public class FirstPersonCamera : MonoBehaviour {
 			angle -= 360;
 		}
 		return Mathf.Clamp(angle, min, max);
+	}
+
+	public float getYRotation(){
+		return this.y;
 	}
 }

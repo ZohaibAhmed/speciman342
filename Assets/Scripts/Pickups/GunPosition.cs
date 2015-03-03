@@ -9,11 +9,18 @@ public class GunPosition : MonoBehaviour {
 	public float yMaxLimit = 80f;
 
 	public Transform holder;
+	public FirstPersonCamera firstPersonCamera;
 	
 	float y = 0.0f;
 
 	// Use this for initialization
 	void Start () {
+	}
+
+	void Awake(){
+		if (firstPersonCamera){
+			y = firstPersonCamera.getYRotation();
+		}
 	}
 	
 	
