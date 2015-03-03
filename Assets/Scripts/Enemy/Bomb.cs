@@ -7,6 +7,8 @@ public class Bomb : MonoBehaviour {
 	public GameObject dropZoneClone;
 	//CharacterController controller;
 
+	public Transform explosion;
+
 	public HudHandler hud;
 	public PlayerControl player;
 
@@ -46,6 +48,9 @@ public class Bomb : MonoBehaviour {
 			if (damage < 5.0f) {
 				hud.changeHealth(-(5.0f - damage));
 			}
+
+			// explode!
+			Instantiate(explosion, this.transform.position, Quaternion.identity);
 		}
 
 		if (col.gameObject.name == "Player") {
@@ -54,6 +59,7 @@ public class Bomb : MonoBehaviour {
 
 			hud.changeHealth(-10.0f);
 		}
+
 
 	}
 	

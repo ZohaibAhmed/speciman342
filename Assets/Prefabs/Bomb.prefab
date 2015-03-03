@@ -89,6 +89,7 @@ MonoBehaviour:
   speed: 10
   dropZone: {fileID: 143058, guid: 71de178cc0a47412cb6f13b0a6edd298, type: 2}
   dropZoneClone: {fileID: 0}
+  explosion: {fileID: 400004, guid: 169b10ce10f4327cb9f40f6b117ed8d7, type: 2}
   hud: {fileID: 0}
   player: {fileID: 0}
 --- !u!136 &13652764

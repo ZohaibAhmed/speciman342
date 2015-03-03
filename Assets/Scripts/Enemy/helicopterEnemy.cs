@@ -11,7 +11,7 @@ public class helicopterEnemy : MonoBehaviour {
 
 	public GameObject bomb;
 	private static float lastBomb;
-	private int bombInterval; // this is the interval in which bombs are going to be created 
+	private float bombInterval; // this is the interval in which bombs are going to be created 
 
 	CharacterController controller;
 
@@ -20,7 +20,7 @@ public class helicopterEnemy : MonoBehaviour {
 		controller = this.GetComponent<CharacterController> ();
 		player = FindObjectOfType<PlayerControl> ();
 		lastBomb = 0.0f;
-		bombInterval = 2;
+		bombInterval = (Random.value + 0.5f) * 2f;
 	}
 	
 	// Update is called once per frame
