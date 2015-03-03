@@ -17226,9 +17226,10 @@ GameObject:
   - 33: {fileID: 1391406748}
   - 65: {fileID: 1391406747}
   - 23: {fileID: 1391406746}
+  - 114: {fileID: 1391406750}
   m_Layer: 0
-  m_Name: Cube
-  m_TagString: Untagged
+  m_Name: Gun
+  m_TagString: Gun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17279,11 +17280,22 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1391406745}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: .860000014, z: 6.28999996}
+  m_LocalPosition: {x: 0, y: 1.38999999, z: 6.65999985}
   m_LocalScale: {x: .159999996, y: .400000006, z: 1.20937502}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 27
+--- !u!114 &1391406750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1391406745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56a46cd685e594cb3af7dea2fd4e703d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1416658993
 Prefab:
   m_ObjectHideFlags: 0
