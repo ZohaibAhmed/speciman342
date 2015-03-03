@@ -8,6 +8,7 @@ public class PlayerControl : MonoBehaviour {
 	public float attackRange = 1.5f;
 	public float growthFactor = 1.25f;
 	public float attackDamage = 1f;
+	public GameObject gun;
 
 	Rigidbody playerRigidbody;
 
@@ -32,6 +33,8 @@ public class PlayerControl : MonoBehaviour {
 	float bigHandsDuration = 0f;
 	float bigHandsDamage;
 	float bigHandsAttackRadiusMultiplier = 100;
+
+	float gunDuration = 0f;
 	
 	Vector3 movement;
 
@@ -57,7 +60,9 @@ public class PlayerControl : MonoBehaviour {
 
 		
 		if (Input.GetButtonDown("Fire1")){
-			Attack ();
+			if (!gun || gunDuration <= 0){
+				Attack ();
+			}
 		}
 		if (growing == true){
 			Grow ();
@@ -71,6 +76,13 @@ public class PlayerControl : MonoBehaviour {
 
 		if (bigHandsDuration > 0){
 			bigHandsDuration -= Time.deltaTime;
+		}
+
+		if (gunDuration > 0 && gun != null){
+			gunDuration -= Time.deltaTime;
+			if (gunDuration <= 0){
+				gun.SetActive(false);
+			}
 		}
 	}
 
@@ -110,7 +122,6 @@ public class PlayerControl : MonoBehaviour {
 		if (bigHandsDuration > 0){
 			attackRadius =  attackRadius * bigHandsAttackRadiusMultiplier;
 			damageDealt = bigHandsDamage;
-			Debug.Log("BIG HANDS");
 		} 
 		
 		hits = Physics.CapsuleCastAll(transform.position - Vector3.up * transform.localScale.y / 2, 
@@ -146,6 +157,12 @@ public class PlayerControl : MonoBehaviour {
 			bigHandsDamage = attackDamage * 2;
 			bigHandsDuration = 30f;
 			Destroy (other.gameObject);
+		} else if (other.gameObject.tag == "Gun"){
+			if (gun){
+				gun.SetActive(true);
+				gunDuration = 30f;
+			}
+			Destroy(other.gameObject);
 		}
 	}
 
