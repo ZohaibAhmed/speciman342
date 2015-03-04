@@ -45,7 +45,7 @@ public class Destructable : MonoBehaviour {
 			} else {
 				Renderer[] childrenRenderer = this.GetComponentsInChildren<Renderer>();
 				int i = 0;
-				while (childrenRenderer.Length > 0){
+				while (i < childrenRenderer.Length){
 					childrenRenderer[i].material.color = Color.Lerp(Color.red, Color.black, health/maxHealth);
 					i++;
 				}
