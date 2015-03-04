@@ -178,10 +178,10 @@ public class PlayerControl : MonoBehaviour {
 	
 	void updateScales(){
 		currentScale = this.transform.localScale;
-		nextScale = new Vector3(this.transform.localScale.x, this.transform.localScale.y * growthFactor, this.transform.localScale.z);
+		nextScale = new Vector3(this.transform.localScale.x * (growthFactor - 0.1f), this.transform.localScale.y * growthFactor, this.transform.localScale.z * (growthFactor - 0.1f));
 
 		oldCameraDistance = cameraControl.distance;
-		newCameraDistance = oldCameraDistance + growthFactor;
+		newCameraDistance = oldCameraDistance + (growthFactor + (transform.localScale.y / 2));
 
 		movementSpeed = movementSpeed + (0.5f * growthFactor);
 		//turningSpeed = turningSpeed * growthFactor;

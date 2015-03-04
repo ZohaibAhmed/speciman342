@@ -14,10 +14,14 @@ public class Destructable : MonoBehaviour {
 	float maxHealth;
 	Color originalColor;
 
+	AudioSource audioSource;
+	public AudioClip explosionSound;
+
 	// Use this for initialization
 	void Start () {
 		maxHealth = health;
 		hud = FindObjectOfType<HudHandler> ();
+		audioSource = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -42,7 +46,14 @@ public class Destructable : MonoBehaviour {
 
 	public void destruct(){
 		// TODO: increment the score according to what we destroy?
-		hud.incrementPoints (10);
+		hud.incrementPoints (points);
+
+		if (audioSource){
+			Debug.Log("AUDIO");
+			if (explosionSound){
+				AudioSource.PlayClipAtPoint(explosionSound, transform.position);
+			}
+		}
 
 		Instantiate(explosion, gameObject.transform.position, Quaternion.identity);
 		bool shouldDrop = Random.value < dropProbability;
