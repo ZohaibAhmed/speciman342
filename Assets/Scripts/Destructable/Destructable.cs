@@ -9,6 +9,8 @@ public class Destructable : MonoBehaviour {
 	public float dropProbability = 0.5f;
 	public int points = 100; // the number of points this will give
 
+	public float dropHeightOffset = 0f;
+
 	public HudHandler hud;
 
 	float maxHealth;
@@ -40,6 +42,13 @@ public class Destructable : MonoBehaviour {
 		if (this.health < maxHealth){
 			if (renderer){
 				this.renderer.material.color = Color.Lerp(Color.red, Color.black, health/maxHealth);
+			} else {
+				Renderer[] childrenRenderer = this.GetComponentsInChildren<Renderer>();
+				int i = 0;
+				while (childrenRenderer.Length > 0){
+					childrenRenderer[i].material.color = Color.Lerp(Color.red, Color.black, health/maxHealth);
+					i++;
+				}
 			}
 		}
 	}
@@ -58,7 +67,7 @@ public class Destructable : MonoBehaviour {
 		Instantiate(explosion, gameObject.transform.position, Quaternion.identity);
 		bool shouldDrop = Random.value < dropProbability;
 		if (itemDrop && shouldDrop){
-			Vector3 dropPosition = gameObject.transform.position - Vector3.up * gameObject.transform.position.y;
+			Vector3 dropPosition = gameObject.transform.position - Vector3.up * gameObject.transform.position.y + Vector3.up * dropHeightOffset;
 			Instantiate(itemDrop, dropPosition, Quaternion.identity);
 		}
 		Debug.Log("EXPLODE");

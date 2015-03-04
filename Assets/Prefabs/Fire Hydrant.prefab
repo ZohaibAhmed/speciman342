@@ -735,6 +735,7 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  dropHeightOffset: 1
   hud: {fileID: 0}
   explosionSound: {fileID: 8300000, guid: 2f9e18a3c3c5342da9ccbfd29bba07a2, type: 3}
 --- !u!1001 &100100000

@@ -10,6 +10,8 @@ public class EnemySpawnManager : MonoBehaviour {
 	public static float lastCopter;
 	public int spawnInterval;
 
+	public float initialDelay = 60f; // initially delay the spawn by 60 seconds
+
 	//public string[] names = {"Down", "Right", "Up"};
 
 	// Use this for initialization
@@ -20,6 +22,11 @@ public class EnemySpawnManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		if (initialDelay > 0){
+			initialDelay -= Time.deltaTime;
+			return;
+		}
 	
 		// spawn a helicopter
 		if (Time.time - lastCopter > spawnInterval){

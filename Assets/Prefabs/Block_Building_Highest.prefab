@@ -157,11 +157,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b135d5bafdd2c419ea7ad6d58e18258c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 2
+  health: 100
   explosion: {fileID: 400004, guid: 169b10ce10f4327cb9f40f6b117ed8d7, type: 2}
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  dropHeightOffset: 0
   hud: {fileID: 0}
   explosionSound: {fileID: 8300000, guid: 6829d718e5aba4f91b455045020fecb0, type: 3}
 --- !u!1001 &100100000

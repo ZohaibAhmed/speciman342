@@ -12,7 +12,8 @@ GameObject:
   - 114: {fileID: 11475558}
   - 143: {fileID: 14375558}
   - 65: {fileID: 6575558}
-  m_Layer: 0
+  - 114: {fileID: 11493200}
+  m_Layer: 8
   m_Name: Helicopter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +28,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 475550}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pCylinder1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +45,7 @@ GameObject:
   - 4: {fileID: 475552}
   - 33: {fileID: 3375558}
   - 23: {fileID: 2375558}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pCylinder2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,7 +60,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 475554}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pSphere1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +75,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 475556}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: transform2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +90,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 475558}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: transform1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -243,6 +244,24 @@ MonoBehaviour:
   player: {fileID: 0}
   ground: {fileID: 0}
   bomb: {fileID: 152764, guid: d4ff0b0b82f2c4308ba8ea09d35e86e4, type: 2}
+--- !u!114 &11493200
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 175548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b135d5bafdd2c419ea7ad6d58e18258c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
+  explosion: {fileID: 400004, guid: 169b10ce10f4327cb9f40f6b117ed8d7, type: 2}
+  itemDrop: {fileID: 0}
+  dropProbability: .5
+  points: 100
+  hud: {fileID: 0}
+  explosionSound: {fileID: 8300000, guid: 6829d718e5aba4f91b455045020fecb0, type: 3}
 --- !u!143 &14375558
 CharacterController:
   m_ObjectHideFlags: 1

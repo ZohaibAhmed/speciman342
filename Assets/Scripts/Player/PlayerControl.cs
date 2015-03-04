@@ -10,6 +10,8 @@ public class PlayerControl : MonoBehaviour {
 	public float attackDamage = 1f;
 	public GameObject gun;
 
+	public float maxSize = 40f;
+
 	Rigidbody playerRigidbody;
 
 	private bool growing = false; // true if the character is growing
@@ -65,7 +67,11 @@ public class PlayerControl : MonoBehaviour {
 			}
 		}
 		if (growing == true){
-			Grow ();
+			if (this.transform.lossyScale.y <= maxSize){ 
+				Grow ();
+			} else {
+				growing = false;
+			}
 		} else {
 			currentGrowLerpTime = 0.0f;
 		}
@@ -146,9 +152,11 @@ public class PlayerControl : MonoBehaviour {
 	
 	void OnTriggerEnter(Collider other){
 		if (other.gameObject.tag == "Chemical"){
-			updateScales();
-			growing = true;
-			Destroy(other.gameObject);
+			if (this.transform.lossyScale.y <= maxSize){ 
+				updateScales();
+				growing = true;
+				Destroy(other.gameObject);
+			}
 		} else if (other.gameObject.tag == "Speed Shoe"){
 			speedShoeSpeed = movementSpeed * 2;
 			speedShoeDuration = 30f;
@@ -186,7 +194,7 @@ public class PlayerControl : MonoBehaviour {
 		movementSpeed = movementSpeed + (0.5f * growthFactor);
 		//turningSpeed = turningSpeed * growthFactor;
 
-		attackDamage += 1;
+		attackDamage += 0.25f;
 	}
 	
 	void Grow(){
