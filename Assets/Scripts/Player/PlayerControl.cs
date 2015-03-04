@@ -183,7 +183,7 @@ public class PlayerControl : MonoBehaviour {
 		oldCameraDistance = cameraControl.distance;
 		newCameraDistance = oldCameraDistance + growthFactor;
 
-		movementSpeed = movementSpeed * growthFactor;
+		movementSpeed = movementSpeed + (0.5f * growthFactor);
 		//turningSpeed = turningSpeed * growthFactor;
 
 		attackDamage += 1;

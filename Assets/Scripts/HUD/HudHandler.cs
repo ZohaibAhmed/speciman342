@@ -10,7 +10,7 @@ public class HudHandler : MonoBehaviour {
 	public bool restart;
 	public gameOverScreen screenOver;
 
-	private float totalTime = 10f; // this is 300 seconds (5 mins)
+	private float totalTime = 300f; // this is 300 seconds (5 mins)
 
 
 	// Use this for initialization
@@ -23,9 +23,10 @@ public class HudHandler : MonoBehaviour {
 	void Update () {
 
 		if (restart) {
-			screenOver.enabled = true;
-			screenOver.FadeToBlack();
-
+			if (screenOver){
+				screenOver.enabled = true;
+				screenOver.FadeToBlack();
+			}
 			if (Input.GetKeyDown (KeyCode.R)) {
 				Application.LoadLevel (Application.loadedLevel);
 			}
@@ -69,6 +70,7 @@ public class HudHandler : MonoBehaviour {
 	}
 
 	public void gameOver() {
+		Debug.Log("Game over");
 		// stop the game...
 		Time.timeScale = 0;
 		// set flag to true
