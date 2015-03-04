@@ -67,11 +67,7 @@ public class PlayerControl : MonoBehaviour {
 			}
 		}
 		if (growing == true){
-			if (this.transform.lossyScale.y <= maxSize){ 
-				Grow ();
-			} else {
-				growing = false;
-			}
+			Grow ();
 		} else {
 			currentGrowLerpTime = 0.0f;
 		}
@@ -155,6 +151,7 @@ public class PlayerControl : MonoBehaviour {
 			if (this.transform.lossyScale.y <= maxSize){ 
 				updateScales();
 				growing = true;
+				currentGrowLerpTime = 0;
 				Destroy(other.gameObject);
 			}
 		} else if (other.gameObject.tag == "Speed Shoe"){
@@ -207,9 +204,9 @@ public class PlayerControl : MonoBehaviour {
 		
 		float perc = currentGrowLerpTime / maxGrowLerpTime;
 		
-		this.transform.localScale = Vector3.Lerp(currentScale, nextScale, perc);
+		this.transform.localScale = Vector3.Lerp(currentScale, nextScale, perc * 2);
 
-		var newYPosition = Mathf.Lerp (this.currentScale.y, this.nextScale.y / 2, perc);
+		float newYPosition = this.transform.localScale.y / 2;
 		Vector3 position = new Vector3(this.transform.position.x, newYPosition, this.transform.position.z);
 		playerRigidbody.transform.position = position;
 
