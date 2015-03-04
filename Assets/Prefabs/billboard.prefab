@@ -102,7 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 2
   explosion: {fileID: 400004, guid: 169b10ce10f4327cb9f40f6b117ed8d7, type: 2}
-  itemDrop: {fileID: 0}
+  itemDrop: {fileID: 445438, guid: 8f4524cb6db1a4cd68d5c40ae4149d87, type: 2}
   dropProbability: .5
   points: 100
   hud: {fileID: 0}

@@ -2,13 +2,12 @@
 using System.Collections;
 
 public class PlayerShooting : MonoBehaviour {
-
-	public Transform firstPerson; // take the transform from the first person camera
-
+	
 	public float timeBetweenShots = 0.15f;
 	public float range = 100f;
 	public float damagePerShot = 1f;
-	public GameObject player;
+	public FirstPersonCamera firstPersonCamera;
+	public GameObject fire;
 
 	float timer;
 	Ray shootRay;
@@ -17,11 +16,23 @@ public class PlayerShooting : MonoBehaviour {
 	LineRenderer shootLine;
 	float effectsDisplayTime = 0.2f;
 
+	public float ySpeed = 120.0f;
+	
+	public float yMinLimit = -20f;
+	public float yMaxLimit = 80f;
+
+	float y = 0.0f;
+
 	Vector3 offset;
 
 	// Use this for initialization
 	void Start () {
 		offset = transform.position;
+
+		if (firstPersonCamera){
+			y = firstPersonCamera.getYRotation();
+		}
+
 	}
 
 	void Awake(){
@@ -36,6 +47,12 @@ public class PlayerShooting : MonoBehaviour {
 		
 		//transform.position = position;
 		//transform.rotation = rotation;
+
+		y += Input.GetAxis("Mouse Y") * ySpeed * 0.02f;
+		
+		y = ClampAngle(y, yMinLimit, yMaxLimit);
+		Quaternion rotation = Quaternion.Euler(y, transform.parent.eulerAngles.y, 0);
+		transform.rotation = rotation;
 
 		Debug.DrawRay(transform.position, transform.forward);
 		timer += Time.deltaTime;
@@ -69,8 +86,18 @@ public class PlayerShooting : MonoBehaviour {
 				destructable.takeDamage(damagePerShot);
 			}
 			shootLine.SetPosition(1, shootHit.point);
+			Instantiate(fire, shootHit.transform.position, Quaternion.identity);
 		} else {
 			shootLine.SetPosition(1, shootRay.origin + shootRay.direction * range);
 		}
+	}
+
+	float ClampAngle(float angle, float min, float max){
+		if (angle < -360){
+			angle += 360;
+		} if (angle > 360){
+			angle -= 360;
+		}
+		return Mathf.Clamp(angle, min, max);
 	}
 }

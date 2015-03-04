@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 443198}
   - 33: {fileID: 3343200}
   - 23: {fileID: 2343200}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Object023
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ GameObject:
   - 95: {fileID: 9543200}
   - 64: {fileID: 6443200}
   - 114: {fileID: 11443200}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TelephoneBooth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
