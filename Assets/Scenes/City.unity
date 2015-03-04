@@ -4472,6 +4472,8 @@ MonoBehaviour:
   healthBarSlider: {fileID: 15458129}
   points: {fileID: 1931350428}
   timeText: {fileID: 1531073553}
+  restart: 0
+  screenOver: {fileID: 0}
 --- !u!114 &1541824669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5207,6 +5209,68 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1728808263}
   m_RootOrder: 0
+--- !u!1 &1957395474
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1957395477}
+  - 131: {fileID: 1957395476}
+  - 114: {fileID: 1957395475}
+  m_Layer: 0
+  m_Name: GameOver
+  m_TagString: Fader
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1957395475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1957395474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 988cc58e180d2482cbded0a04d64907c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StartAlpha: 1
+  EndAlpha: 0
+  FadingSpeed: 1
+--- !u!131 &1957395476
+GUITexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1957395474}
+  m_Enabled: 1
+  m_Texture: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: .501960814}
+  m_PixelInset:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0
+    height: 0
+  m_LeftBorder: 0
+  m_RightBorder: 0
+  m_TopBorder: 0
+  m_BottomBorder: 0
+--- !u!4 &1957395477
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1957395474}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 30
 --- !u!1 &1985848323
 GameObject:
   m_ObjectHideFlags: 0

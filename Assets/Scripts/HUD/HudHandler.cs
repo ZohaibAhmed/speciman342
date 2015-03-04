@@ -7,38 +7,73 @@ public class HudHandler : MonoBehaviour {
 	public Slider healthBarSlider;
 	public Text points;
 	public Text timeText;
+	public bool restart;
+	public gameOverScreen screenOver;
 
-	private float totalTime = 300f; // this is 300 seconds (5 mins)
+	private float totalTime = 10f; // this is 300 seconds (5 mins)
+
 
 	// Use this for initialization
 	void Start () {
+		restart = false;
+		screenOver = FindObjectOfType<gameOverScreen> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		// subtract Time.deltaTime from totalTime
-		totalTime = totalTime - Time.deltaTime;
 
-		// convert totalTime to minutes and seconds
-		System.TimeSpan t = System.TimeSpan.FromSeconds( totalTime );
+		if (restart) {
+			screenOver.enabled = true;
+			screenOver.FadeToBlack();
 
-		string answer = string.Format("{0:D2}:{1:D2}", 
-		                              t.Minutes, 
-		                              t.Seconds
-		                              );
-		
-		timeText.text = answer;
+			if (Input.GetKeyDown (KeyCode.R)) {
+				Application.LoadLevel (Application.loadedLevel);
+			}
+		} else {
+
+			// subtract Time.deltaTime from totalTime
+			totalTime = totalTime - Time.deltaTime;
+
+			// convert totalTime to minutes and seconds
+			System.TimeSpan t = System.TimeSpan.FromSeconds (totalTime);
+
+			string answer = string.Format ("{0:D2}:{1:D2}", 
+			                              t.Minutes, 
+			                              t.Seconds
+			);
+			
+			timeText.text = answer;
+
+			// times up
+			if (totalTime <= 0) {
+				gameOver ();
+			}
+		}
 
 	}
 
 	public void changeHealth(float change) {
 		healthBarSlider.value = healthBarSlider.value + change;
-	}
+
+		if (healthBarSlider.value == 0.0f) {
+			// you're dead
+			gameOver();
+		}
+	}	
 
 	public void incrementPoints(int addPoints) {
 		int totalPoints = int.Parse(points.text);
 		int finalPoints = totalPoints + addPoints;
 
 		points.text = finalPoints.ToString ();
+	}
+
+	public void gameOver() {
+		// stop the game...
+		Time.timeScale = 0;
+		// set flag to true
+		restart = true;
+
+
 	}
 }
