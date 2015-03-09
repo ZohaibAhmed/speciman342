@@ -183,15 +183,15 @@ public class PlayerControl : MonoBehaviour {
 	
 	void updateScales(){
 		currentScale = this.transform.localScale;
-		nextScale = new Vector3(this.transform.localScale.x * (growthFactor - 0.1f), this.transform.localScale.y * growthFactor, this.transform.localScale.z * (growthFactor - 0.1f));
+		nextScale = new Vector3(this.transform.localScale.x * growthFactor, this.transform.localScale.y * growthFactor, this.transform.localScale.z * growthFactor);
 
 		oldCameraDistance = cameraControl.distance;
 		newCameraDistance = oldCameraDistance + (growthFactor + (transform.localScale.y / 2));
 
-		movementSpeed = movementSpeed + (0.5f * growthFactor);
+		movementSpeed = movementSpeed + (0.75f * growthFactor);
 		//turningSpeed = turningSpeed * growthFactor;
 
-		attackDamage += 0.25f;
+		attackDamage += 0.75f;
 	}
 	
 	void Grow(){
@@ -206,7 +206,8 @@ public class PlayerControl : MonoBehaviour {
 		
 		this.transform.localScale = Vector3.Lerp(currentScale, nextScale, perc * 2);
 
-		float newYPosition = this.transform.localScale.y / 2;
+		//float newYPosition = this.transform.localScale.y / 2;
+		float newYPosition = 0f;
 		Vector3 position = new Vector3(this.transform.position.x, newYPosition, this.transform.position.z);
 		playerRigidbody.transform.position = position;
 

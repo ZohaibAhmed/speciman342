@@ -9,6 +9,7 @@ public class HudHandler : MonoBehaviour {
 	public Text timeText;
 	public bool restart;
 	public gameOverScreen screenOver;
+	Animator anim;
 
 	private float totalTime = 300f; // this is 300 seconds (5 mins)
 
@@ -16,6 +17,7 @@ public class HudHandler : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		restart = false;
+		anim = GetComponent <Animator> ();
 		screenOver = FindObjectOfType<gameOverScreen> ();
 	}
 	
@@ -71,6 +73,8 @@ public class HudHandler : MonoBehaviour {
 
 	public void gameOver() {
 		Debug.Log("Game over");
+
+		anim.SetTrigger ("GameOver");
 		// stop the game...
 		Time.timeScale = 0;
 		// set flag to true
