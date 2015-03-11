@@ -16,6 +16,8 @@ public class CameraControl : MonoBehaviour {
 
 	public float ySpeed = 120.0f;
 
+	public string mouseYInput;
+
 	float y = 0.0f;
 
 	Vector3 offset;
@@ -29,7 +31,7 @@ public class CameraControl : MonoBehaviour {
 	void LateUpdate() {
 
 		if (target){
-			y += Input.GetAxis("Mouse Y") * ySpeed * 0.02f;
+			y += Input.GetAxis(mouseYInput) * ySpeed * 0.02f;
 
 			y = ClampAngle(y, yMinLimit, yMaxLimit);
 

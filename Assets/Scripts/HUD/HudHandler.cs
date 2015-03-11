@@ -9,6 +9,7 @@ public class HudHandler : MonoBehaviour {
 	public Text timeText;
 	public bool restart;
 	public gameOverScreen screenOver;
+	public PlayerControl player;
 	Animator anim;
 
 	private float totalTime = 300f; // this is 300 seconds (5 mins)
@@ -19,10 +20,14 @@ public class HudHandler : MonoBehaviour {
 		restart = false;
 		anim = GetComponent <Animator> ();
 		screenOver = FindObjectOfType<gameOverScreen> ();
+		healthBarSlider.maxValue = player.maxHealth;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
+		// update the health
+		healthBarSlider.value = player.getHealth();
 
 		if (restart) {
 			if (screenOver){

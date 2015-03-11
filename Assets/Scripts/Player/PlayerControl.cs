@@ -8,9 +8,12 @@ public class PlayerControl : MonoBehaviour {
 	public float attackRange = 1.5f;
 	public float growthFactor = 1.25f;
 	public float attackDamage = 1f;
+	public float maxHealth = 100f;
 	public GameObject gun;
 
 	public float maxSize = 40f;
+
+	float currentHealth;
 
 	Rigidbody playerRigidbody;
 
@@ -28,6 +31,11 @@ public class PlayerControl : MonoBehaviour {
 
 	public ChemicalSpawnManager chemicalSpawnManager;
 	public CameraControl cameraControl;
+
+	public string horizontalInput;
+	public string verticalInput;
+	public string mouseXInput;
+	public string fireInput;
 
 	float speedShoeDuration = 0f;
 	float speedShoeSpeed;
@@ -50,13 +58,14 @@ public class PlayerControl : MonoBehaviour {
 		destructableMask = LayerMask.GetMask("Destructable");
 		playerRigidbody = GetComponent<Rigidbody>();
 		anim = GetComponent<Animator> ();
+		currentHealth = maxHealth;
 	}
 
 	void FixedUpdate(){
-		float h = Input.GetAxis("Horizontal");
-		float v = Input.GetAxis("Vertical");
+		float h = Input.GetAxis(horizontalInput);
+		float v = Input.GetAxis(verticalInput);
 		Move (h, v);
-		Rotate (0, Input.GetAxis("Mouse X"), 0);
+		Rotate (0, Input.GetAxis(mouseXInput), 0);
 		Animating(h, v);
 	}
 
@@ -65,7 +74,7 @@ public class PlayerControl : MonoBehaviour {
 		//Move ();
 
 		
-		if (Input.GetButtonDown("Fire1")){
+		if (Input.GetButtonDown(fireInput)){
 			if (!gun || gunDuration <= 0){
 				Attack ();
 			}
@@ -136,18 +145,27 @@ public class PlayerControl : MonoBehaviour {
 		                    transform.position + Vector3.up * transform.localScale.y,
 		                    transform.lossyScale.x / 2, 
 		                    direction,
-		                    attackRange,
-		                    destructableMask);
+		                    attackRange);
 		Debug.DrawRay(transform.position, direction, Color.cyan);
 		Debug.DrawRay(transform.position + Vector3.up * transform.lossyScale.y, direction, Color.cyan);
 		int i = 0;
 		while (i < hits.Length){
 			RaycastHit hit = hits[i];
 
-			if (bigHandsDuration > 0 || transform.lossyScale.y >= hit.transform.lossyScale.y){
-				//chemicalSpawnManager.SpawnChemical(new Vector3(hit.transform.position.x, 0.5f, hit.transform.position.z));
-				Destructable other = hit.collider.GetComponent<Destructable>();
-				other.takeDamage(damageDealt);
+			int layerMask = 1 << hit.collider.gameObject.layer;
+			if ((layerMask & destructableMask) > 0){
+				if (bigHandsDuration > 0 || transform.lossyScale.y >= hit.transform.lossyScale.y){
+					//chemicalSpawnManager.SpawnChemical(new Vector3(hit.transform.position.x, 0.5f, hit.transform.position.z));
+					Destructable other = hit.collider.GetComponent<Destructable>();
+					other.takeDamage(damageDealt);
+				}
+			} else if (hit.collider.tag == "Player" && hit.collider.gameObject.name != this.gameObject.name){
+				Debug.Log("HIT!!");
+				PlayerControl otherPlayer = hit.collider.GetComponent<PlayerControl>();
+				Debug.Log(otherPlayer.getHealth());
+				otherPlayer.takeDamage(damageDealt);
+			} else {
+				Debug.Log("no match");
 			}
 			i++;
 		}
@@ -201,6 +219,14 @@ public class PlayerControl : MonoBehaviour {
 		//turningSpeed = turningSpeed * growthFactor;
 
 		attackDamage += 0.75f;
+	}
+
+	void takeDamage(float d){
+		this.currentHealth -= d;
+	}
+
+	public float getHealth(){
+		return this.currentHealth;
 	}
 	
 	void Grow(){

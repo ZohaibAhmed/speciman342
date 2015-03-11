@@ -5,6 +5,8 @@ public class CameraManager : MonoBehaviour {
 	public GameObject ThirdPersonCamera;
 	public GameObject FirstPersonCamera;
 
+	public string cameraToggleInput;
+
 
 	// Use this for initialization
 	void Start () {
@@ -14,7 +16,7 @@ public class CameraManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//Debug.Log(Input.GetAxis("CameraToggle"));
-		if (Input.GetAxis("CameraToggle") > 0){
+		if (Input.GetAxis(cameraToggleInput) > 0){
 			ThirdPersonCamera.SetActive(false);
 			FirstPersonCamera.SetActive(true);
 		} else {

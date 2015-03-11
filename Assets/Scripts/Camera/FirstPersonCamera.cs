@@ -9,6 +9,8 @@ public class FirstPersonCamera : MonoBehaviour {
 	public float yMinLimit = -20f;
 	public float yMaxLimit = 80f;
 
+	public string mouseYInput;
+
 	float y = 0.0f;
 
 	// Use this for initialization
@@ -18,7 +20,7 @@ public class FirstPersonCamera : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		y += Input.GetAxis("Mouse Y") * ySpeed * 0.02f;
+		y += Input.GetAxis(mouseYInput) * ySpeed * 0.02f;
 
 		y = ClampAngle(y, yMinLimit, yMaxLimit);
 		Quaternion rotation = Quaternion.Euler(y, transform.parent.eulerAngles.y, 0);
