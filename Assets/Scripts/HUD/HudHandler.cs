@@ -85,7 +85,7 @@ public class HudHandler : MonoBehaviour {
 
 		anim.SetTrigger ("GameOver");
 		// stop the game...
-		Time.timeScale = 0;
+		//Time.timeScale = 0;
 		// set flag to true
 		//restart = true;
 

@@ -51,7 +51,7 @@ State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: New State
+  m_Name: Normal
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
@@ -91,14 +91,14 @@ StateMachine:
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
     data:
+      first: {fileID: 0}
+      second: []
+    data:
       first: {fileID: 110206402}
       second:
       - {fileID: 110152824}
     data:
       first: {fileID: 110278686}
-      second: []
-    data:
-      first: {fileID: 0}
       second: []
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: -24, y: 36, z: 0}
