@@ -3,6 +3,8 @@ using System.Collections;
 
 public class PlayerControl : MonoBehaviour {
 
+
+	public float timeBetweenAttacks = 0.15f;
 	public float movementSpeed = 2.0f;
 	public float turningSpeed = 2.0f;
 	public float attackRange = 1.5f;
@@ -14,6 +16,7 @@ public class PlayerControl : MonoBehaviour {
 	public float maxSize = 40f;
 
 	float currentHealth;
+	float timer;
 
 	Rigidbody playerRigidbody;
 
@@ -73,8 +76,8 @@ public class PlayerControl : MonoBehaviour {
 	void Update () {
 		//Move ();
 
-		
-		if (Input.GetButtonDown(fireInput)){
+		timer += Time.deltaTime;
+		if (Input.GetButtonDown(fireInput) && timer >= timeBetweenAttacks && Time.timeScale != 0){
 			if (!gun || gunDuration <= 0){
 				Attack ();
 			}
@@ -130,6 +133,8 @@ public class PlayerControl : MonoBehaviour {
 
 	void Attack(){
 		RaycastHit[] hits;
+		timer = 0f;
+
 		Vector3 direction = transform.forward;
 		float damageDealt = attackDamage;
 		float attackRadius = transform.lossyScale.x / 2;

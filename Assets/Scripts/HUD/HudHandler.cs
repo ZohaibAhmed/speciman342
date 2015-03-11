@@ -29,6 +29,10 @@ public class HudHandler : MonoBehaviour {
 		// update the health
 		healthBarSlider.value = player.getHealth();
 
+		if (player.getHealth() <= 0){
+			gameOver();
+		}
+
 		if (restart) {
 			if (screenOver){
 				screenOver.enabled = true;
@@ -83,7 +87,7 @@ public class HudHandler : MonoBehaviour {
 		// stop the game...
 		Time.timeScale = 0;
 		// set flag to true
-		restart = true;
+		//restart = true;
 
 
 	}
