@@ -40,6 +40,8 @@ public class PlayerControl : MonoBehaviour {
 	
 	Vector3 movement;
 
+	Animator anim;
+
 	// Use this for initialization
 	void Start () {
 	}
@@ -47,6 +49,7 @@ public class PlayerControl : MonoBehaviour {
 	void Awake(){
 		destructableMask = LayerMask.GetMask("Destructable");
 		playerRigidbody = GetComponent<Rigidbody>();
+		anim = GetComponent<Animator> ();
 	}
 
 	void FixedUpdate(){
@@ -54,6 +57,7 @@ public class PlayerControl : MonoBehaviour {
 		float v = Input.GetAxis("Vertical");
 		Move (h, v);
 		Rotate (0, Input.GetAxis("Mouse X"), 0);
+		Animating(h, v);
 	}
 
 	// Update is called once per frame
@@ -121,17 +125,21 @@ public class PlayerControl : MonoBehaviour {
 		float damageDealt = attackDamage;
 		float attackRadius = transform.lossyScale.x / 2;
 
+		anim.SetTrigger("Attack");
+
 		if (bigHandsDuration > 0){
 			attackRadius =  attackRadius * bigHandsAttackRadiusMultiplier;
 			damageDealt = bigHandsDamage;
 		} 
 		
-		hits = Physics.CapsuleCastAll(transform.position - Vector3.up * transform.localScale.y / 2, 
-		                    transform.position + Vector3.up * transform.localScale.y / 2,
+		hits = Physics.CapsuleCastAll(transform.position, 
+		                    transform.position + Vector3.up * transform.localScale.y,
 		                    transform.lossyScale.x / 2, 
 		                    direction,
 		                    attackRange,
 		                    destructableMask);
+		Debug.DrawRay(transform.position, direction, Color.cyan);
+		Debug.DrawRay(transform.position + Vector3.up * transform.lossyScale.y, direction, Color.cyan);
 		int i = 0;
 		while (i < hits.Length){
 			RaycastHit hit = hits[i];
@@ -162,13 +170,14 @@ public class PlayerControl : MonoBehaviour {
 			bigHandsDamage = attackDamage * 2;
 			bigHandsDuration = 30f;
 			Destroy (other.gameObject);
-		} else if (other.gameObject.tag == "Gun"){
-			if (gun){
-				gun.SetActive(true);
-				gunDuration = 30f;
-			}
-			Destroy(other.gameObject);
-		}
+		} 
+//		else if (other.gameObject.tag == "Gun"){
+//			if (gun){
+//				gun.SetActive(true);
+//				gunDuration = 30f;
+//			}
+//			Destroy(other.gameObject);
+//		}
 	}
 
 	void OnCollisionEnter(Collision collision){
@@ -212,5 +221,10 @@ public class PlayerControl : MonoBehaviour {
 		playerRigidbody.transform.position = position;
 
 		cameraControl.distance = Mathf.Lerp(oldCameraDistance, newCameraDistance, perc);
+	}
+
+	void Animating(float h, float v){
+		bool walking = h != 0f || v != 0f;
+		anim.SetBool("IsWalking", walking);
 	}
 }
