@@ -62,14 +62,16 @@ public class PlayerControl : MonoBehaviour {
 		playerRigidbody = GetComponent<Rigidbody>();
 		anim = GetComponent<Animator> ();
 		currentHealth = maxHealth;
+		timer = timeBetweenAttacks;
 	}
 
 	void FixedUpdate(){
 		float h = Input.GetAxis(horizontalInput);
 		float v = Input.GetAxis(verticalInput);
+		float y = Input.GetAxis(mouseXInput);
 		Move (h, v);
-		Rotate (0, Input.GetAxis(mouseXInput), 0);
-		Animating(h, v);
+		Rotate (0, y, 0);
+		Animating(h, v, y);
 	}
 
 	// Update is called once per frame
@@ -254,8 +256,40 @@ public class PlayerControl : MonoBehaviour {
 		cameraControl.distance = Mathf.Lerp(oldCameraDistance, newCameraDistance, perc);
 	}
 
-	void Animating(float h, float v){
+	/* trigger the animator
+	 * h is the horizontal movement
+	 * v is the vertical movement
+	 * y is the rotatation about the y axis (gecko is turning if y is not 0)
+	 */
+	void Animating(float h, float v, float y){
 		bool walking = h != 0f || v != 0f;
-		anim.SetBool("IsWalking", walking);
+		bool rotating  = y != 0f;
+		if (walking){
+			bool shuffling = Mathf.Abs(h) > Mathf.Abs(v);
+			bool shufflingLeft;
+			if (shuffling){
+				shufflingLeft = h < 0;
+				anim.SetBool("IsShufflingLeft", shufflingLeft);
+				anim.SetBool("IsShufflingRight", !shufflingLeft);
+			} else {
+				anim.SetBool("IsShufflingLeft", false);
+				anim.SetBool("IsShufflingRight", false);
+			}
+			anim.SetBool("IsWalking", !shuffling);
+			anim.SetBool("IsTurningLeft", false);
+			anim.SetBool("IsTurningRight", false);
+		} else if (rotating){
+			anim.SetBool("IsWalking", false);
+			anim.SetBool("IsShufflingLeft", false);
+			anim.SetBool("IsShufflingRight", false);
+			anim.SetBool("IsTurningLeft",  y < 0);
+			anim.SetBool("IsTurningRight", y > 0);
+		} else {
+			anim.SetBool("IsWalking", false);
+			anim.SetBool("IsShufflingLeft", false);
+			anim.SetBool("IsShufflingRight", false);
+			anim.SetBool("IsTurningLeft", false);
+			anim.SetBool("IsTurningRight", false);
+		}
 	}
 }
