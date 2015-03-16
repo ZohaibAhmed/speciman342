@@ -1576,6 +1576,7 @@ GameObject:
   - 4: {fileID: 463212}
   - 114: {fileID: 11463254}
   - 114: {fileID: 11448498}
+  - 114: {fileID: 11466900}
   - 95: {fileID: 9563256}
   - 54: {fileID: 5463256}
   - 65: {fileID: 6563256}
@@ -3700,13 +3701,14 @@ MonoBehaviour:
   movementSpeed: 5
   turningSpeed: 250
   growthFactor: 1.10000002
-  maxHealth: 100
   maxSize: 80
+  enemies: []
   chemicalSpawnManager: {fileID: 0}
   cameraControl: {fileID: 0}
   horizontalInput: HorizontalP1
   verticalInput: VerticalP1
   mouseXInput: Mouse X P1
+  lockOnInput: LockOnP1
 --- !u!114 &11463256
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3726,6 +3728,18 @@ MonoBehaviour:
   ySpeed: 120
   yMinLimit: -80
   yMaxLimit: 80
+--- !u!114 &11466900
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 163212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2af72ffe2cfbf4a2ea84be1751ebf5d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
 --- !u!120 &12063256
 LineRenderer:
   m_ObjectHideFlags: 1

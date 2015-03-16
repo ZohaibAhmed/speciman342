@@ -6,8 +6,8 @@ public class PlayerControl : MonoBehaviour {
 	public float movementSpeed = 2.0f;
 	public float turningSpeed = 2.0f;
 	public float growthFactor = 1.25f;
-
 	public float maxSize = 40f;
+	public Transform[] enemies;
 
 	float currentHealth;
 	float timer;
@@ -32,6 +32,7 @@ public class PlayerControl : MonoBehaviour {
 	public string horizontalInput;
 	public string verticalInput;
 	public string mouseXInput;
+	public string lockOnInput;
 
 	float speedShoeDuration = 0f;
 	float speedShoeSpeed;
@@ -56,15 +57,17 @@ public class PlayerControl : MonoBehaviour {
 		float v = Input.GetAxis(verticalInput);
 		float y = Input.GetAxis(mouseXInput);
 		Move (h, v);
-		Rotate (0, y, 0);
+		if (Input.GetAxis(lockOnInput) > 0){
+			LockOn();
+		} else {
+			Rotate (0, y, 0);
+		}
 		Animating(h, v, y);
 	}
 
 	// Update is called once per frame
 	void Update () {
 		//Move ();
-
-
 		if (growing == true){
 			Grow ();
 		} else {
@@ -95,7 +98,27 @@ public class PlayerControl : MonoBehaviour {
 		rigidbody.MoveRotation(rigidbody.rotation * Quaternion.Euler(rotation));
 	}
 
-
+	// makes the gecko face the closest enemy
+	void LockOn(){
+		float closestEnemy = 0f;
+		Transform target = null;
+		foreach (Transform t in enemies){
+			float d = Vector3.Distance(this.transform.position, t.position);
+			if (closestEnemy == 0){
+				target = t;
+				closestEnemy = d;
+			} else if (closestEnemy > 0 && d < closestEnemy){
+				closestEnemy = d;
+				target = t;
+			}
+		}
+		if (target != null){
+			Vector3 lockOnPosition = new Vector3(target.position.x,
+			                                     this.transform.position.y,
+			                                     target.position.z);
+			transform.LookAt(lockOnPosition);
+		}
+	}
 
 	
 	void OnTriggerEnter(Collider other){
