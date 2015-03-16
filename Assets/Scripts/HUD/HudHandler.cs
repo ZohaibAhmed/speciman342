@@ -9,7 +9,7 @@ public class HudHandler : MonoBehaviour {
 	public Text timeText;
 	public bool restart;
 	public gameOverScreen screenOver;
-	public PlayerControl player;
+	public PlayerHealth player;
 	Animator anim;
 
 	private float totalTime = 300f; // this is 300 seconds (5 mins)

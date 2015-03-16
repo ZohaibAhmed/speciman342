@@ -2,16 +2,10 @@
 using System.Collections;
 
 public class PlayerControl : MonoBehaviour {
-
-
-	public float timeBetweenAttacks = 0.15f;
+	
 	public float movementSpeed = 2.0f;
 	public float turningSpeed = 2.0f;
-	public float attackRange = 1.5f;
 	public float growthFactor = 1.25f;
-	public float attackDamage = 1f;
-	public float maxHealth = 100f;
-	public GameObject gun;
 
 	public float maxSize = 40f;
 
@@ -38,20 +32,13 @@ public class PlayerControl : MonoBehaviour {
 	public string horizontalInput;
 	public string verticalInput;
 	public string mouseXInput;
-	public string fireInput;
 
 	float speedShoeDuration = 0f;
 	float speedShoeSpeed;
 
-	float bigHandsDuration = 0f;
-	float bigHandsDamage;
-	float bigHandsAttackRadiusMultiplier = 100;
-
-	float gunDuration = 0f;
-	
 	Vector3 movement;
-
 	Animator anim;
+	PlayerAttack playerAttack;
 
 	// Use this for initialization
 	void Start () {
@@ -61,8 +48,7 @@ public class PlayerControl : MonoBehaviour {
 		destructableMask = LayerMask.GetMask("Destructable");
 		playerRigidbody = GetComponent<Rigidbody>();
 		anim = GetComponent<Animator> ();
-		currentHealth = maxHealth;
-		timer = timeBetweenAttacks;
+		playerAttack = GetComponent<PlayerAttack> ();
 	}
 
 	void FixedUpdate(){
@@ -78,12 +64,7 @@ public class PlayerControl : MonoBehaviour {
 	void Update () {
 		//Move ();
 
-		timer += Time.deltaTime;
-		if (Input.GetButtonDown(fireInput) && timer >= timeBetweenAttacks && Time.timeScale != 0){
-			if (!gun || gunDuration <= 0){
-				Attack ();
-			}
-		}
+
 		if (growing == true){
 			Grow ();
 		} else {
@@ -93,25 +74,10 @@ public class PlayerControl : MonoBehaviour {
 		if (speedShoeDuration > 0){
 			speedShoeDuration -= Time.deltaTime;
 		}
-
-		if (bigHandsDuration > 0){
-			bigHandsDuration -= Time.deltaTime;
-		}
-
-		if (gunDuration > 0 && gun != null){
-			gunDuration -= Time.deltaTime;
-			if (gunDuration <= 0){
-				gun.SetActive(false);
-			}
-		}
 	}
 
 	void Move(float h, float v){
-		//this.transform.Rotate(new Vector3(0, Input.GetAxis("Mouse X"), 0) * this.turningSpeed * 0.02f);
-		//movement.Set(h, 0f, v);
 		movement = playerRigidbody.transform.forward * v + playerRigidbody.transform.right * h;
-
-
 
 		float speed;
 		if (speedShoeDuration > 0){
@@ -122,9 +88,6 @@ public class PlayerControl : MonoBehaviour {
 
 		movement = movement.normalized * speed * Time.deltaTime;
 		playerRigidbody.MovePosition(transform.position + movement);
-
-		//rigidbody.MovePosition(this.transform.right * Input.GetAxis("Horizontal") * speed) ;
-		//rigidbody.MovePosition(this.transform.forward * Input.GetAxis("Vertical") * speed);
 	}
 
 	void Rotate(float x, float y, float z){
@@ -133,51 +96,7 @@ public class PlayerControl : MonoBehaviour {
 	}
 
 
-	void Attack(){
-		RaycastHit[] hits;
-		timer = 0f;
 
-		Vector3 direction = transform.forward;
-		float damageDealt = attackDamage;
-		float attackRadius = transform.lossyScale.x / 2;
-
-		anim.SetTrigger("Attack");
-
-		if (bigHandsDuration > 0){
-			attackRadius =  attackRadius * bigHandsAttackRadiusMultiplier;
-			damageDealt = bigHandsDamage;
-		} 
-		
-		hits = Physics.CapsuleCastAll(transform.position, 
-		                    transform.position + Vector3.up * transform.localScale.y,
-		                    transform.lossyScale.x / 2, 
-		                    direction,
-		                    attackRange);
-		Debug.DrawRay(transform.position, direction, Color.cyan);
-		Debug.DrawRay(transform.position + Vector3.up * transform.lossyScale.y, direction, Color.cyan);
-		int i = 0;
-		while (i < hits.Length){
-			RaycastHit hit = hits[i];
-
-			int layerMask = 1 << hit.collider.gameObject.layer;
-			if ((layerMask & destructableMask) > 0){
-				if (bigHandsDuration > 0 || transform.lossyScale.y >= hit.transform.lossyScale.y){
-					//chemicalSpawnManager.SpawnChemical(new Vector3(hit.transform.position.x, 0.5f, hit.transform.position.z));
-					Destructable other = hit.collider.GetComponent<Destructable>();
-					other.takeDamage(damageDealt);
-				}
-			} else if (hit.collider.tag == "Player" && hit.collider.gameObject.name != this.gameObject.name){
-				Debug.Log("HIT!!");
-				PlayerControl otherPlayer = hit.collider.GetComponent<PlayerControl>();
-				Debug.Log(otherPlayer.getHealth());
-				otherPlayer.takeDamage(damageDealt);
-			} else {
-				Debug.Log("no match");
-			}
-			i++;
-		}
-
-	}
 	
 	void OnTriggerEnter(Collider other){
 		if (other.gameObject.tag == "Chemical"){
@@ -192,17 +111,9 @@ public class PlayerControl : MonoBehaviour {
 			speedShoeDuration = 30f;
 			Destroy (other.gameObject);
 		} else if (other.gameObject.tag == "Big Hands"){
-			bigHandsDamage = attackDamage * 2;
-			bigHandsDuration = 30f;
+			playerAttack.activateBigHands();
 			Destroy (other.gameObject);
 		} 
-//		else if (other.gameObject.tag == "Gun"){
-//			if (gun){
-//				gun.SetActive(true);
-//				gunDuration = 30f;
-//			}
-//			Destroy(other.gameObject);
-//		}
 	}
 
 	void OnCollisionEnter(Collision collision){
@@ -225,16 +136,10 @@ public class PlayerControl : MonoBehaviour {
 		movementSpeed = movementSpeed + (0.75f * growthFactor);
 		//turningSpeed = turningSpeed * growthFactor;
 
-		attackDamage += 0.75f;
+		playerAttack.updateAttackDamage(0.75f);
 	}
 
-	void takeDamage(float d){
-		this.currentHealth -= d;
-	}
 
-	public float getHealth(){
-		return this.currentHealth;
-	}
 	
 	void Grow(){
 		currentGrowLerpTime += Time.deltaTime;
@@ -252,7 +157,6 @@ public class PlayerControl : MonoBehaviour {
 		float newYPosition = 0f;
 		Vector3 position = new Vector3(this.transform.position.x, newYPosition, this.transform.position.z);
 		playerRigidbody.transform.position = position;
-
 		cameraControl.distance = Mathf.Lerp(oldCameraDistance, newCameraDistance, perc);
 	}
 
