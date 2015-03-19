@@ -3671,7 +3671,8 @@ MonoBehaviour:
   timeBetweenAttacks: .150000006
   attackRange: 1.5
   attackDamage: 1
-  fireInput: FireP1
+  regularAttackInput: FireP1
+  hardAttackInput: 
 --- !u!114 &11463252
 MonoBehaviour:
   m_ObjectHideFlags: 1

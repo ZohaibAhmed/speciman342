@@ -6,7 +6,8 @@ public class PlayerAttack : MonoBehaviour
 	public float timeBetweenAttacks = 0.15f;
 	public float attackRange = 1.5f;
 	public float attackDamage = 1f;
-	public string fireInput;
+	public string regularAttackInput;
+	public string hardAttackInput;
 
 
 	float bigHandsDuration = 0f;
@@ -34,8 +35,12 @@ public class PlayerAttack : MonoBehaviour
 	void Update ()
 	{
 		timer += Time.deltaTime;
-		if (Input.GetButtonDown(fireInput) && timer >= timeBetweenAttacks && Time.timeScale != 0){
-			Attack ();
+		if (Input.GetButtonDown(regularAttackInput) && timer >= timeBetweenAttacks && Time.timeScale != 0){
+			anim.SetTrigger("Attack");
+			Attack (attackDamage);
+		} else if (Input.GetButtonDown(hardAttackInput) && timer >= timeBetweenAttacks * 2 && Time.timeScale != 0) {
+			anim.SetTrigger("HardAttack");
+			Attack(attackDamage * 2);
 		}
 
 		if (bigHandsDuration > 0){
@@ -44,16 +49,13 @@ public class PlayerAttack : MonoBehaviour
 
 	}
 
-	void Attack(){
+	void Attack(float damageDealt){
 		RaycastHit[] hits;
 		timer = 0f;
 		
 		Vector3 direction = transform.forward;
-		float damageDealt = attackDamage;
 		float attackRadius = transform.lossyScale.x / 2;
-		
-		anim.SetTrigger("Attack");
-		
+
 		if (bigHandsDuration > 0){
 			attackRadius =  attackRadius * bigHandsAttackRadiusMultiplier;
 			damageDealt = bigHandsDamage;
