@@ -2454,7 +2454,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b135d5bafdd2c419ea7ad6d58e18258c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 200
   explosion: {fileID: 400004, guid: 169b10ce10f4327cb9f40f6b117ed8d7, type: 2}
   itemDrop: {fileID: 0}
   dropProbability: .5
@@ -3413,7 +3413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b135d5bafdd2c419ea7ad6d58e18258c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 65
+  health: 130
   explosion: {fileID: 0}
   itemDrop: {fileID: 0}
   dropProbability: .5
@@ -3865,7 +3865,7 @@ Transform:
   m_PrefabInternal: {fileID: 1581070117}
   m_GameObject: {fileID: 85487790}
   m_LocalRotation: {x: 0, y: -.707106829, z: 0, w: .707106709}
-  m_LocalPosition: {x: 57.6373062, y: 0, z: -154.51889}
+  m_LocalPosition: {x: 57.6373062, y: .100000001, z: -154.51889}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 578965224}
@@ -3882,7 +3882,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: .670258045, y: 1.04197514, z: .604730844}
+  m_Size: {x: 1, y: 1.04197514, z: .604730844}
   m_Center: {x: .00318534672, y: .519584715, z: -.0437095314}
 --- !u!54 &85487793
 Rigidbody:
@@ -10355,7 +10355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b135d5bafdd2c419ea7ad6d58e18258c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 200
   explosion: {fileID: 400004, guid: 169b10ce10f4327cb9f40f6b117ed8d7, type: 2}
   itemDrop: {fileID: 0}
   dropProbability: .5
@@ -11028,7 +11028,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b135d5bafdd2c419ea7ad6d58e18258c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 75
+  health: 150
   explosion: {fileID: 0}
   itemDrop: {fileID: 0}
   dropProbability: .5
@@ -13611,7 +13611,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b135d5bafdd2c419ea7ad6d58e18258c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 200
   explosion: {fileID: 400004, guid: 169b10ce10f4327cb9f40f6b117ed8d7, type: 2}
   itemDrop: {fileID: 0}
   dropProbability: .5
@@ -16651,7 +16651,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b135d5bafdd2c419ea7ad6d58e18258c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 75
+  health: 150
   explosion: {fileID: 0}
   itemDrop: {fileID: 0}
   dropProbability: .5
@@ -20897,7 +20897,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b135d5bafdd2c419ea7ad6d58e18258c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 200
+  health: 300
   explosion: {fileID: 400004, guid: 169b10ce10f4327cb9f40f6b117ed8d7, type: 2}
   itemDrop: {fileID: 0}
   dropProbability: .5
@@ -21642,7 +21642,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b135d5bafdd2c419ea7ad6d58e18258c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  health: 100
   explosion: {fileID: 0}
   itemDrop: {fileID: 0}
   dropProbability: .5
@@ -25279,7 +25279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b135d5bafdd2c419ea7ad6d58e18258c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 75
+  health: 150
   explosion: {fileID: 0}
   itemDrop: {fileID: 0}
   dropProbability: .5
@@ -32647,7 +32647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b135d5bafdd2c419ea7ad6d58e18258c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  health: 100
   explosion: {fileID: 0}
   itemDrop: {fileID: 0}
   dropProbability: .5
@@ -38183,7 +38183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b135d5bafdd2c419ea7ad6d58e18258c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  health: 100
   explosion: {fileID: 0}
   itemDrop: {fileID: 0}
   dropProbability: .5
@@ -38402,7 +38402,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b135d5bafdd2c419ea7ad6d58e18258c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 200
   explosion: {fileID: 400004, guid: 169b10ce10f4327cb9f40f6b117ed8d7, type: 2}
   itemDrop: {fileID: 0}
   dropProbability: .5
@@ -40288,7 +40288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b135d5bafdd2c419ea7ad6d58e18258c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 200
   explosion: {fileID: 400004, guid: 169b10ce10f4327cb9f40f6b117ed8d7, type: 2}
   itemDrop: {fileID: 0}
   dropProbability: .5
@@ -45657,7 +45657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b135d5bafdd2c419ea7ad6d58e18258c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 75
+  health: 150
   explosion: {fileID: 0}
   itemDrop: {fileID: 0}
   dropProbability: .5
@@ -46700,7 +46700,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b135d5bafdd2c419ea7ad6d58e18258c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 75
+  health: 150
   explosion: {fileID: 0}
   itemDrop: {fileID: 0}
   dropProbability: .5
@@ -47752,7 +47752,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b135d5bafdd2c419ea7ad6d58e18258c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 75
+  health: 150
   explosion: {fileID: 0}
   itemDrop: {fileID: 0}
   dropProbability: .5
@@ -51308,7 +51308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b135d5bafdd2c419ea7ad6d58e18258c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  health: 100
   explosion: {fileID: 0}
   itemDrop: {fileID: 0}
   dropProbability: .5
@@ -51917,7 +51917,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b135d5bafdd2c419ea7ad6d58e18258c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 200
   explosion: {fileID: 400004, guid: 169b10ce10f4327cb9f40f6b117ed8d7, type: 2}
   itemDrop: {fileID: 0}
   dropProbability: .5
@@ -57756,7 +57756,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b135d5bafdd2c419ea7ad6d58e18258c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 200
   explosion: {fileID: 400004, guid: 169b10ce10f4327cb9f40f6b117ed8d7, type: 2}
   itemDrop: {fileID: 0}
   dropProbability: .5
@@ -57950,7 +57950,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b135d5bafdd2c419ea7ad6d58e18258c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 75
+  health: 150
   explosion: {fileID: 0}
   itemDrop: {fileID: 0}
   dropProbability: .5
@@ -58550,7 +58550,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b135d5bafdd2c419ea7ad6d58e18258c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 200
+  health: 250
   explosion: {fileID: 0}
   itemDrop: {fileID: 0}
   dropProbability: .5
@@ -61122,7 +61122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b135d5bafdd2c419ea7ad6d58e18258c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 200
+  health: 300
   explosion: {fileID: 400004, guid: 169b10ce10f4327cb9f40f6b117ed8d7, type: 2}
   itemDrop: {fileID: 0}
   dropProbability: .5
@@ -64433,7 +64433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b135d5bafdd2c419ea7ad6d58e18258c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 75
+  health: 150
   explosion: {fileID: 0}
   itemDrop: {fileID: 0}
   dropProbability: .5
@@ -65433,7 +65433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b135d5bafdd2c419ea7ad6d58e18258c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 200
   explosion: {fileID: 400004, guid: 169b10ce10f4327cb9f40f6b117ed8d7, type: 2}
   itemDrop: {fileID: 0}
   dropProbability: .5
@@ -65790,7 +65790,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b135d5bafdd2c419ea7ad6d58e18258c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 2
+  health: 150
   explosion: {fileID: 0}
   itemDrop: {fileID: 0}
   dropProbability: .5
@@ -65847,7 +65847,7 @@ Transform:
   m_PrefabInternal: {fileID: 1772333334}
   m_GameObject: {fileID: 1355476505}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.5999999, y: 15.1000004, z: 107.900002}
+  m_LocalPosition: {x: 5.5999999, y: 15, z: 107.900002}
   m_LocalScale: {x: 150, y: 30, z: 50}
   m_Children: []
   m_Father: {fileID: 0}
@@ -72629,7 +72629,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b135d5bafdd2c419ea7ad6d58e18258c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 200
+  health: 300
   explosion: {fileID: 400004, guid: 169b10ce10f4327cb9f40f6b117ed8d7, type: 2}
   itemDrop: {fileID: 0}
   dropProbability: .5
@@ -73644,7 +73644,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b135d5bafdd2c419ea7ad6d58e18258c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 75
+  health: 150
   explosion: {fileID: 0}
   itemDrop: {fileID: 0}
   dropProbability: .5
@@ -76643,7 +76643,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 463212, guid: 86dcbc4b6cedd40af97132da1015bbe0, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: .100000001
       objectReference: {fileID: 0}
     - target: {fileID: 463212, guid: 86dcbc4b6cedd40af97132da1015bbe0, type: 2}
       propertyPath: m_LocalPosition.z
@@ -76691,6 +76691,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 463212, guid: 86dcbc4b6cedd40af97132da1015bbe0, type: 2}
       propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6563256, guid: 86dcbc4b6cedd40af97132da1015bbe0, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6563256, guid: 86dcbc4b6cedd40af97132da1015bbe0, type: 2}
+      propertyPath: m_Size.x
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
@@ -80641,7 +80649,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 1
-  far clip plane: 1000
+  far clip plane: 2000
   field of view: 34
   orthographic: 0
   orthographic size: 5
@@ -80863,7 +80871,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b135d5bafdd2c419ea7ad6d58e18258c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 75
+  health: 150
   explosion: {fileID: 0}
   itemDrop: {fileID: 0}
   dropProbability: .5
@@ -81487,7 +81495,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b135d5bafdd2c419ea7ad6d58e18258c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 75
+  health: 150
   explosion: {fileID: 0}
   itemDrop: {fileID: 0}
   dropProbability: .5
@@ -83637,7 +83645,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b135d5bafdd2c419ea7ad6d58e18258c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 200
   explosion: {fileID: 400004, guid: 169b10ce10f4327cb9f40f6b117ed8d7, type: 2}
   itemDrop: {fileID: 0}
   dropProbability: .5
@@ -85041,7 +85049,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 407624, guid: 3758d58527f3e456f8b42b754b56d2fa, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 15.1000004
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 407624, guid: 3758d58527f3e456f8b42b754b56d2fa, type: 2}
       propertyPath: m_LocalPosition.z
@@ -85078,6 +85086,14 @@ Prefab:
     - target: {fileID: 107624, guid: 3758d58527f3e456f8b42b754b56d2fa, type: 2}
       propertyPath: m_TagString
       value: RecyclingPlant
+      objectReference: {fileID: 0}
+    - target: {fileID: 2307624, guid: 3758d58527f3e456f8b42b754b56d2fa, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6507624, guid: 3758d58527f3e456f8b42b754b56d2fa, type: 2}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3758d58527f3e456f8b42b754b56d2fa, type: 2}
@@ -85708,7 +85724,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b135d5bafdd2c419ea7ad6d58e18258c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 75
+  health: 150
   explosion: {fileID: 0}
   itemDrop: {fileID: 0}
   dropProbability: .5
@@ -87205,6 +87221,14 @@ Prefab:
     - target: {fileID: 11439136, guid: 6b331d1f866004511bdca6393481f3d9, type: 2}
       propertyPath: distance
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2039136, guid: 6b331d1f866004511bdca6393481f3d9, type: 2}
+      propertyPath: far clip plane
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439136, guid: 6b331d1f866004511bdca6393481f3d9, type: 2}
+      propertyPath: m_Constraints
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6b331d1f866004511bdca6393481f3d9, type: 2}
@@ -90695,7 +90719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b135d5bafdd2c419ea7ad6d58e18258c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 200
   explosion: {fileID: 400004, guid: 169b10ce10f4327cb9f40f6b117ed8d7, type: 2}
   itemDrop: {fileID: 0}
   dropProbability: .5

@@ -43,12 +43,27 @@ public class CameraControl : MonoBehaviour {
 			transform.rotation = rotation;
 			transform.position = normalPosition;
 
+			Vector3 targetRightBound = target.transform.position + (target.transform.right.normalized * target.transform.lossyScale.x);
+			Vector3 targetLeftBound = target.transform.position - target.transform.right.normalized * target.transform.lossyScale.x;
+
 			// make sure that there is nothing between the camera and the target
 			float d = Vector3.Distance(transform.position, target.transform.position);
+			float dR = Vector3.Distance(transform.position, targetRightBound);
+			float dL = Vector3.Distance(transform.position, targetLeftBound);
+
 			var relativePos = transform.position - (target.transform.position);
+			var relativePosR = transform.position - targetRightBound;
+			var relativePosL = transform.position - targetLeftBound;
+
 			RaycastHit hit;
+			RaycastHit hitRight;
+			RaycastHit hitLeft;
 			Debug.DrawRay(target.transform.position, relativePos.normalized * d, Color.green);
-			bool clipping =  Physics.Raycast(target.transform.position, relativePos, out hit, d);
+			Debug.DrawRay(targetRightBound, relativePosR.normalized * dR, Color.red);
+			Debug.DrawRay(targetLeftBound, relativePosL.normalized * dL, Color.red);
+			bool clipping =  Physics.Raycast(target.transform.position, relativePos, out hit, d) &&
+							 Physics.Raycast(targetRightBound, relativePosR, dR) &&
+							 Physics.Raycast(targetLeftBound, relativePosL, dL);
 			if (clipping && hit.transform != target && hit.collider.tag != "Player"){ // make sure the hit is not with the target
 
 				Debug.DrawLine(target.transform.position, hit.point, Color.red);

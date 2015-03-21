@@ -71,8 +71,8 @@ public class PlayerAttack : MonoBehaviour
 		                              transform.lossyScale.x / 2, 
 		                              direction,
 		                              attackRange);
-		Debug.DrawRay(transform.position, direction, Color.cyan);
-		Debug.DrawRay(transform.position + Vector3.up * transform.lossyScale.y, direction, Color.cyan);
+		Debug.DrawRay(transform.position, direction * attackRange, Color.red, 2, false);
+		Debug.DrawRay(transform.position + Vector3.up * transform.lossyScale.y, direction * attackRange, Color.red, 2, false);
 		int i = 0;
 		while (i < hits.Length){
 			RaycastHit hit = hits[i];
@@ -86,12 +86,12 @@ public class PlayerAttack : MonoBehaviour
 						scoreCounter.incrementScore(other.points);
 						Debug.Log (other.gameObject.tag);
 						if (other.gameObject.tag == "RadioactiveTruck"){
-							playerControl.updateScales(1.05f);
+							playerControl.Grow(1.05f);
 						} else if(other.gameObject.tag == "RecyclingPlant"){
 							Debug.Log("Recycling plant destroyed");
-							playerControl.updateScales(2f);
+							playerControl.Grow(2f);
 						} else if (other.gameObject.tag == "NuclearPowerplant"){
-							playerControl.updateScales(2f);
+							playerControl.Grow(2f);
 						}
 					}
 
@@ -102,11 +102,10 @@ public class PlayerAttack : MonoBehaviour
 				PlayerHealth otherPlayer = hit.collider.GetComponent<PlayerHealth>();
 				Debug.Log(otherPlayer.getHealth());
 				otherPlayer.takeDamage(damageDealt);
-			} else {
-				Debug.Log("no match");
 			}
 			i++;
 		}
+		Debug.Log(hits.Length);
 	}
 
 	public void updateAttackDamage(float increase){

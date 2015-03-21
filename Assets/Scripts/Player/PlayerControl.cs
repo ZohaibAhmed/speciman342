@@ -69,7 +69,7 @@ public class PlayerControl : MonoBehaviour {
 	void Update () {
 		//Move ();
 		if (growing == true){
-			Grow ();
+			updateScales ();
 		} else {
 			currentGrowLerpTime = 0.0f;
 		}
@@ -124,7 +124,7 @@ public class PlayerControl : MonoBehaviour {
 	void OnTriggerEnter(Collider other){
 		if (other.gameObject.tag == "Chemical"){
 			if (this.transform.lossyScale.y <= maxSize){ 
-				updateScales(this.growthFactor);
+				Grow(this.growthFactor);
 				currentGrowLerpTime = 0;
 				Destroy(other.gameObject);
 			}
@@ -145,14 +145,14 @@ public class PlayerControl : MonoBehaviour {
 				Destructable destructable = collision.gameObject.GetComponent<Destructable>();
 
 				if (collision.gameObject.tag == "RadioactiveTruck"){
-					updateScales(1.05f);
+					Grow(1.05f);
 				}
 				destructable.destruct();
 			}
 		}
 	}
 	
-	public void updateScales(float growthAmount = 1.05f){
+	public void Grow(float growthAmount = 1.05f){
 		if (this.transform.lossyScale.y * growthAmount >= maxSize){
 			if (this.transform.lossyScale.y < maxSize){
 				growing = true;
@@ -169,24 +169,27 @@ public class PlayerControl : MonoBehaviour {
 
 		growing = true;
 		currentScale = this.transform.localScale;
-		nextScale = new Vector3(this.transform.localScale.x * growthAmount, this.transform.localScale.y * growthAmount, this.transform.localScale.z * growthAmount);
+		nextScale = new Vector3(this.transform.localScale.x + growthAmount,
+		                        this.transform.localScale.y + growthAmount, 
+		                        this.transform.localScale.z + growthAmount);
 		//nextScale = new Vector3(this.transform.localScale.x + growthFactor, this.transform.localScale.y + growthFactor, this.transform.localScale.z + growthFactor);
 
 
 		oldCameraDistance = cameraControl.distance;
 		//newCameraDistance = oldCameraDistance + (growthAmount + (transform.localScale.y / 2));
-		newCameraDistance = 6 * transform.localScale.y;
+		newCameraDistance = 6 * nextScale.y;
 
 		movementSpeed = movementSpeed + growthAmount;
 		//movementSpeed = 5 * this.transform.localScale.x;
 		//turningSpeed = turningSpeed * growthFactor;
 
-		playerAttack.updateAttackDamage(0.75f);
+		playerAttack.updateAttackDamage(0.75f * growthAmount);
+		playerAttack.updateAttackRange(0.1f * growthAmount);
 	}
 
 
 	
-	void Grow(){
+	void updateScales(){
 		currentGrowLerpTime += Time.deltaTime;
 		if (currentGrowLerpTime > maxGrowLerpTime) {
 			currentGrowLerpTime = maxGrowLerpTime;
