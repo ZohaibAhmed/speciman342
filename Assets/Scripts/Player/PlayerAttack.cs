@@ -19,6 +19,9 @@ public class PlayerAttack : MonoBehaviour
 
 	int destructableMask;
 
+	PlayerScoreCounter scoreCounter;
+	PlayerControl playerControl;
+
 	// Use this for initialization
 	void Start ()
 	{
@@ -28,6 +31,8 @@ public class PlayerAttack : MonoBehaviour
 	void Awake(){
 		destructableMask = LayerMask.GetMask("Destructable");
 		anim = GetComponent<Animator> ();
+		scoreCounter = GetComponent<PlayerScoreCounter>();
+		playerControl = GetComponent<PlayerControl>();
 		timer = timeBetweenAttacks;
 	}
 
@@ -71,12 +76,25 @@ public class PlayerAttack : MonoBehaviour
 		int i = 0;
 		while (i < hits.Length){
 			RaycastHit hit = hits[i];
-			
+			Debug.Log("hit!");
 			int layerMask = 1 << hit.collider.gameObject.layer;
 			if ((layerMask & destructableMask) > 0){
-				if (bigHandsDuration > 0 || transform.lossyScale.y >= hit.transform.lossyScale.y){
+				if (bigHandsDuration > 0 || transform.lossyScale.y >= hit.transform.lossyScale.y * 0.75){
 					//chemicalSpawnManager.SpawnChemical(new Vector3(hit.transform.position.x, 0.5f, hit.transform.position.z));
 					Destructable other = hit.collider.GetComponent<Destructable>();
+					if (damageDealt >= other.health){
+						scoreCounter.incrementScore(other.points);
+						Debug.Log (other.gameObject.tag);
+						if (other.gameObject.tag == "RadioactiveTruck"){
+							playerControl.updateScales(1.05f);
+						} else if(other.gameObject.tag == "RecyclingPlant"){
+							Debug.Log("Recycling plant destroyed");
+							playerControl.updateScales(2f);
+						} else if (other.gameObject.tag == "NuclearPowerplant"){
+							playerControl.updateScales(2f);
+						}
+					}
+
 					other.takeDamage(damageDealt);
 				}
 			} else if (hit.collider.tag == "Player" && hit.collider.gameObject.name != this.gameObject.name){

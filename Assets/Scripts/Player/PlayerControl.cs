@@ -124,8 +124,7 @@ public class PlayerControl : MonoBehaviour {
 	void OnTriggerEnter(Collider other){
 		if (other.gameObject.tag == "Chemical"){
 			if (this.transform.lossyScale.y <= maxSize){ 
-				updateScales();
-				growing = true;
+				updateScales(this.growthFactor);
 				currentGrowLerpTime = 0;
 				Destroy(other.gameObject);
 			}
@@ -144,19 +143,42 @@ public class PlayerControl : MonoBehaviour {
 		if ((layerMask & destructableMask) > 0){
 			if (transform.localScale.y >= collision.transform.lossyScale.y * 4){
 				Destructable destructable = collision.gameObject.GetComponent<Destructable>();
+
+				if (collision.gameObject.tag == "RadioactiveTruck"){
+					updateScales(1.05f);
+				}
 				destructable.destruct();
 			}
 		}
 	}
 	
-	void updateScales(){
+	public void updateScales(float growthAmount = 1.05f){
+		if (this.transform.lossyScale.y * growthAmount >= maxSize){
+			if (this.transform.lossyScale.y < maxSize){
+				growing = true;
+				currentScale = this.transform.localScale;
+				oldCameraDistance = cameraControl.distance;
+				nextScale = new Vector3(maxSize, maxSize, maxSize);
+				newCameraDistance = 6 * maxSize;
+				movementSpeed = 4 * maxSize;
+				playerAttack.updateAttackDamage(5f);
+			}
+			return;
+			
+		}
+
+		growing = true;
 		currentScale = this.transform.localScale;
-		nextScale = new Vector3(this.transform.localScale.x * growthFactor, this.transform.localScale.y * growthFactor, this.transform.localScale.z * growthFactor);
+		nextScale = new Vector3(this.transform.localScale.x * growthAmount, this.transform.localScale.y * growthAmount, this.transform.localScale.z * growthAmount);
+		//nextScale = new Vector3(this.transform.localScale.x + growthFactor, this.transform.localScale.y + growthFactor, this.transform.localScale.z + growthFactor);
+
 
 		oldCameraDistance = cameraControl.distance;
-		newCameraDistance = oldCameraDistance + (growthFactor + (transform.localScale.y / 2));
+		//newCameraDistance = oldCameraDistance + (growthAmount + (transform.localScale.y / 2));
+		newCameraDistance = 6 * transform.localScale.y;
 
-		movementSpeed = movementSpeed + (0.75f * growthFactor);
+		movementSpeed = movementSpeed + growthAmount;
+		//movementSpeed = 5 * this.transform.localScale.x;
 		//turningSpeed = turningSpeed * growthFactor;
 
 		playerAttack.updateAttackDamage(0.75f);

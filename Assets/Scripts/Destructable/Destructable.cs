@@ -55,7 +55,7 @@ public class Destructable : MonoBehaviour {
 
 	public void destruct(){
 		// TODO: increment the score according to what we destroy?
-		hud.incrementPoints (points);
+		//hud.incrementPoints (points);
 
 		if (audioSource){
 			Debug.Log("AUDIO");
@@ -63,8 +63,9 @@ public class Destructable : MonoBehaviour {
 				AudioSource.PlayClipAtPoint(explosionSound, transform.position);
 			}
 		}
-
-		Instantiate(explosion, gameObject.transform.position, Quaternion.identity);
+		if (explosion){
+			Instantiate(explosion, gameObject.transform.position, Quaternion.identity);
+		}
 		bool shouldDrop = Random.value < dropProbability;
 		if (itemDrop && shouldDrop){
 			Vector3 dropPosition = gameObject.transform.position - Vector3.up * gameObject.transform.position.y + Vector3.up * dropHeightOffset;

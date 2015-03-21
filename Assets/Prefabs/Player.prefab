@@ -1580,6 +1580,7 @@ GameObject:
   - 95: {fileID: 9563256}
   - 54: {fileID: 5463256}
   - 65: {fileID: 6563256}
+  - 114: {fileID: 11421990}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -3657,6 +3658,17 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11421990
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 163212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8da22c7c6ce5846adbb40f8dbb880fe8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11448498
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3671,8 +3683,8 @@ MonoBehaviour:
   timeBetweenAttacks: .150000006
   attackRange: 1.5
   attackDamage: 1
-  regularAttackInput: FireP1
-  hardAttackInput: 
+  regularAttackInput: Attack P1
+  hardAttackInput: Hard Attack P1
 --- !u!114 &11463252
 MonoBehaviour:
   m_ObjectHideFlags: 1

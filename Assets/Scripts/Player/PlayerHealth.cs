@@ -6,6 +6,7 @@ public class PlayerHealth : MonoBehaviour
 
 	public float maxHealth = 100f;
 	float currentHealth;
+	Animator anim;
 
 	// Use this for initialization
 	void Start ()
@@ -15,6 +16,7 @@ public class PlayerHealth : MonoBehaviour
 
 	void Awake(){
 		currentHealth = maxHealth;
+		anim = GetComponent<Animator>();
 	}
 
 
@@ -26,6 +28,9 @@ public class PlayerHealth : MonoBehaviour
 
 	public void takeDamage(float d){
 		this.currentHealth -= d;
+		if (this.currentHealth <=0){
+			anim.SetTrigger("Death");
+		}
 	}
 	
 	public float getHealth(){
