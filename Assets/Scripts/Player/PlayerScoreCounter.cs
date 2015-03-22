@@ -19,7 +19,7 @@ public class PlayerScoreCounter : MonoBehaviour {
 		this.score += score;
 	}
 
-	int getScore(){
+	public int getScore(){
 		return this.score;
 	}
 }

@@ -66,13 +66,13 @@ public class PlayerAttack : MonoBehaviour
 			damageDealt = bigHandsDamage;
 		} 
 		
-		hits = Physics.CapsuleCastAll(transform.position, 
-		                              transform.position + Vector3.up * transform.localScale.y,
+		hits = Physics.CapsuleCastAll(transform.position - transform.forward.normalized * transform.lossyScale.x / 2, 
+		                              transform.position + Vector3.up * transform.localScale.y - transform.forward.normalized * transform.lossyScale.x / 2,
 		                              transform.lossyScale.x / 2, 
 		                              direction,
 		                              attackRange);
-		Debug.DrawRay(transform.position, direction * attackRange, Color.red, 2, false);
-		Debug.DrawRay(transform.position + Vector3.up * transform.lossyScale.y, direction * attackRange, Color.red, 2, false);
+		Debug.DrawRay(transform.position - transform.forward.normalized * transform.lossyScale.x / 2, direction * attackRange, Color.red, 2, false);
+		Debug.DrawRay(transform.position + Vector3.up * transform.lossyScale.y - transform.forward.normalized * transform.lossyScale.x / 2, direction * attackRange, Color.red, 2, false);
 		int i = 0;
 		while (i < hits.Length){
 			RaycastHit hit = hits[i];

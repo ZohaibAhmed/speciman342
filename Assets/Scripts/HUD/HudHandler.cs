@@ -5,11 +5,12 @@ using UnityEngine.UI;
 public class HudHandler : MonoBehaviour {
 
 	public Slider healthBarSlider;
-	public Text points;
+	public Text pointsText;
 	public Text timeText;
 	public bool restart;
 	public gameOverScreen screenOver;
-	public PlayerHealth player;
+	public PlayerHealth playerHealth;
+	public PlayerScoreCounter playerScore;
 	Animator anim;
 
 	private float totalTime = 300f; // this is 300 seconds (5 mins)
@@ -20,16 +21,19 @@ public class HudHandler : MonoBehaviour {
 		restart = false;
 		anim = GetComponent <Animator> ();
 		screenOver = FindObjectOfType<gameOverScreen> ();
-		healthBarSlider.maxValue = player.maxHealth;
+		healthBarSlider.maxValue = playerHealth.maxHealth;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
 		// update the health
-		healthBarSlider.value = player.getHealth();
+		healthBarSlider.value = playerHealth.getHealth();
+		healthBarSlider.maxValue = playerHealth.maxHealth;
 
-		if (player.getHealth() <= 0){
+		pointsText.text = playerScore.getScore().ToString("D9");
+
+		if (playerHealth.getHealth() <= 0){
 			gameOver();
 		}
 
@@ -74,10 +78,10 @@ public class HudHandler : MonoBehaviour {
 	}	
 
 	public void incrementPoints(int addPoints) {
-		int totalPoints = int.Parse(points.text);
+		int totalPoints = int.Parse(pointsText.text);
 		int finalPoints = totalPoints + addPoints;
 
-		points.text = finalPoints.ToString ();
+		pointsText.text = finalPoints.ToString ();
 	}
 
 	public void gameOver() {
