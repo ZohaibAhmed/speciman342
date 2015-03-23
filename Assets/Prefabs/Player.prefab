@@ -3713,8 +3713,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 5
   turningSpeed: 250
-  growthFactor: 1.10000002
-  maxSize: 80
+  growthFactor: .5
+  maxSize: 300
   enemies: []
   chemicalSpawnManager: {fileID: 0}
   cameraControl: {fileID: 0}

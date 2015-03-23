@@ -8,6 +8,9 @@ public class PlayerControl : MonoBehaviour {
 	public float growthFactor = 1.25f;
 	public float maxSize = 40f;
 	public Transform[] enemies;
+	public float radioactiveTruckGrowth = 2f;
+	public float wasteDisposalFacilityGrowth = 30f;
+	public float nuclearPowerPlantGrowth = 80f;
 
 	float currentHealth;
 	float timer;
@@ -147,7 +150,7 @@ public class PlayerControl : MonoBehaviour {
 				Destructable destructable = collision.gameObject.GetComponent<Destructable>();
 
 				if (collision.gameObject.tag == "RadioactiveTruck"){
-					Grow(1.05f);
+					Grow(this.radioactiveTruckGrowth);
 				}
 				destructable.destruct();
 			}
@@ -155,19 +158,19 @@ public class PlayerControl : MonoBehaviour {
 	}
 	
 	public void Grow(float growthAmount = 1.05f){
-		if (this.transform.lossyScale.y * growthAmount >= maxSize){
-			if (this.transform.lossyScale.y < maxSize){
-				growing = true;
-				currentScale = this.transform.localScale;
-				oldCameraDistance = cameraControl.distance;
-				nextScale = new Vector3(maxSize, maxSize, maxSize);
-				newCameraDistance = 6 * maxSize;
-				movementSpeed = 4 * maxSize;
-				playerAttack.updateAttackDamage(5f);
-			}
-			return;
-			
-		}
+//		if (this.transform.lossyScale.y + growthAmount >= maxSize){
+//			if (this.transform.lossyScale.y < maxSize){
+//				growing = true;
+//				currentScale = this.transform.localScale;
+//				oldCameraDistance = cameraControl.distance;
+//				nextScale = new Vector3(maxSize, maxSize, maxSize);
+//				newCameraDistance = 6 * maxSize;
+//				movementSpeed = 4 * maxSize;
+//				playerAttack.updateAttackDamage(5f);
+//			}
+//			return;
+//			
+//		}
 
 		growing = true;
 		currentScale = this.transform.localScale;

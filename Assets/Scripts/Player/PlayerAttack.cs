@@ -91,12 +91,12 @@ public class PlayerAttack : MonoBehaviour
 						scoreCounter.incrementScore(other.points);
 						Debug.Log (other.gameObject.tag);
 						if (other.gameObject.tag == "RadioactiveTruck"){
-							playerControl.Grow(1.05f);
+							playerControl.Grow(playerControl.radioactiveTruckGrowth);
 						} else if(other.gameObject.tag == "RecyclingPlant"){
 							Debug.Log("Recycling plant destroyed");
-							playerControl.Grow(2f);
+							playerControl.Grow(playerControl.wasteDisposalFacilityGrowth);
 						} else if (other.gameObject.tag == "NuclearPowerplant"){
-							playerControl.Grow(2f);
+							playerControl.Grow(playerControl.nuclearPowerPlantGrowth);
 						}
 					}
 
