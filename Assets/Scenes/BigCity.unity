@@ -4002,7 +4002,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 822859c93285f48b89cfcfcc91092a1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenAttacks: .150000006
+  timeBetweenAttacks: .400000006
   attackRange: 1.5
   attackDamage: 1
   regularAttackInput: Attack P1
@@ -4023,7 +4023,8 @@ MonoBehaviour:
   turningSpeed: 250
   growthFactor: 1.10000002
   maxSize: 150
-  enemies: []
+  enemies:
+  - {fileID: 162828287}
   chemicalSpawnManager: {fileID: 0}
   cameraControl: {fileID: 1673088405}
   horizontalInput: HorizontalP1
@@ -7656,8 +7657,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  healthSlider: {fileID: 1544309254}
-  damageImage: {fileID: 1508657795}
+  healthSlider: {fileID: 177035943}
+  damageImage: {fileID: 1854773739}
   flashSpeed: 5
   flashColour: {r: 1, g: 0, b: 0, a: .100000001}
 --- !u!114 &162828293
@@ -7672,7 +7673,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 822859c93285f48b89cfcfcc91092a1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenAttacks: .150000006
+  timeBetweenAttacks: .400000006
   attackRange: 1.5
   attackDamage: 1
   regularAttackInput: Attack P2
@@ -7693,7 +7694,8 @@ MonoBehaviour:
   turningSpeed: 250
   growthFactor: 1.10000002
   maxSize: 150
-  enemies: []
+  enemies:
+  - {fileID: 85487791}
   chemicalSpawnManager: {fileID: 0}
   cameraControl: {fileID: 1877777583}
   horizontalInput: HorizontalP2
@@ -28311,6 +28313,10 @@ Prefab:
     - target: {fileID: 2039136, guid: 6b331d1f866004511bdca6393481f3d9, type: 2}
       propertyPath: m_NormalizedViewPortRect.x
       value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11439136, guid: 6b331d1f866004511bdca6393481f3d9, type: 2}
+      propertyPath: mouseYInput
+      value: Mouse Y P2
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8139136, guid: 6b331d1f866004511bdca6393481f3d9, type: 2}
@@ -75105,7 +75111,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1490232803
 RectTransform:
   m_ObjectHideFlags: 0
@@ -80742,6 +80748,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11463254, guid: 86dcbc4b6cedd40af97132da1015bbe0, type: 2}
+      propertyPath: enemies.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 463212, guid: 86dcbc4b6cedd40af97132da1015bbe0, type: 2}
       propertyPath: m_LocalPosition.x
       value: 57.6373062
@@ -80817,6 +80827,14 @@ Prefab:
     - target: {fileID: 163212, guid: 86dcbc4b6cedd40af97132da1015bbe0, type: 2}
       propertyPath: m_Name
       value: Player 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11463254, guid: 86dcbc4b6cedd40af97132da1015bbe0, type: 2}
+      propertyPath: enemies.Array.data[0]
+      value: 
+      objectReference: {fileID: 162828287}
+    - target: {fileID: 11448498, guid: 86dcbc4b6cedd40af97132da1015bbe0, type: 2}
+      propertyPath: timeBetweenAttacks
+      value: .400000006
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11421990, guid: 86dcbc4b6cedd40af97132da1015bbe0, type: 2}
@@ -81391,7 +81409,7 @@ SkinnedMeshRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 4e399956f093a451098987977c1faedf, type: 2}
+  - {fileID: 2100000, guid: 030c6d463732e4cc1b97f9f87ff37ddf, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -95281,7 +95299,7 @@ MonoBehaviour:
   yMinLimit: -80
   yMaxLimit: 80
   ySpeed: 120
-  mouseYInput: Mouse Y P1
+  mouseYInput: Mouse Y P2
 --- !u!20 &1877777584
 Camera:
   m_ObjectHideFlags: 0
@@ -98142,6 +98160,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11463254, guid: 86dcbc4b6cedd40af97132da1015bbe0, type: 2}
+      propertyPath: enemies.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 463212, guid: 86dcbc4b6cedd40af97132da1015bbe0, type: 2}
       propertyPath: m_LocalPosition.x
       value: 57.637001
@@ -98209,11 +98231,11 @@ Prefab:
     - target: {fileID: 11466900, guid: 86dcbc4b6cedd40af97132da1015bbe0, type: 2}
       propertyPath: healthSlider
       value: 
-      objectReference: {fileID: 1544309254}
+      objectReference: {fileID: 177035943}
     - target: {fileID: 11466900, guid: 86dcbc4b6cedd40af97132da1015bbe0, type: 2}
       propertyPath: damageImage
       value: 
-      objectReference: {fileID: 1508657795}
+      objectReference: {fileID: 1854773739}
     - target: {fileID: 163212, guid: 86dcbc4b6cedd40af97132da1015bbe0, type: 2}
       propertyPath: m_Name
       value: Player 2
@@ -98249,6 +98271,18 @@ Prefab:
     - target: {fileID: 11463252, guid: 86dcbc4b6cedd40af97132da1015bbe0, type: 2}
       propertyPath: mouseYInput
       value: Mouse Y P2
+      objectReference: {fileID: 0}
+    - target: {fileID: 13763256, guid: 86dcbc4b6cedd40af97132da1015bbe0, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 030c6d463732e4cc1b97f9f87ff37ddf, type: 2}
+    - target: {fileID: 11463254, guid: 86dcbc4b6cedd40af97132da1015bbe0, type: 2}
+      propertyPath: enemies.Array.data[0]
+      value: 
+      objectReference: {fileID: 85487791}
+    - target: {fileID: 11448498, guid: 86dcbc4b6cedd40af97132da1015bbe0, type: 2}
+      propertyPath: timeBetweenAttacks
+      value: .400000006
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11421990, guid: 86dcbc4b6cedd40af97132da1015bbe0, type: 2}
@@ -101397,7 +101431,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 103660, guid: 49df93829f1534b79b2f4219cc324e93, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 49df93829f1534b79b2f4219cc324e93, type: 2}

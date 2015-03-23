@@ -41,6 +41,7 @@ public class PlayerAttack : MonoBehaviour
 	{
 		timer += Time.deltaTime;
 		if (Input.GetButtonDown(regularAttackInput) && timer >= timeBetweenAttacks && Time.timeScale != 0){
+			Debug.Log("Attack!");
 			anim.SetTrigger("Attack");
 			Attack (attackDamage);
 		} else if (Input.GetButtonDown(hardAttackInput) && timer >= timeBetweenAttacks * 2 && Time.timeScale != 0) {
