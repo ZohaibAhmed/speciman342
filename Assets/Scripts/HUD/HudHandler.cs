@@ -27,10 +27,6 @@ public class HudHandler : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		// update the health
-		healthBarSlider.value = playerHealth.getHealth();
-		healthBarSlider.maxValue = playerHealth.maxHealth;
-
 		pointsText.text = playerScore.getScore().ToString("D9");
 
 		if (playerHealth.getHealth() <= 0){
@@ -67,15 +63,6 @@ public class HudHandler : MonoBehaviour {
 		}
 
 	}
-
-	public void changeHealth(float change) {
-		healthBarSlider.value = healthBarSlider.value + change;
-
-		if (healthBarSlider.value == 0.0f) {
-			// you're dead
-			gameOver();
-		}
-	}	
 
 	public void incrementPoints(int addPoints) {
 		int totalPoints = int.Parse(pointsText.text);

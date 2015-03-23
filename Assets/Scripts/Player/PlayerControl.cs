@@ -40,6 +40,7 @@ public class PlayerControl : MonoBehaviour {
 	Vector3 movement;
 	Animator anim;
 	PlayerAttack playerAttack;
+	PlayerHealth playerHealth;
 
 	// Use this for initialization
 	void Start () {
@@ -50,6 +51,7 @@ public class PlayerControl : MonoBehaviour {
 		playerRigidbody = GetComponent<Rigidbody>();
 		anim = GetComponent<Animator> ();
 		playerAttack = GetComponent<PlayerAttack> ();
+		playerHealth = GetComponent<PlayerHealth> ();
 	}
 
 	void FixedUpdate(){
@@ -185,6 +187,8 @@ public class PlayerControl : MonoBehaviour {
 
 		playerAttack.updateAttackDamage(0.75f * growthAmount);
 		playerAttack.updateAttackRange(0.1f * growthAmount);
+
+
 	}
 
 

@@ -46,7 +46,7 @@ public class Bomb : MonoBehaviour {
 			float damage = Euclidean(player.transform.position.x, this.transform.position.x, player.transform.position.y, this.transform.position.y);
 			Debug.Log (damage);
 			if (damage < 5.0f) {
-				hud.changeHealth(-(5.0f - damage));
+				player.gameObject.GetComponent<PlayerHealth>().takeDamage((5.0f - damage));
 			}
 
 			// explode!
@@ -57,7 +57,8 @@ public class Bomb : MonoBehaviour {
 			Destroy(this.gameObject);
 			Destroy(dropZoneClone.gameObject);
 
-			hud.changeHealth(-10.0f);
+			PlayerHealth playerHealth = col.gameObject.GetComponent<PlayerHealth>();
+			playerHealth.takeDamage(10.0f);
 		}
 
 

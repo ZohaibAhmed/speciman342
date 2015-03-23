@@ -30,7 +30,8 @@ public class Bullet : MonoBehaviour {
 		Debug.Log ("collided with " + col.gameObject.name);
 		if (col.gameObject.name == "Player") {
 			Destroy (this.gameObject);
-			hud.changeHealth (-10.0f);
+			PlayerHealth playerHealth = col.gameObject.GetComponent<PlayerHealth>();
+			playerHealth.takeDamage(10.0f);
 		} else if (col.gameObject.name != "Bullet(Clone)") {
 			// we collided with something else... just explode.
 			Destroy(this.gameObject);

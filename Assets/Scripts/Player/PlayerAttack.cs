@@ -100,8 +100,12 @@ public class PlayerAttack : MonoBehaviour
 			} else if (hit.collider.tag == "Player" && hit.collider.gameObject.name != this.gameObject.name){
 				Debug.Log("HIT!!");
 				PlayerHealth otherPlayer = hit.collider.GetComponent<PlayerHealth>();
-				Debug.Log(otherPlayer.getHealth());
 				otherPlayer.takeDamage(damageDealt);
+				if (otherPlayer.getHealth() <= 0){
+					anim.SetTrigger("Win");
+					playerControl.enabled = false;
+					this.enabled = false;
+				}
 			}
 			i++;
 		}
