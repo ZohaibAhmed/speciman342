@@ -84,7 +84,7 @@ public class PlayerAttack : MonoBehaviour
 			Debug.Log("hit: " + hit.collider.gameObject.ToString());
 			int layerMask = 1 << hit.collider.gameObject.layer;
 			if ((layerMask & destructableMask) > 0){
-				if (bigHandsDuration > 0 || transform.lossyScale.y >= hit.transform.lossyScale.y * 0.75){
+				if (bigHandsDuration > 0 || transform.lossyScale.y >= hit.transform.lossyScale.y * 0.5f){
 					//chemicalSpawnManager.SpawnChemical(new Vector3(hit.transform.position.x, 0.5f, hit.transform.position.z));
 					Destructable other = hit.collider.GetComponent<Destructable>();
 					if (damageDealt >= other.health){
