@@ -3680,8 +3680,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 822859c93285f48b89cfcfcc91092a1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenAttacks: .150000006
-  attackRange: 1.5
+  timeBetweenAttacks: .400000006
+  attackRange: .25
   attackDamage: 1
   regularAttackInput: Attack P1
   hardAttackInput: Hard Attack P1
@@ -3753,6 +3753,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  healthSlider: {fileID: 0}
+  damageImage: {fileID: 0}
+  flashSpeed: 5
+  flashColour: {r: 1, g: 0, b: 0, a: .100000001}
 --- !u!120 &12063256
 LineRenderer:
   m_ObjectHideFlags: 1

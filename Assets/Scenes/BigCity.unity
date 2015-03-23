@@ -3939,7 +3939,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.04197514, z: .604730844}
+  m_Size: {x: .670257986, y: 1.04197514, z: .604730844}
   m_Center: {x: .00318534672, y: .519584715, z: -.0437095314}
 --- !u!54 &85487793
 Rigidbody:
@@ -4003,7 +4003,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBetweenAttacks: .400000006
-  attackRange: 1.5
+  attackRange: .25
   attackDamage: 1
   regularAttackInput: Attack P1
   hardAttackInput: Hard Attack P1
@@ -7610,7 +7610,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.04197514, z: .604730844}
+  m_Size: {x: .670257986, y: 1.04197514, z: .604730844}
   m_Center: {x: .00318534672, y: .519584715, z: -.0437095314}
 --- !u!54 &162828290
 Rigidbody:
@@ -7674,7 +7674,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBetweenAttacks: .400000006
-  attackRange: 1.5
+  attackRange: .25
   attackDamage: 1
   regularAttackInput: Attack P2
   hardAttackInput: Hard Attack P2
@@ -75169,8 +75169,8 @@ MonoBehaviour:
   timeText: {fileID: 390932713}
   restart: 0
   screenOver: {fileID: 0}
-  playerHealth: {fileID: 85487795}
-  playerScore: {fileID: 85487799}
+  playerHealth: {fileID: 162828292}
+  playerScore: {fileID: 162828288}
 --- !u!114 &1490232806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80814,7 +80814,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 6563256, guid: 86dcbc4b6cedd40af97132da1015bbe0, type: 2}
       propertyPath: m_Size.x
-      value: 1
+      value: .670257986
       objectReference: {fileID: 0}
     - target: {fileID: 11466900, guid: 86dcbc4b6cedd40af97132da1015bbe0, type: 2}
       propertyPath: healthSlider
@@ -98226,7 +98226,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 6563256, guid: 86dcbc4b6cedd40af97132da1015bbe0, type: 2}
       propertyPath: m_Size.x
-      value: 1
+      value: .670257986
       objectReference: {fileID: 0}
     - target: {fileID: 11466900, guid: 86dcbc4b6cedd40af97132da1015bbe0, type: 2}
       propertyPath: healthSlider
@@ -101392,11 +101392,11 @@ Prefab:
     - target: {fileID: 11403658, guid: 49df93829f1534b79b2f4219cc324e93, type: 2}
       propertyPath: playerHealth
       value: 
-      objectReference: {fileID: 85487795}
+      objectReference: {fileID: 162828292}
     - target: {fileID: 11403658, guid: 49df93829f1534b79b2f4219cc324e93, type: 2}
       propertyPath: playerScore
       value: 
-      objectReference: {fileID: 85487799}
+      objectReference: {fileID: 162828288}
     - target: {fileID: 121226, guid: 49df93829f1534b79b2f4219cc324e93, type: 2}
       propertyPath: m_IsActive
       value: 1

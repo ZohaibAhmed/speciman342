@@ -4,7 +4,7 @@ using System.Collections;
 public class PlayerAttack : MonoBehaviour
 {
 	public float timeBetweenAttacks = 0.15f;
-	public float attackRange = 1.5f;
+	public float attackRange = 0.5f;
 	public float attackDamage = 1f;
 	public string regularAttackInput;
 	public string hardAttackInput;
@@ -60,24 +60,28 @@ public class PlayerAttack : MonoBehaviour
 		timer = 0f;
 		
 		Vector3 direction = transform.forward;
-		float attackRadius = transform.lossyScale.x / 2;
 
 		if (bigHandsDuration > 0){
-			attackRadius =  attackRadius * bigHandsAttackRadiusMultiplier;
 			damageDealt = bigHandsDamage;
 		} 
-		
-		hits = Physics.CapsuleCastAll(transform.position - transform.forward.normalized * transform.lossyScale.x / 2, 
-		                              transform.position + Vector3.up * transform.localScale.y - transform.forward.normalized * transform.lossyScale.x / 2,
-		                              transform.lossyScale.x / 2, 
+
+		// + transform.forward.normalized * transform.lossyScale.x / 4
+
+
+		float range = attackRange + transform.lossyScale.x * 0.3f;
+
+		hits = Physics.CapsuleCastAll(transform.position, 
+		                              transform.position + Vector3.up * transform.localScale.y,
+		                              transform.lossyScale.z * 0.35f, 
 		                              direction,
-		                              attackRange);
-		Debug.DrawRay(transform.position - transform.forward.normalized * transform.lossyScale.x / 2, direction * attackRange, Color.red, 2, false);
-		Debug.DrawRay(transform.position + Vector3.up * transform.lossyScale.y - transform.forward.normalized * transform.lossyScale.x / 2, direction * attackRange, Color.red, 2, false);
+		                              range);
+		Debug.DrawRay(transform.position , direction * range, Color.red, 2, false);
+		Debug.DrawRay(transform.position + Vector3.up * transform.lossyScale.y, direction * range, Color.red, 2, false);
+
 		int i = 0;
 		while (i < hits.Length){
 			RaycastHit hit = hits[i];
-			Debug.Log("hit!");
+			Debug.Log("hit: " + hit.collider.gameObject.ToString());
 			int layerMask = 1 << hit.collider.gameObject.layer;
 			if ((layerMask & destructableMask) > 0){
 				if (bigHandsDuration > 0 || transform.lossyScale.y >= hit.transform.lossyScale.y * 0.75){

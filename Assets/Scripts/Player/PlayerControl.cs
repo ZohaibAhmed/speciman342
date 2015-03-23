@@ -186,7 +186,7 @@ public class PlayerControl : MonoBehaviour {
 		//turningSpeed = turningSpeed * growthFactor;
 
 		playerAttack.updateAttackDamage(0.75f * growthAmount);
-		playerAttack.updateAttackRange(0.1f * growthAmount);
+		playerAttack.updateAttackRange(0.25f * growthAmount);
 
 
 	}
