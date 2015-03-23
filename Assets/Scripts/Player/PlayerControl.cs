@@ -158,7 +158,7 @@ public class PlayerControl : MonoBehaviour {
 	}
 	
 	public void Grow(float growthAmount = 1.05f){
-//		if (this.transform.lossyScale.y + growthAmount >= maxSize){
+//		i (this.transform.lossyScale.y + growthAmount >= maxSize){
 //			if (this.transform.lossyScale.y < maxSize){
 //				growing = true;
 //				currentScale = this.transform.localScale;
@@ -190,6 +190,8 @@ public class PlayerControl : MonoBehaviour {
 
 		playerAttack.updateAttackDamage(0.75f * growthAmount);
 		playerAttack.updateAttackRange(0.25f * growthAmount);
+
+		playerHealth.incrementHealth(growthAmount);
 
 
 	}
