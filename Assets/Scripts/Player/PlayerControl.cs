@@ -188,8 +188,8 @@ public class PlayerControl : MonoBehaviour {
 		//movementSpeed = 5 * this.transform.localScale.x;
 		//turningSpeed = turningSpeed * growthFactor;
 
-		playerAttack.updateAttackDamage(0.75f * growthAmount);
-		playerAttack.updateAttackRange(0.25f * growthAmount);
+		playerAttack.updateAttackDamage(growthAmount);
+		playerAttack.updateAttackRange(0.20f * growthAmount);
 
 		playerHealth.incrementHealth(growthAmount);
 

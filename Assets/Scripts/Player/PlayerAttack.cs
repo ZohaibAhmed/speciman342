@@ -87,6 +87,9 @@ public class PlayerAttack : MonoBehaviour
 				if (bigHandsDuration > 0 || transform.lossyScale.y >= hit.transform.lossyScale.y * 0.5f){
 					//chemicalSpawnManager.SpawnChemical(new Vector3(hit.transform.position.x, 0.5f, hit.transform.position.z));
 					Destructable other = hit.collider.GetComponent<Destructable>();
+					if (other == null){
+						Debug.Log("No destructable script: " + hit.collider.gameObject.ToString());
+					}
 					if (damageDealt >= other.health){
 						scoreCounter.incrementScore(other.points);
 						Debug.Log (other.gameObject.tag);
