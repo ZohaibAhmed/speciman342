@@ -31,6 +31,14 @@ public class tankEnemy : MonoBehaviour {
 		} else if (spawnPoint == 2 || spawnPoint == 3) {
 			controller.Move (Vector3.right * -Speed * Time.deltaTime);
 		} 
+
+		if (spawnPoint == 4 || spawnPoint == 5) {
+			// this should move from left to right
+			controller.Move (Vector3.right * Speed * Time.deltaTime);
+		} else if (spawnPoint == 6 || spawnPoint == 7) {
+			controller.Move (Vector3.right * -Speed * Time.deltaTime);
+		} 
+
 		// TODO: follow a path.
 
 		// Find if a player is near me so I can point and shoot
@@ -65,7 +73,7 @@ public class tankEnemy : MonoBehaviour {
 		// If Im outside the scene for any reason, kill me...
 		RaycastHit hit;
 		if (!Physics.Raycast (transform.position, -Vector3.up, out hit)) {
-			enemySpawnManager.decrementTankCount();
+			enemySpawnManager.decrementTankCount(spawnPoint);
 			Destroy(this.gameObject);
 		}
 

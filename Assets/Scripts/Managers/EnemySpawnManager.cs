@@ -17,6 +17,10 @@ public class EnemySpawnManager : MonoBehaviour {
 	public int spawnInterval;
 	public int tankSpawnInterval;
 
+	public static float lastTankMirror;
+	public int tankMirrorSpawnInterval;
+	public int tankMirrorCount;
+
 	public float initialDelay = 60f; // initially delay the spawn by 60 seconds
 
 	//public string[] names = {"Down", "Right", "Up"};
@@ -25,9 +29,12 @@ public class EnemySpawnManager : MonoBehaviour {
 	void Start () {
 		lastCopter = 0.0f;
 		lastTank = 0.0f;
+		lastTankMirror = 0.0f;
 		tankCount = 0;
+		tankMirrorCount = 0;
 		spawnInterval = Random.Range (5, 20);
 		tankSpawnInterval = Random.Range (10, 20);
+		tankMirrorSpawnInterval = Random.Range (10, 20);
 	}
 	
 	// Update is called once per frame
@@ -50,8 +57,7 @@ public class EnemySpawnManager : MonoBehaviour {
 		}
 
 		if (Time.time - lastTank > tankSpawnInterval && tankCount < 4) {
-			int spawn = Random.Range(0, 5);
-			Debug.Log ("Spawning Tank");
+			int spawn = Random.Range(0, 8);
 
 			tankObject = Instantiate(tank, tankSpawnPoints[spawn].transform.position, Quaternion.identity) as GameObject;
 			tankEnemy enemy = tankObject.GetComponent(typeof(tankEnemy)) as tankEnemy;
@@ -65,9 +71,31 @@ public class EnemySpawnManager : MonoBehaviour {
 
 			lastTank = Time.time;
 		}
+
+		// TODO: I know this isn't efficient, but we're just going to spawn tanks on the other side here..
+		if (Time.time - lastTankMirror > tankMirrorSpawnInterval && tankMirrorCount < 4) {
+			int spawn = Random.Range(4, 8);
+
+			tankObject = Instantiate(tank, tankSpawnPoints[spawn].transform.position, Quaternion.identity) as GameObject;
+			tankEnemy enemy = tankObject.GetComponent(typeof(tankEnemy)) as tankEnemy;
+			
+			enemy.spawnPoint = spawn;
+			
+			if (spawn == 6 || spawn == 7) {
+				enemy.transform.Rotate (0, 180, 0);
+			} 
+
+			tankMirrorCount++;
+			lastTankMirror = Time.time;
+		}
+
 	}
 
-	public void decrementTankCount () {
-		tankCount = tankCount - 1;
+	public void decrementTankCount (int spawnPoint) {
+		if (spawnPoint < 4) {
+			tankCount--;
+		} else {
+			tankMirrorCount--;
+		}
 	}
 }

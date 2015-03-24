@@ -29,6 +29,12 @@ public class Bomb : MonoBehaviour {
 	void Update () {
 		//controller.Move (-this.transform.up * speed * Time.deltaTime);
 		//transform.Translate (-Vector3.up * speed * Time.deltaTime);
+
+		// Get rid of me
+		RaycastHit hit;
+		if (!Physics.Raycast (transform.position, -Vector3.up, out hit)) {
+			Destroy(this.gameObject);
+		}
 	}
 
 	float Euclidean(float x1, float x2, float y1, float y2) {
