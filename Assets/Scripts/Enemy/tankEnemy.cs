@@ -25,17 +25,12 @@ public class tankEnemy : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		controller.Move (Vector3.right * Speed * Time.deltaTime);
-		if (spawnPoint == 0) {
+		if (spawnPoint == 0 || spawnPoint == 1) {
 			// this should move from left to right
 			controller.Move (Vector3.right * Speed * Time.deltaTime);
-		} else if (spawnPoint == 1) {
-			controller.Move (Vector3.forward * -Speed * Time.deltaTime);
-		} else if (spawnPoint == 2) {
+		} else if (spawnPoint == 2 || spawnPoint == 3) {
 			controller.Move (Vector3.right * -Speed * Time.deltaTime);
-		} else if (spawnPoint == 3) {
-			controller.Move (Vector3.forward * Speed * Time.deltaTime);
-		}
+		} 
 		// TODO: follow a path.
 
 		// Find if a player is near me so I can point and shoot
@@ -62,7 +57,7 @@ public class tankEnemy : MonoBehaviour {
 			float distance = 5;
 
 			GameObject b = (GameObject)Instantiate(bullet, transform.Find("Tower").transform.position + (transform.Find("Tower").transform.up * distance), Quaternion.identity);
-			b.rigidbody.AddForce(transform.Find("Tower").transform.up * 500);
+			b.GetComponent<Rigidbody>().AddForce(transform.Find("Tower").transform.up * 500);
 			
 			lastBullet = Time.time;
 		}

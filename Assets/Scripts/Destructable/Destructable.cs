@@ -40,8 +40,8 @@ public class Destructable : MonoBehaviour {
 		}
 
 		if (this.health < maxHealth){
-			if (renderer){
-				this.renderer.material.color = Color.Lerp(Color.red, Color.black, health/maxHealth);
+			if (GetComponent<Renderer>()){
+				this.GetComponent<Renderer>().material.color = Color.Lerp(Color.red, Color.black, health/maxHealth);
 			} else {
 				Renderer[] childrenRenderer = this.GetComponentsInChildren<Renderer>();
 				int i = 0;
