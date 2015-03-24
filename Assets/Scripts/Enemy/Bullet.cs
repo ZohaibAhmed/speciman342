@@ -11,6 +11,9 @@ public class Bullet : MonoBehaviour {
 	public float SecondsUntilDestroy = 100.0f;
 	public float startTime;
 
+	public AudioClip bombSound;
+	private AudioSource source;
+
 	// Use this for initialization
 	void Start () {
 		hud = FindObjectOfType<HudHandler> ();
@@ -24,18 +27,24 @@ public class Bullet : MonoBehaviour {
 			Destroy(this.gameObject);
 		} 
 
+		source = GetComponent<AudioSource>();
+
 	}
 
 	void OnCollisionEnter (Collision col) {
-		Debug.Log ("collided with " + col.gameObject.name);
 		if (col.gameObject.name == "Player") {
 			Destroy (this.gameObject);
 			PlayerHealth playerHealth = col.gameObject.GetComponent<PlayerHealth>();
 			playerHealth.takeDamage(10.0f);
+
+			source.PlayOneShot(bombSound, 0.7f);
+
 		} else if (col.gameObject.name != "Bullet(Clone)") {
 			// we collided with something else... just explode.
 			Destroy(this.gameObject);
 			Instantiate(explosion, this.transform.position, Quaternion.identity);
+
+			source.PlayOneShot(bombSound, 0.7f);
 		}
 
 	}

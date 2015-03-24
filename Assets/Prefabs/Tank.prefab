@@ -28,6 +28,7 @@ GameObject:
   - 95: {fileID: 9521102}
   - 114: {fileID: 11421102}
   - 143: {fileID: 14321102}
+  - 82: {fileID: 8253858}
   m_Layer: 0
   m_Name: Tank
   m_TagString: Untagged
@@ -144,6 +145,64 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 121102}
   m_Mesh: {fileID: 4300000, guid: 2f36ff213ce19454f80e5be2bd75e2fd, type: 3}
+--- !u!82 &8253858
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 121100}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: 2f9e18a3c3c5342da9ccbfd29bba07a2, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: .680000007
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!95 &9521102
 Animator:
   serializedVersion: 3
@@ -175,6 +234,7 @@ MonoBehaviour:
   player: {fileID: 0}
   enemySpawnManager: {fileID: 0}
   bullet: {fileID: 116320, guid: b2bc96084090449fb83e1bbc5a1b20a2, type: 2}
+  shootSound: {fileID: 0}
 --- !u!143 &14321102
 CharacterController:
   m_ObjectHideFlags: 1

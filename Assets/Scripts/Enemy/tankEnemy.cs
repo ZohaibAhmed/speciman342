@@ -14,6 +14,9 @@ public class tankEnemy : MonoBehaviour {
 	private static float lastBullet;
 	private float bulletInterval; // this is the interval in which bombs are going to be created 
 
+	public AudioClip shootSound;
+	private AudioSource source;
+
 	// Use this for initialization
 	void Start () {
 		controller = this.GetComponent<CharacterController> ();
@@ -21,6 +24,8 @@ public class tankEnemy : MonoBehaviour {
 
 		lastBullet = 0.0f;
 		bulletInterval = (Random.value + 0.5f) * 2f;
+
+		source = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -66,6 +71,9 @@ public class tankEnemy : MonoBehaviour {
 
 			GameObject b = (GameObject)Instantiate(bullet, transform.Find("Tower").transform.position + (transform.Find("Tower").transform.up * distance), Quaternion.identity);
 			b.GetComponent<Rigidbody>().AddForce(transform.Find("Tower").transform.up * 500);
+
+			// play shoot sound
+			source.PlayOneShot(shootSound, 0.7f);
 			
 			lastBullet = Time.time;
 		}

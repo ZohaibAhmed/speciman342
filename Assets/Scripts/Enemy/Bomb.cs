@@ -12,6 +12,9 @@ public class Bomb : MonoBehaviour {
 	public HudHandler hud;
 	public PlayerControl player;
 
+	public AudioClip bombSound;
+	private AudioSource source;
+
 	// Use this for initialization
 	void Start () {
 		// create a new dropZone
@@ -23,6 +26,7 @@ public class Bomb : MonoBehaviour {
 
 		player = FindObjectOfType<PlayerControl> ();
 		hud = FindObjectOfType<HudHandler> ();
+		source = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -43,6 +47,9 @@ public class Bomb : MonoBehaviour {
 
 
 	void OnCollisionEnter (Collision col) {
+		// play sound for bomb
+		source.PlayOneShot(bombSound, 0.7f);
+
 		if(col.gameObject.name == "Ground")
 		{
 			Destroy(this.gameObject);
