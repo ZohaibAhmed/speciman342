@@ -33,10 +33,10 @@ public class EnemySpawnManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-//		if (initialDelay > 0){
-//			initialDelay -= Time.deltaTime;
-//			return;
-//		}
+		if (initialDelay > 0){
+			initialDelay -= Time.deltaTime;
+			return;
+		}
 	
 		if (Time.time - lastCopter > spawnInterval){
 			int spawn = Random.Range(0, 7);
