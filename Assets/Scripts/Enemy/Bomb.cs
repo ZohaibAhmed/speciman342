@@ -49,7 +49,7 @@ public class Bomb : MonoBehaviour {
 	void OnCollisionEnter (Collision col) {
 		// play sound for bomb
 		source.PlayOneShot(bombSound, 0.7f);
-
+		Debug.Log ("collided with " + col.gameObject.name);
 		if(col.gameObject.name == "Ground")
 		{
 			Destroy(this.gameObject);

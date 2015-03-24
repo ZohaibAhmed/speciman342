@@ -273,4 +273,8 @@ public class PlayerControl : MonoBehaviour {
 			anim.SetBool("IsTurningRight", false);
 		}
 	}
+
+	public void knockBack(Vector3 direction, float damage) {
+		playerRigidbody.MovePosition (transform.position + direction.normalized * damage);
+	}
 }

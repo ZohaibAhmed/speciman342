@@ -21,7 +21,7 @@ public class EnemySpawnManager : MonoBehaviour {
 	public int tankMirrorSpawnInterval;
 	public int tankMirrorCount;
 
-	public float initialDelay = 30f; // initially delay the spawn by 60 seconds
+	public float initialDelay = 15f; // initially delay the spawn by 60 seconds
 
 	//public string[] names = {"Down", "Right", "Up"};
 
@@ -40,11 +40,11 @@ public class EnemySpawnManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (initialDelay > 0){
-			initialDelay -= Time.deltaTime;
-			return;
-		}
-	
+//		if (initialDelay > 0){
+//			initialDelay -= Time.deltaTime;
+//			return;
+//		}
+//	
 		if (Time.time - lastCopter > spawnInterval){
 			int spawn = Random.Range(0, 7);
 			copter = Instantiate(helicopter, SpawnPoints[spawn].transform.position, Quaternion.identity) as GameObject;
