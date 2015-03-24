@@ -166,6 +166,7 @@ public class PlayerControl : MonoBehaviour {
 	}
 
 	public void faceCamera(){
+		//cameraControl.enabled = false;
 		transform.LookAt(new Vector3(cameraControl.transform.position.x,
 		                             0,
 		                             cameraControl.transform.position.z));
