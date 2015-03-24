@@ -20,16 +20,18 @@ public class tankEnemy : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		controller = this.GetComponent<CharacterController> ();
-		player = FindObjectOfType<PlayerControl> ();
+		player = FindObjectOfType<PlayerControl> (); // TODO: find the closest player to target
 
 		lastBullet = 0.0f;
-		bulletInterval = (Random.value + 0.5f) * 2f;
+		bulletInterval = (Random.value + 0.5f) * 3f;
 
 		source = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
+//		player = findClosestPlayer ();
+
 		if (spawnPoint == 0 || spawnPoint == 1) {
 			// this should move from left to right
 			controller.Move (Vector3.right * Speed * Time.deltaTime);
@@ -86,4 +88,20 @@ public class tankEnemy : MonoBehaviour {
 		}
 
 	}
+
+//	GameObject FindClosestPlayer() {
+//		Object g = GameObject.FindGameObjectsWithTag("Player");
+//		float distance = Mathf.Infinity;
+//
+//		foreach (GameObject go in g) {
+//			Vector3 diff = go.transform.position - transform.position;
+//			float curDistance = diff.sqrMagnitude;
+//			if (curDistance < distance) {
+//				closestPlayer = go;
+//				distance = curDistance;
+//			}
+//		}
+//
+//		return closestPlayer;
+//	}
 }

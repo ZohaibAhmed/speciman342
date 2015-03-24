@@ -28,9 +28,9 @@ public class helicopterEnemy : MonoBehaviour {
 
 		if (spawnPoint >= 0 && spawnPoint <= 2) {
 			// this should move from left to right
-			controller.Move (Vector3.right * Speed * Time.deltaTime);
+			controller.Move (Vector3.forward * Speed * Time.deltaTime);
 		} else if (spawnPoint >= 3 && spawnPoint <= 5) {
-			controller.Move (Vector3.right * -Speed * Time.deltaTime);
+			controller.Move (Vector3.forward * -Speed * Time.deltaTime);
 		} else if (spawnPoint >= 6) {
 			// this helicopter will point towards the player and move there
 			// note: will only rotate with respect to y-axis

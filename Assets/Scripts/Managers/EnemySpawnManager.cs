@@ -21,7 +21,7 @@ public class EnemySpawnManager : MonoBehaviour {
 	public int tankMirrorSpawnInterval;
 	public int tankMirrorCount;
 
-	public float initialDelay = 60f; // initially delay the spawn by 60 seconds
+	public float initialDelay = 30f; // initially delay the spawn by 60 seconds
 
 	//public string[] names = {"Down", "Right", "Up"};
 

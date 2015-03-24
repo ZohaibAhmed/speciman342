@@ -29,6 +29,12 @@ public class Bullet : MonoBehaviour {
 
 		source = GetComponent<AudioSource>();
 
+		// destroy the bullet when its off the map
+		RaycastHit hit;
+		if (!Physics.Raycast (transform.position, -Vector3.up, out hit)) {
+			Destroy(this.gameObject);
+		}
+
 	}
 
 	void OnCollisionEnter (Collision col) {
