@@ -27,7 +27,7 @@ public class EnemySpawnManager : MonoBehaviour {
 		lastTank = 0.0f;
 		tankCount = 0;
 		spawnInterval = Random.Range (5, 20);
-		tankSpawnInterval = Random.Range (2, 5);
+		tankSpawnInterval = Random.Range (10, 20);
 	}
 	
 	// Update is called once per frame
