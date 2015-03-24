@@ -58,14 +58,9 @@ public class EnemySpawnManager : MonoBehaviour {
 
 			enemy.spawnPoint = spawn;
 
-			if (spawn == 1) {
-				enemy.transform.Rotate (0, 90, 0);
-			} else if (spawn == 2) {
+			if (spawn == 2 || spawn == 3) {
 				enemy.transform.Rotate (0, 180, 0);
-			} else if (spawn == 3) {
-				enemy.transform.Rotate(0, -90, 0);
-			}
-
+			} 
 			tankCount++;
 
 			lastTank = Time.time;

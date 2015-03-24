@@ -100,7 +100,7 @@ public class PlayerControl : MonoBehaviour {
 
 	void Rotate(float x, float y, float z){
 		Vector3 rotation = new Vector3(x, y, z) * this.turningSpeed * 0.02f;
-		rigidbody.MoveRotation(rigidbody.rotation * Quaternion.Euler(rotation));
+		GetComponent<Rigidbody>().MoveRotation(GetComponent<Rigidbody>().rotation * Quaternion.Euler(rotation));
 	}
 
 	// makes the gecko face the closest enemy

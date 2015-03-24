@@ -60,9 +60,9 @@ function OnGUI () {
 
 function SetNormal() {
 	for (var closedBarrel in closedBarrels) {
-		closedBarrel.audio.Stop();
-		closedBarrel.audio.pitch = Random.Range(0.4, 0.7);
-		closedBarrel.audio.Play();
+		closedBarrel.GetComponent.<AudioSource>().Stop();
+		closedBarrel.GetComponent.<AudioSource>().pitch = Random.Range(0.4, 0.7);
+		closedBarrel.GetComponent.<AudioSource>().Play();
 		closedBarrel.mesh = meshTypes[0];
 		//closedBarrel.transform.localEulerAngles.y = Random.Range(0,360);
 		yield WaitForSeconds(0.01);
@@ -70,9 +70,9 @@ function SetNormal() {
 }
 function SetOpened() {
 	for (var closedBarrel in closedBarrels) {
-		closedBarrel.audio.Stop();
-		closedBarrel.audio.pitch = Random.Range(0.4, 0.7);
-		closedBarrel.audio.Play();
+		closedBarrel.GetComponent.<AudioSource>().Stop();
+		closedBarrel.GetComponent.<AudioSource>().pitch = Random.Range(0.4, 0.7);
+		closedBarrel.GetComponent.<AudioSource>().Play();
 		closedBarrel.mesh = meshTypes[5];
 		//closedBarrel.transform.localEulerAngles.y = Random.Range(0,360);
 		yield WaitForSeconds(0.01);
@@ -80,10 +80,10 @@ function SetOpened() {
 }
 function SetBending() {
 	for (var closedBarrel in closedBarrels) {
-		closedBarrel.audio.Stop();
-		closedBarrel.audio.pitch = Random.Range(0.4, 0.7);
+		closedBarrel.GetComponent.<AudioSource>().Stop();
+		closedBarrel.GetComponent.<AudioSource>().pitch = Random.Range(0.4, 0.7);
 		//closedBarrel.audio.volume = Random.Range(0.5, 1.0);
-		closedBarrel.audio.Play();
+		closedBarrel.GetComponent.<AudioSource>().Play();
 		closedBarrel.mesh = meshTypes[Random.Range(1,4)];
 		closedBarrel.transform.localEulerAngles.y = Random.Range(0,360);
 		yield WaitForSeconds(Random.Range(0.01,0.1));
@@ -91,10 +91,10 @@ function SetBending() {
 }
 function SetFlat() {
 	for (var closedBarrel in closedBarrels) {
-		closedBarrel.audio.Stop();
-		closedBarrel.audio.pitch = Random.Range(0.4, 0.7);
+		closedBarrel.GetComponent.<AudioSource>().Stop();
+		closedBarrel.GetComponent.<AudioSource>().pitch = Random.Range(0.4, 0.7);
 		//closedBarrel.audio.volume = Random.Range(0.5, 1.0);
-		closedBarrel.audio.Play();
+		closedBarrel.GetComponent.<AudioSource>().Play();
 		closedBarrel.mesh = meshTypes[4];
 		closedBarrel.transform.localEulerAngles.y = Random.Range(0,360);
 		yield WaitForSeconds(Random.Range(0.01,0.1));
