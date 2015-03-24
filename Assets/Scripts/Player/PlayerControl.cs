@@ -37,6 +37,8 @@ public class PlayerControl : MonoBehaviour {
 	public string mouseXInput;
 	public string lockOnInput;
 
+	float hardAttackDuration = 0f;
+
 	float speedShoeDuration = 0f;
 	float speedShoeSpeed;
 
@@ -61,12 +63,18 @@ public class PlayerControl : MonoBehaviour {
 		float h = Input.GetAxis(horizontalInput);
 		float v = Input.GetAxis(verticalInput);
 		float y = Input.GetAxis(mouseXInput);
-		Move (h, v);
-		if (Input.GetAxis(lockOnInput) > 0){
-			LockOn();
+
+		if (hardAttackDuration <= 0){
+			Move (h, v);
+			if (Input.GetAxis(lockOnInput) > 0){
+				LockOn();
+			} else {
+				Rotate (0, y, 0);
+			}
 		} else {
-			Rotate (0, y, 0);
+			hardAttackDuration -= Time.deltaTime;
 		}
+
 		Animating(h, v, y);
 	}
 
@@ -156,6 +164,18 @@ public class PlayerControl : MonoBehaviour {
 			}
 		}
 	}
+
+	public void faceCamera(){
+		transform.LookAt(new Vector3(cameraControl.transform.position.x,
+		                             0,
+		                             cameraControl.transform.position.z));
+	}
+
+	public void hardAttack(float duration){
+		hardAttackDuration = duration;
+		cameraControl.shakeCamera(duration);
+
+	}
 	
 	public void Grow(float growthAmount = 1.05f){
 //		i (this.transform.lossyScale.y + growthAmount >= maxSize){
@@ -188,7 +208,7 @@ public class PlayerControl : MonoBehaviour {
 		//movementSpeed = 5 * this.transform.localScale.x;
 		//turningSpeed = turningSpeed * growthFactor;
 
-		playerAttack.updateAttackDamage(growthAmount);
+		playerAttack.updateAttackDamage(0.5f * growthAmount);
 		playerAttack.updateAttackRange(0.20f * growthAmount);
 
 		playerHealth.incrementHealth(growthAmount);

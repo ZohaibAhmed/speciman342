@@ -19,13 +19,27 @@ public class CameraControl : MonoBehaviour {
 	public string mouseYInput;
 
 	float y = 0.0f;
+	float shake = 0.0f;
+	float shakeAmount = 0.1f;
+
 
 	Vector3 offset;
+//	Animator anim;
 
 	void Start(){
 		Vector3 angles = transform.eulerAngles;
 		y = angles.x;
+//		anim = GetComponent<Animator>();
+	}
 
+	void Update() {
+//		if (shake > 0) {
+//			transform.position = transform.position + Random.insideUnitSphere * shakeAmount;
+//			shake -= Time.deltaTime;
+//			
+//		} else {
+//			shake = 0.0f;
+//		}
 	}
 
 	void LateUpdate() {
@@ -81,6 +95,7 @@ public class CameraControl : MonoBehaviour {
 		}
 	}
 
+
 	float ClampAngle(float angle, float min, float max){
 		if (angle < -360){
 			angle += 360;
@@ -88,5 +103,9 @@ public class CameraControl : MonoBehaviour {
 			angle -= 360;
 		}
 		return Mathf.Clamp(angle, min, max);
+	}
+
+	public void shakeCamera(float shakeTime){
+		shake = shakeTime;
 	}
 }

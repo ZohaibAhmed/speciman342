@@ -46,6 +46,7 @@ public class PlayerAttack : MonoBehaviour
 			Attack (attackDamage);
 		} else if (Input.GetButtonDown(hardAttackInput) && timer >= timeBetweenAttacks * 2 && Time.timeScale != 0) {
 			anim.SetTrigger("HardAttack");
+			playerControl.hardAttack(timeBetweenAttacks * 2f);
 			Attack(attackDamage * 2);
 		}
 
@@ -111,6 +112,7 @@ public class PlayerAttack : MonoBehaviour
 				otherPlayer.takeDamage(damageDealt);
 				if (otherPlayer.getHealth() <= 0){
 					anim.SetTrigger("Win");
+					playerControl.faceCamera();
 					playerControl.enabled = false;
 					this.enabled = false;
 				}
