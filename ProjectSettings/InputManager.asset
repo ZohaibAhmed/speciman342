@@ -20,7 +20,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 0
-    joyNum: 0
+    joyNum: 1
   - serializedVersion: 3
     m_Name: VerticalP1
     descriptiveName: 
@@ -36,15 +36,15 @@ InputManager:
     invert: 1
     type: 2
     axis: 1
-    joyNum: 0
+    joyNum: 1
   - serializedVersion: 3
-    m_Name: FireP1
+    m_Name: Attack P1
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: joystick button 14
+    positiveButton: joystick 1 button 14
     altNegativeButton: 
-    altPositiveButton: joystick button 11
+    altPositiveButton: joystick 1 button 11
     gravity: 1000
     dead: .00100000005
     sensitivity: 1000
@@ -58,7 +58,7 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: joystick button 10
+    positiveButton: joystick 1 button 10
     altNegativeButton: 
     altPositiveButton: mouse 1
     gravity: 1000
@@ -70,13 +70,13 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Fire3
+    m_Name: Hard Attack P1
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: left cmd
+    positiveButton: joystick 1 button 9
     altNegativeButton: 
-    altPositiveButton: mouse 2
+    altPositiveButton: joystick 1 button 15
     gravity: 1000
     dead: .00100000005
     sensitivity: 1000
@@ -116,7 +116,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 2
-    joyNum: 0
+    joyNum: 1
   - serializedVersion: 3
     m_Name: Mouse Y P1
     descriptiveName: 
@@ -132,13 +132,13 @@ InputManager:
     invert: 0
     type: 2
     axis: 3
-    joyNum: 0
+    joyNum: 1
   - serializedVersion: 3
-    m_Name: Mouse ScrollWheel
+    m_Name: Start
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: 
+    positiveButton: joystick button 3
     altNegativeButton: 
     altPositiveButton: 
     gravity: 0
@@ -146,8 +146,8 @@ InputManager:
     sensitivity: .100000001
     snap: 0
     invert: 0
-    type: 1
-    axis: 2
+    type: 0
+    axis: 0
     joyNum: 0
   - serializedVersion: 3
     m_Name: HorizontalP2
@@ -162,9 +162,9 @@ InputManager:
     sensitivity: 1
     snap: 0
     invert: 0
-    type: 0
+    type: 2
     axis: 0
-    joyNum: 0
+    joyNum: 2
   - serializedVersion: 3
     m_Name: VerticalP2
     descriptiveName: 
@@ -177,16 +177,16 @@ InputManager:
     dead: .189999998
     sensitivity: 1
     snap: 0
-    invert: 0
-    type: 0
+    invert: 1
+    type: 2
     axis: 1
-    joyNum: 0
+    joyNum: 2
   - serializedVersion: 3
     m_Name: CameraToggleP2
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: q
+    positiveButton: joystick 2 button 10
     altNegativeButton: 
     altPositiveButton: 
     gravity: 3
@@ -198,13 +198,13 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: FireP2
+    m_Name: Attack P2
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: mouse 0
+    positiveButton: joystick 2 button 14
     altNegativeButton: 
-    altPositiveButton: 
+    altPositiveButton: joystick 2 button 11
     gravity: 3
     dead: .00100000005
     sensitivity: 1
@@ -221,14 +221,14 @@ InputManager:
     positiveButton: 
     altNegativeButton: 
     altPositiveButton: 
-    gravity: 1000
-    dead: .00100000005
+    gravity: 0
+    dead: .100000001
     sensitivity: 1
     snap: 0
     invert: 0
-    type: 1
-    axis: 0
-    joyNum: 0
+    type: 2
+    axis: 2
+    joyNum: 2
   - serializedVersion: 3
     m_Name: Mouse Y P2
     descriptiveName: 
@@ -237,22 +237,22 @@ InputManager:
     positiveButton: joystick button 3
     altNegativeButton: 
     altPositiveButton: 
-    gravity: 1000
-    dead: .00100000005
+    gravity: 0
+    dead: .0500000007
     sensitivity: 1
     snap: 0
     invert: 0
-    type: 1
-    axis: 1
-    joyNum: 0
+    type: 2
+    axis: 3
+    joyNum: 2
   - serializedVersion: 3
-    m_Name: Submit
+    m_Name: LockOnP1
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: return
+    positiveButton: joystick 1 button 8
     altNegativeButton: 
-    altPositiveButton: joystick button 0
+    altPositiveButton: 
     gravity: 1000
     dead: .00100000005
     sensitivity: 1000
@@ -262,13 +262,13 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Submit
+    m_Name: LockOnP2
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: enter
+    positiveButton: joystick 2 button 8
     altNegativeButton: 
-    altPositiveButton: space
+    altPositiveButton: 
     gravity: 1000
     dead: .00100000005
     sensitivity: 1000
@@ -278,13 +278,13 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Cancel
+    m_Name: Hard Attack P2
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: escape
+    positiveButton: joystick 2 button 9
     altNegativeButton: 
-    altPositiveButton: joystick button 1
+    altPositiveButton: joystick 2 button 15
     gravity: 1000
     dead: .00100000005
     sensitivity: 1000

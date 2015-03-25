@@ -18,6 +18,8 @@ public class CameraControl : MonoBehaviour {
 
 	public string mouseYInput;
 
+	public bool playerWon = false;
+
 	float y = 0.0f;
 	float shake = 0.0f;
 	float shakeAmount = 0.1f;
@@ -52,9 +54,18 @@ public class CameraControl : MonoBehaviour {
 			float targetRotation = target.transform.eulerAngles.y;
 
 			Quaternion rotation = Quaternion.Euler(y, targetRotation, 0);
-			Vector3 normalPosition = (rotation * new Vector3(0, 0, -distance)) + target.transform.position;
+			Vector3 normalPosition;
+			if (!playerWon){
+				normalPosition = (rotation * new Vector3(0, 0, -distance)) + target.transform.position;
+				transform.rotation = rotation;
+			} else {
+				//TODO
+				normalPosition = (rotation * new Vector3(0, 0, -distance)) + target.transform.position;
+				transform.rotation = rotation;
+				//transform.LookAt(target.transform.position);
+			}
 
-			transform.rotation = rotation;
+
 			transform.position = normalPosition;
 
 			Vector3 targetRightBound = target.transform.position + (target.transform.right.normalized * target.transform.lossyScale.x);
