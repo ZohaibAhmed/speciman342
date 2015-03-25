@@ -8,6 +8,8 @@ public class Destructable : MonoBehaviour {
 	public Transform itemDrop; // the item to be dropped
 	public float dropProbability = 0.5f;
 	public int points = 100; // the number of points this will give
+	public bool building = false;
+	public GameObject smoke;
 
 	public float dropHeightOffset = 0f;
 
@@ -19,11 +21,15 @@ public class Destructable : MonoBehaviour {
 	AudioSource audioSource;
 	public AudioClip explosionSound;
 
+	Animator anim;
+	int destroyHash = Animator.StringToHash("destroy");
+
 	// Use this for initialization
 	void Start () {
 		maxHealth = health;
 		hud = FindObjectOfType<HudHandler> ();
 		audioSource = GetComponent<AudioSource>();
+		anim = GetComponent<Animator> ();
 	}
 	
 	// Update is called once per frame
@@ -63,9 +69,13 @@ public class Destructable : MonoBehaviour {
 				AudioSource.PlayClipAtPoint(explosionSound, transform.position);
 			}
 		}
-		if (explosion){
-			Instantiate(explosion, gameObject.transform.position, Quaternion.identity);
+		if (explosion && !building) {
+			Instantiate (explosion, gameObject.transform.position, Quaternion.identity);
+		} else if (building) {
+			anim.SetTrigger (destroyHash);
+			Instantiate (smoke, gameObject.transform.position, Quaternion.identity);
 		}
+
 		bool shouldDrop = Random.value < dropProbability;
 		if (itemDrop && shouldDrop){
 			Vector3 dropPosition = gameObject.transform.position - Vector3.up * gameObject.transform.position.y + Vector3.up * dropHeightOffset;
