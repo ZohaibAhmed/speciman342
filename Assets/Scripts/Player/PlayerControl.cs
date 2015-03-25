@@ -42,6 +42,10 @@ public class PlayerControl : MonoBehaviour {
 	float speedShoeDuration = 0f;
 	float speedShoeSpeed;
 
+	bool knockingback;
+	Vector3 knockBackDirection;
+	float knockbackDamage;
+
 	Vector3 movement;
 	Animator anim;
 	PlayerAttack playerAttack;
@@ -63,6 +67,14 @@ public class PlayerControl : MonoBehaviour {
 		float h = Input.GetAxis(horizontalInput);
 		float v = Input.GetAxis(verticalInput);
 		float y = Input.GetAxis(mouseXInput);
+
+		if (knockingback){
+			Debug.Log("knockback!");
+			playerRigidbody.MovePosition (transform.position + knockBackDirection.normalized * knockbackDamage);
+
+			knockingback = false;
+			return;
+		}
 
 		if (hardAttackDuration <= 0){
 			Move (h, v);
@@ -276,6 +288,8 @@ public class PlayerControl : MonoBehaviour {
 	}
 
 	public void knockBack(Vector3 direction, float damage) {
-		playerRigidbody.MovePosition (transform.position + direction.normalized * damage);
+		knockingback = true;
+		knockBackDirection = direction;
+		knockbackDamage = damage;
 	}
 }
