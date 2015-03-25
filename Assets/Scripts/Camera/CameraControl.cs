@@ -53,13 +53,15 @@ public class CameraControl : MonoBehaviour {
 
 			float targetRotation = target.transform.eulerAngles.y;
 
-			Quaternion rotation = Quaternion.Euler(y, targetRotation, 0);
+			Quaternion rotation;
 			Vector3 normalPosition;
 			if (!playerWon){
+				rotation = Quaternion.Euler(y, targetRotation, 0);
 				normalPosition = (rotation * new Vector3(0, 0, -distance)) + target.transform.position;
 				transform.rotation = rotation;
 			} else {
 				//TODO
+				rotation = Quaternion.Euler(y, targetRotation + 180f, 0);
 				normalPosition = (rotation * new Vector3(0, 0, -distance)) + target.transform.position;
 				transform.rotation = rotation;
 				//transform.LookAt(target.transform.position);
