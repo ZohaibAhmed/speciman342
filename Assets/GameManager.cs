@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour {
 	public GameObject cameraP1;
 	public GameObject cameraP2;
 
+	public GameObject city2;
+
 	public GameObject FlyByTargets;
 	public GameObject startCamera;
 	public GameObject startScreenTarget;
@@ -40,5 +42,13 @@ public class GameManager : MonoBehaviour {
 		Destroy(startScreenTarget);
 		Destroy(FlyByTargets);
 		Destroy(startScreenGUI);
+	}
+
+	public void UnloadCity2(){
+		city2.SetActive(false);
+	}
+
+	public void LoadCity2(){
+		city2.SetActive(true);
 	}
 }

@@ -141,6 +141,7 @@ public class StartScreenCamera : MonoBehaviour {
 			transition2 = !TransitionAndLookAtTarget(transition2StartPosition, transition2TargetPosition, playerOne.position, transition2StartTime, transition2speed, transition2JourneyLength);
 			trans3 = !transition2;
 			if (trans3){
+				gameManager.UnloadCity2();
 				transition3 = new Transition(Time.time + DisplayTextTime / 2, transform, ChemPickupCamPos, ChemPickupTarget);
 				timeBetweenTransitions = DisplayTextTime / 2;
 			}
@@ -224,6 +225,7 @@ public class StartScreenCamera : MonoBehaviour {
 				                                    transition6.journeyLength);
 				trans7 = !trans6;
 				if (trans7){
+					gameManager.LoadCity2();
 					transition7 = new Transition(Time.time + DisplayTextTime, NuclearPlantCamPos, CityCamPos, CityTarget);
 					timeBetweenTransitions = DisplayTextTime;
 				}
