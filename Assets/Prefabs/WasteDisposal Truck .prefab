@@ -1624,7 +1624,7 @@ Light:
   m_DrawHalo: 0
   m_ActuallyLightmapped: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 2
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -1650,6 +1650,8 @@ MonoBehaviour:
   itemDrop: {fileID: 0}
   dropProbability: .5
   points: 100
+  building: 0
+  smoke: {fileID: 0}
   dropHeightOffset: 0
   hud: {fileID: 0}
   explosionSound: {fileID: 0}

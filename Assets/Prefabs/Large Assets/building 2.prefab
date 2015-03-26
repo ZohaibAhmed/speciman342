@@ -222,7 +222,7 @@ Animator:
   m_GameObject: {fileID: 103278}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 48f9842dc004d478185c71d337cfe8b2, type: 3}
-  m_Controller: {fileID: 9100000, guid: 88eabc418b6c2402dbc3dfdbfc2d8637, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -244,7 +244,7 @@ MonoBehaviour:
   itemDrop: {fileID: 0}
   dropProbability: .5
   points: 100
-  building: 1
+  building: 0
   smoke: {fileID: 199550, guid: 44c2661af077c42a9a68959f3ff37160, type: 2}
   dropHeightOffset: 0
   hud: {fileID: 0}
