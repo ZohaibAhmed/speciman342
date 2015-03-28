@@ -1199,6 +1199,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 463162}
+  - 23: {fileID: 2366102}
   m_Layer: 0
   m_Name: gecko
   m_TagString: Untagged
@@ -1578,9 +1579,8 @@ GameObject:
   - 114: {fileID: 11448498}
   - 114: {fileID: 11466900}
   - 95: {fileID: 9563256}
-  - 54: {fileID: 5463256}
   - 65: {fileID: 6563256}
-  - 114: {fileID: 11421990}
+  - 114: {fileID: 11430174}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -3602,21 +3602,26 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: .0219999999
---- !u!54 &5463256
-Rigidbody:
+--- !u!23 &2366102
+Renderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 163212}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: Infinity
-  m_AngularDrag: Infinity
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 84
-  m_CollisionDetection: 0
+  m_GameObject: {fileID: 163162}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
 --- !u!65 &6563256
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -3658,7 +3663,7 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11421990
+--- !u!114 &11430174
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -3666,7 +3671,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 163212}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8da22c7c6ce5846adbb40f8dbb880fe8, type: 3}
+  m_Script: {fileID: 11500000, guid: e4f198a2fe9f748ca9c479b208b0748a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &11448498
@@ -3685,6 +3690,7 @@ MonoBehaviour:
   attackDamage: 1
   regularAttackInput: Attack P1
   hardAttackInput: Hard Attack P1
+  bigHandsAttackMultiplier: 4
 --- !u!114 &11463252
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3716,6 +3722,9 @@ MonoBehaviour:
   growthFactor: .5
   maxSize: 300
   enemies: []
+  radioactiveTruckGrowth: 2
+  wasteDisposalFacilityGrowth: 30
+  nuclearPowerPlantGrowth: 80
   chemicalSpawnManager: {fileID: 0}
   cameraControl: {fileID: 0}
   horizontalInput: HorizontalP1

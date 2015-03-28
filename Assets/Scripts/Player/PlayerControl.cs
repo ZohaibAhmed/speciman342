@@ -153,14 +153,7 @@ public class PlayerControl : MonoBehaviour {
 				currentGrowLerpTime = 0;
 				Destroy(other.gameObject);
 			}
-		} else if (other.gameObject.tag == "Speed Shoe"){
-			speedShoeSpeed = movementSpeed * 2;
-			speedShoeDuration = 30f;
-			Destroy (other.gameObject);
-		} else if (other.gameObject.tag == "Big Hands"){
-			playerAttack.activateBigHands();
-			Destroy (other.gameObject);
-		} 
+		}
 	}
 
 	void OnCollisionEnter(Collision collision){
@@ -185,10 +178,10 @@ public class PlayerControl : MonoBehaviour {
 		                             cameraControl.transform.position.z));
 	}
 
+	// set hardattackduration so movement is disabled while its happening!
 	public void hardAttack(float duration){
 		hardAttackDuration = duration;
-		cameraControl.shakeCamera(duration);
-
+		cameraControl.Shake(0.06f, 0.006f, 0.7f); // shake the camera
 	}
 	
 	public void Grow(float growthAmount = 1.05f){

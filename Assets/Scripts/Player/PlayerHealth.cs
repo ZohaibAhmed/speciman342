@@ -50,6 +50,8 @@ public class PlayerHealth : MonoBehaviour
 	public void takeDamage(float d){
 		damaged = true;
 
+		anim.SetTrigger("Damaged");
+
 		currentHealth -= d;
 		healthSlider.value = currentHealth;
 

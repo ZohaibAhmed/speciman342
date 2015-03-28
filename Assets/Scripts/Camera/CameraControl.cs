@@ -21,12 +21,16 @@ public class CameraControl : MonoBehaviour {
 	public bool playerWon = false;
 
 	float y = 0.0f;
-	float shake = 0.0f;
-	float shakeAmount = 0.1f;
+
+	float shake_decay;
+	float shake_intensity;
+	float shake_delay;
 
 
 	Vector3 offset;
 //	Animator anim;
+	
+		
 
 	void Start(){
 		Vector3 angles = transform.eulerAngles;
@@ -35,21 +39,15 @@ public class CameraControl : MonoBehaviour {
 	}
 
 	void Update() {
-//		if (shake > 0) {
-//			transform.position = transform.position + Random.insideUnitSphere * shakeAmount;
-//			shake -= Time.deltaTime;
-//			
-//		} else {
-//			shake = 0.0f;
-//		}
+
 	}
 
 	void LateUpdate() {
+		y += Input.GetAxis(mouseYInput) * ySpeed * 0.02f;
+		
+		y = ClampAngle(y, yMinLimit, yMaxLimit);
 
 		if (target){
-			y += Input.GetAxis(mouseYInput) * ySpeed * 0.02f;
-
-			y = ClampAngle(y, yMinLimit, yMaxLimit);
 
 			float targetRotation = target.transform.eulerAngles.y;
 
@@ -67,8 +65,24 @@ public class CameraControl : MonoBehaviour {
 				//transform.LookAt(target.transform.position);
 			}
 
+			Quaternion originRotation = transform.rotation;
 
-			transform.position = normalPosition;
+			if (shake_delay > 0){
+				shake_delay -= Time.deltaTime;
+			}
+
+			if (shake_intensity > 0 && shake_delay <= 0){
+
+				transform.position = normalPosition + Random.insideUnitSphere * shake_intensity;
+				transform.rotation = new Quaternion(
+					originRotation.x + Random.Range (-shake_intensity,shake_intensity) * .2f,
+					originRotation.y + Random.Range (-shake_intensity,shake_intensity) * .2f,
+					originRotation.z + Random.Range (-shake_intensity,shake_intensity) * .2f,
+					originRotation.w + Random.Range (-shake_intensity,shake_intensity) * .2f);
+				shake_intensity -= shake_decay;
+			} else {
+				transform.position = normalPosition;
+			}
 
 			Vector3 targetRightBound = target.transform.position + (target.transform.right.normalized * target.transform.lossyScale.x);
 			Vector3 targetLeftBound = target.transform.position - target.transform.right.normalized * target.transform.lossyScale.x;
@@ -106,6 +120,7 @@ public class CameraControl : MonoBehaviour {
 				cam.fieldOfView = defaultCameraFOV;
 			}
 		}
+
 	}
 
 
@@ -118,7 +133,9 @@ public class CameraControl : MonoBehaviour {
 		return Mathf.Clamp(angle, min, max);
 	}
 
-	public void shakeCamera(float shakeTime){
-		shake = shakeTime;
+	public void Shake(float intensity, float decay, float delay){
+		shake_intensity = intensity;
+		shake_decay = decay;
+		shake_delay = delay;
 	}
 }

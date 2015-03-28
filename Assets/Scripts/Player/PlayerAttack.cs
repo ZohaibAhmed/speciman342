@@ -8,19 +8,18 @@ public class PlayerAttack : MonoBehaviour
 	public float attackDamage = 1f;
 	public string regularAttackInput;
 	public string hardAttackInput;
-
-
-	float bigHandsDuration = 0f;
-	float bigHandsDamage;
-	float bigHandsAttackRadiusMultiplier = 100;
+	public float hardAttackMultiplier = 4f;
 
 	Animator anim;	
 	float timer;
+	float hardAttackDelay;
 
 	int destructableMask;
 
 	PlayerScoreCounter scoreCounter;
 	PlayerControl playerControl;
+
+	CameraControl camControl;
 
 	// Use this for initialization
 	void Start ()
@@ -44,15 +43,20 @@ public class PlayerAttack : MonoBehaviour
 			Debug.Log("Attack!");
 			anim.SetTrigger("Attack");
 			Attack (attackDamage);
-		} else if (Input.GetButtonDown(hardAttackInput) && timer >= timeBetweenAttacks * 2 && Time.timeScale != 0) {
+		} else if (Input.GetButtonDown(hardAttackInput) && timer >= timeBetweenAttacks * 4 && Time.timeScale != 0) {
 			anim.SetTrigger("HardAttack");
 			playerControl.hardAttack(timeBetweenAttacks * 2f);
-			Attack(attackDamage * 2);
+			hardAttackDelay = 0.7f;
 		}
 
-		if (bigHandsDuration > 0){
-			bigHandsDuration -= Time.deltaTime;
+		if (hardAttackDelay > 0){
+			hardAttackDelay -= Time.deltaTime;
+			if (hardAttackDelay <= 0){
+				Attack(attackDamage * hardAttackMultiplier);
+			}
 		}
+
+
 
 	}
 
@@ -61,10 +65,6 @@ public class PlayerAttack : MonoBehaviour
 		timer = 0f;
 		
 		Vector3 direction = transform.forward;
-
-		if (bigHandsDuration > 0){
-			damageDealt = bigHandsDamage;
-		} 
 
 		// + transform.forward.normalized * transform.lossyScale.x / 4
 
@@ -85,7 +85,7 @@ public class PlayerAttack : MonoBehaviour
 			Debug.Log("hit: " + hit.collider.gameObject.ToString());
 			int layerMask = 1 << hit.collider.gameObject.layer;
 			if ((layerMask & destructableMask) > 0){
-				if (bigHandsDuration > 0 || transform.lossyScale.y >= hit.transform.lossyScale.y * 0.5f){
+				if (transform.lossyScale.y >= hit.transform.lossyScale.y * 0.5f){
 					//chemicalSpawnManager.SpawnChemical(new Vector3(hit.transform.position.x, 0.5f, hit.transform.position.z));
 					Destructable other = hit.collider.GetComponent<Destructable>();
 					if (other == null){
@@ -132,11 +132,6 @@ public class PlayerAttack : MonoBehaviour
 
 	public void updateAttackRange(float increase){
 		attackRange += increase;
-	}
-
-	public void activateBigHands(){
-		bigHandsDamage = attackDamage * 2;
-		bigHandsDuration = 30f;
 	}
 }
 
