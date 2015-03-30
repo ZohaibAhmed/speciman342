@@ -16,7 +16,7 @@ public class Destructable : MonoBehaviour {
 	public GameObject smoke;
 	public Vector3 smokeOffset;
 	public Vector3 explosionOffset;
-
+	public Vector3 explosionRotation;
 
 	public float dropHeightOffset = 0f;
 
@@ -165,6 +165,7 @@ public class Destructable : MonoBehaviour {
 			}
 		}
 		if (explosion && !building) {
+			Quaternion explosionQ = Quaternion.Euler(explosionRotation.x, explosionRotation.y, explosionRotation.z);
 			Instantiate (explosion, gameObject.transform.position + explosionOffset, Quaternion.identity);
 		} else if (building) {
 			anim.SetTrigger (destroyHash);

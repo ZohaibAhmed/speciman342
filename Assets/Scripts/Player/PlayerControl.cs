@@ -7,10 +7,12 @@ public class PlayerControl : MonoBehaviour {
 	public float turningSpeed = 2.0f;
 	public float growthFactor = 1.25f;
 	public float maxSize = 40f;
-	public Transform[] enemies;
+	public Transform enemy;
 	public float radioactiveTruckGrowth = 2f;
 	public float wasteDisposalFacilityGrowth = 30f;
 	public float nuclearPowerPlantGrowth = 80f;
+	public GameObject ExclamationMark;
+	public float FranticThresholdDistance = 750f;
 
 	float currentHealth;
 	float timer;
@@ -50,6 +52,8 @@ public class PlayerControl : MonoBehaviour {
 	Animator anim;
 	PlayerAttack playerAttack;
 	PlayerHealth playerHealth;
+
+	bool isFrantic;
 
 	// Use this for initialization
 	void Start () {
@@ -100,11 +104,31 @@ public class PlayerControl : MonoBehaviour {
 			currentGrowLerpTime = 0.0f;
 		}
 
-		if (speedShoeDuration > 0){
-			speedShoeDuration -= Time.deltaTime;
+		if (!isFrantic && checkFrantic())
+		{
+			movementSpeed = movementSpeed * 6f;
+			Vector3 lockOnPosition = new Vector3(enemy.position.x,
+			                                     this.transform.position.y,
+			                                     enemy.position.z);
+			transform.LookAt(lockOnPosition);
+			anim.SetTrigger("Surprise");
+			anim.SetBool("Frantic", true);
+			if (ExclamationMark){
+				ExclamationMark.SetActive(true);
+			}
+			isFrantic = true;
+		} else if (isFrantic){
+			if (enemy.lossyScale.y <= 4f* transform.lossyScale.y){
+				movementSpeed = movementSpeed / 6f;
+				anim.SetBool("Frantic", false);
+				if (ExclamationMark){
+					ExclamationMark.SetActive(false);
+				}
+				isFrantic = false;
+			}
 		}
 	}
-
+	
 	void Move(float h, float v){
 		movement = playerRigidbody.transform.forward * v + playerRigidbody.transform.right * h;
 
@@ -126,26 +150,22 @@ public class PlayerControl : MonoBehaviour {
 
 	// makes the gecko face the closest enemy
 	void LockOn(){
-		float closestEnemy = 0f;
-		Transform target = null;
-		foreach (Transform t in enemies){
-			float d = Vector3.Distance(this.transform.position, t.position);
-			if (closestEnemy == 0){
-				target = t;
-				closestEnemy = d;
-			} else if (closestEnemy > 0 && d < closestEnemy){
-				closestEnemy = d;
-				target = t;
-			}
-		}
-		if (target != null){
-			Vector3 lockOnPosition = new Vector3(target.position.x,
+		if (enemy != null){
+			Vector3 lockOnPosition = new Vector3(enemy.position.x,
 			                                     this.transform.position.y,
-			                                     target.position.z);
+			                                     enemy.position.z);
 			transform.LookAt(lockOnPosition);
 		}
 	}
 
+	bool checkFrantic(){
+		if (enemy){
+			return Vector3.Distance(enemy.position, transform.position) <= FranticThresholdDistance &&
+				   enemy.lossyScale.y >= 4f * transform.lossyScale.x;
+		}
+
+		return false;
+	}
 	
 	void OnTriggerEnter(Collider other){
 		if (other.gameObject.tag == "Chemical"){
@@ -213,14 +233,18 @@ public class PlayerControl : MonoBehaviour {
 		//newCameraDistance = oldCameraDistance + (growthAmount + (transform.localScale.y / 2));
 		newCameraDistance = 6 * nextScale.y;
 
-		movementSpeed = movementSpeed + growthAmount;
+		if (isFrantic){
+			movementSpeed = movementSpeed + growthAmount * 6f;
+		} else {
+			movementSpeed = movementSpeed + growthAmount;
+		}
 		//movementSpeed = 5 * this.transform.localScale.x;
 		//turningSpeed = turningSpeed * growthFactor;
 
 		playerAttack.updateAttackDamage(0.5f * growthAmount);
 		playerAttack.updateAttackRange(0.20f * growthAmount);
 
-		playerHealth.incrementHealth(growthAmount);
+		playerHealth.incrementHealth(growthAmount * 2f);
 
 
 	}
