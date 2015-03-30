@@ -61,6 +61,7 @@ public class PlayerControl : MonoBehaviour {
 		anim = GetComponent<Animator> ();
 		playerAttack = GetComponent<PlayerAttack> ();
 		playerHealth = GetComponent<PlayerHealth> ();
+		currentScale = this.transform.localScale;
 	}
 
 	void FixedUpdate(){
@@ -200,10 +201,11 @@ public class PlayerControl : MonoBehaviour {
 //		}
 
 		growing = true;
-		currentScale = this.transform.localScale;
-		nextScale = new Vector3(this.transform.localScale.x + growthAmount,
-		                        this.transform.localScale.y + growthAmount, 
-		                        this.transform.localScale.z + growthAmount);
+		nextScale = new Vector3(currentScale.x + growthAmount,
+		                        currentScale.y + growthAmount, 
+		                        currentScale.z + growthAmount);
+		currentScale = nextScale;
+
 		//nextScale = new Vector3(this.transform.localScale.x + growthFactor, this.transform.localScale.y + growthFactor, this.transform.localScale.z + growthFactor);
 
 
@@ -238,7 +240,7 @@ public class PlayerControl : MonoBehaviour {
 		this.transform.localScale = Vector3.Lerp(currentScale, nextScale, perc * 2);
 
 		//float newYPosition = this.transform.localScale.y / 2;
-		float newYPosition = 0f;
+		float newYPosition = -0.005f * transform.localScale.y;
 		Vector3 position = new Vector3(this.transform.position.x, newYPosition, this.transform.position.z);
 		playerRigidbody.transform.position = position;
 		cameraControl.distance = Mathf.Lerp(oldCameraDistance, newCameraDistance, perc);

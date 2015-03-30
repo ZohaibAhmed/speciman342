@@ -245,7 +245,13 @@ MonoBehaviour:
   dropProbability: .5
   points: 100
   building: 0
+  ShakeWhenHit: 1
+  MoveDownWhenHit: 1
+  damagedMesh: {fileID: 0}
+  damageTexture: {fileID: 2800000, guid: 27e49a3caf01545538e200b2ed09ff30, type: 3}
   smoke: {fileID: 199550, guid: 44c2661af077c42a9a68959f3ff37160, type: 2}
+  smokeOffset: {x: 0, y: 0, z: 0}
+  explosionOffset: {x: 0, y: 0, z: 0}
   dropHeightOffset: 0
   hud: {fileID: 0}
   explosionSound: {fileID: 8300000, guid: 89afab3f3b0be449c81ebcc52b5958ee, type: 3}

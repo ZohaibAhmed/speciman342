@@ -9,7 +9,14 @@ public class Destructable : MonoBehaviour {
 	public float dropProbability = 0.5f;
 	public int points = 100; // the number of points this will give
 	public bool building = false;
+	public bool ShakeWhenHit;
+	public bool MoveDownWhenHit;
+	public Mesh damagedMesh;
+	public Texture damageTexture;
 	public GameObject smoke;
+	public Vector3 smokeOffset;
+	public Vector3 explosionOffset;
+
 
 	public float dropHeightOffset = 0f;
 
@@ -17,12 +24,21 @@ public class Destructable : MonoBehaviour {
 
 	float maxHealth;
 	Color originalColor;
-
+		
 	AudioSource audioSource;
 	public AudioClip explosionSound;
 
 	Animator anim;
 	int destroyHash = Animator.StringToHash("destroy");
+
+	Vector3 originalPosition;
+	Vector3 currentPosition;
+	float shakeIntensity;
+	float shakeDecay;
+
+	float smokeTimer;
+
+	ParticleSystem hitParticles;
 
 	// Use this for initialization
 	void Start () {
@@ -30,11 +46,24 @@ public class Destructable : MonoBehaviour {
 		hud = FindObjectOfType<HudHandler> ();
 		audioSource = GetComponent<AudioSource>();
 		anim = GetComponent<Animator> ();
+		originalPosition = transform.position;
+		currentPosition = originalPosition;
+		hitParticles = GetComponentInChildren<ParticleSystem>();
 	}
 	
 	// Update is called once per frame
-	void Update () {
-	
+	void Update() {
+		if (shakeIntensity > 0){
+			this.transform.position = currentPosition + Random.insideUnitSphere * shakeIntensity;
+			shakeIntensity -= shakeDecay;
+			if (shakeIntensity <= 0){
+				this.transform.position = currentPosition;
+			}
+		} 
+
+		if (smokeTimer > 0){
+			smokeTimer -= Time.deltaTime;
+		}
 	}
 
 	public void takeDamage(float damage){
@@ -46,15 +75,77 @@ public class Destructable : MonoBehaviour {
 		}
 
 		if (this.health < maxHealth){
-			if (GetComponent<Renderer>()){
-				this.GetComponent<Renderer>().material.color = Color.Lerp(Color.red, Color.black, health/maxHealth);
-			} else {
-				Renderer[] childrenRenderer = this.GetComponentsInChildren<Renderer>();
-				int i = 0;
-				while (i < childrenRenderer.Length){
-					childrenRenderer[i].material.color = Color.Lerp(Color.red, Color.black, health/maxHealth);
-					i++;
+			Renderer r = GetComponent<Renderer>();
+			if (this.health + damage == maxHealth){ // first hit
+
+				MeshFilter meshFilter = GetComponent<MeshFilter>();
+				if (meshFilter && damagedMesh){
+					meshFilter.mesh = damagedMesh;
+					MeshRenderer meshRenderer = GetComponent<MeshRenderer>();
+					Debug.Log(damagedMesh.subMeshCount);
+					if (r.materials.Length < damagedMesh.subMeshCount){
+						Material[] materials = new Material[damagedMesh.subMeshCount];
+						for (int j = 0; j < materials.Length; j++){
+							if (j < r.materials.Length){
+								materials[j] = r.materials[j];
+								materials[j].mainTexture = damageTexture;
+							} else {
+								materials[j] = r.materials[0];
+								materials[j].mainTexture = damageTexture;
+							}
+						}
+						meshRenderer.materials = materials;
+					}
+
+					MeshCollider col = GetComponent<MeshCollider>();
+					if (col){
+						col.sharedMesh = damagedMesh;
+					}
 				}
+			}
+
+
+			if (r){
+				foreach (Material m in r.materials){
+					m.color = Color.Lerp(Color.yellow, Color.red, 1 - health/maxHealth);
+					m.mainTexture = damageTexture;
+					m.mainTextureScale = new Vector2(maxHealth / (health + damage), maxHealth / (health + damage)) * 2f;
+				}
+			} 
+			Renderer[] childrenRenderer = this.GetComponentsInChildren<Renderer>();
+			int i = 0;
+			while (i < childrenRenderer.Length){
+				if (childrenRenderer[i].gameObject.tag != "DamageParticle"){
+					foreach (Material m in childrenRenderer[i].materials){
+						m.color = Color.Lerp(Color.yellow, Color.red, 1 - health/maxHealth);
+						m.mainTexture = damageTexture;
+						m.mainTextureScale = new Vector2(maxHealth / (health + damage), maxHealth / (health + damage)) * 2f;
+					}
+				}
+				i++;
+			}
+
+			if (MoveDownWhenHit){
+				currentPosition = new Vector3(originalPosition.x,
+				                              Mathf.Lerp(originalPosition.y, originalPosition.y - transform.lossyScale.y / 2, 1 - health/maxHealth),
+				                              originalPosition.z);
+				
+				transform.position = currentPosition;
+			}
+			
+			
+			if (smoke && smokeTimer <= 0){
+				Quaternion smokeRotation = Quaternion.Euler(new Vector3(-90, 0, 0));
+				Instantiate (smoke, transform.position + smokeOffset, smokeRotation);
+				smokeTimer = 10f;
+			}
+
+			if (hitParticles){
+				hitParticles.Play();
+			}
+
+			if (ShakeWhenHit){
+				Shake(damage);
 			}
 		}
 	}
@@ -63,6 +154,10 @@ public class Destructable : MonoBehaviour {
 		// TODO: increment the score according to what we destroy?
 		//hud.incrementPoints (points);
 
+		if (hitParticles){
+			hitParticles.Play();
+		}
+		
 		if (audioSource){
 			Debug.Log("AUDIO");
 			if (explosionSound){
@@ -70,10 +165,10 @@ public class Destructable : MonoBehaviour {
 			}
 		}
 		if (explosion && !building) {
-			Instantiate (explosion, gameObject.transform.position, Quaternion.identity);
+			Instantiate (explosion, gameObject.transform.position + explosionOffset, Quaternion.identity);
 		} else if (building) {
 			anim.SetTrigger (destroyHash);
-			Instantiate (smoke, gameObject.transform.position, Quaternion.identity);
+			Instantiate (smoke, gameObject.transform.position + smokeOffset, Quaternion.identity);
 		}
 
 		bool shouldDrop = Random.value < dropProbability;
@@ -83,5 +178,10 @@ public class Destructable : MonoBehaviour {
 		}
 		Debug.Log("EXPLODE");
 		Destroy(gameObject);
+	}
+
+	void Shake(float damage){
+		shakeIntensity = Mathf.Clamp(0.2f * damage, 0f, 0.25f * transform.lossyScale.x);
+		shakeDecay = 0.1f * shakeIntensity;
 	}
 }

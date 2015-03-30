@@ -58,10 +58,6 @@ Transition:
   m_TransitionDuration: .100000001
   m_TransitionOffset: 0
   m_Conditions:
-  - m_ConditionMode: 5
-    m_ConditionEvent: destroy
-    m_EventTreshold: 0
-    m_ExitTime: .899999976
   - m_ConditionMode: 1
     m_ConditionEvent: destroy
     m_EventTreshold: 0
@@ -99,7 +95,7 @@ State:
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: 63c8db54fbda642e68a9f45ca220389a, type: 2}
+  - {fileID: 7400000, guid: fd47c875ef4f841e7b3c28c9d9b9f628, type: 2}
   m_ParentStateMachine: {fileID: 110727694}
   m_Position: {x: 48, y: 84, z: 0}
   m_IKOnFeet: 0
@@ -127,7 +123,7 @@ StateMachine:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Base Layer
-  m_DefaultState: {fileID: 110227694}
+  m_DefaultState: {fileID: 110282040}
   m_States:
   - {fileID: 110227694}
   - {fileID: 110282040}
@@ -135,12 +131,12 @@ StateMachine:
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
     data:
+      first: {fileID: 110227694}
+      second: []
+    data:
       first: {fileID: 110282040}
       second:
       - {fileID: 110160552}
-    data:
-      first: {fileID: 110227694}
-      second: []
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: -12, y: -60, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}

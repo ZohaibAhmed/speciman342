@@ -13,6 +13,7 @@ TagManager:
   - RadioactiveTruck
   - NuclearPowerplant
   - RecyclingPlant
+  - DamageParticle
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
