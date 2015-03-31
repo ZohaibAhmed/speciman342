@@ -167,7 +167,7 @@ public class Destructable : MonoBehaviour {
 		if (explosion && !building) {
 			Debug.Log("Explode me");
 			Quaternion explosionQ = Quaternion.Euler(explosionRotation.x, explosionRotation.y, explosionRotation.z);
-			Instantiate (explosion, originalPosition + explosionOffset, Quaternion.identity);
+			Instantiate (explosion, originalPosition + explosionOffset, explosionQ);
 		} else if (building) {
 			anim.SetTrigger (destroyHash);
 			Instantiate (smoke, gameObject.transform.position + smokeOffset, Quaternion.identity);

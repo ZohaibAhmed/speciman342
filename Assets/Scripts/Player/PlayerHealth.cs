@@ -52,13 +52,18 @@ public class PlayerHealth : MonoBehaviour
 
 		anim.SetTrigger("Damaged");
 
-		currentHealth -= d;
+		this.currentHealth -= d;
+		Debug.Log(this.currentHealth);
 		healthSlider.value = currentHealth;
 
 		if (this.currentHealth <=0){
+			Debug.Log ("dead");
 			playerControl.enabled = false;
 			playerAttack.enabled = false;
 			anim.SetTrigger("Death");
+			anim.SetBool("Dead", true);
+			this.enabled = false;
+
 		}
 	}
 	

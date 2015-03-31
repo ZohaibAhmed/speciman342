@@ -43,15 +43,19 @@ public class PlayerAttack : MonoBehaviour
 			Debug.Log("Attack!");
 			anim.SetTrigger("Attack");
 			Attack (attackDamage);
-		} else if (Input.GetButtonDown(hardAttackInput) && timer >= timeBetweenAttacks * 4 && Time.timeScale != 0) {
+		} else if (Input.GetButtonDown(hardAttackInput) && timer >= timeBetweenAttacks * 2f && Time.timeScale != 0) {
+			Debug.Log(timeBetweenAttacks * 4f);
 			anim.SetTrigger("HardAttack");
 			playerControl.hardAttack(timeBetweenAttacks * 2f);
+			timer = 0f;
+			Debug.Log ("Timer:" + timer);
 			hardAttackDelay = 0.7f;
 		}
 
 		if (hardAttackDelay > 0){
 			hardAttackDelay -= Time.deltaTime;
 			if (hardAttackDelay <= 0){
+				Debug.Log("Attack delay over");
 				Attack(attackDamage * hardAttackMultiplier);
 			}
 		}
@@ -85,7 +89,7 @@ public class PlayerAttack : MonoBehaviour
 			Debug.Log("hit: " + hit.collider.gameObject.ToString());
 			int layerMask = 1 << hit.collider.gameObject.layer;
 			if ((layerMask & destructableMask) > 0){
-				if (transform.lossyScale.y >= hit.transform.lossyScale.y * 0.5f){
+				if (transform.lossyScale.y >= hit.transform.lossyScale.y * 0.25f){
 					//chemicalSpawnManager.SpawnChemical(new Vector3(hit.transform.position.x, 0.5f, hit.transform.position.z));
 					Destructable other = hit.collider.GetComponent<Destructable>();
 					if (other == null){

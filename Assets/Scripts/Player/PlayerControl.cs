@@ -106,7 +106,7 @@ public class PlayerControl : MonoBehaviour {
 
 		if (!isFrantic && checkFrantic())
 		{
-			movementSpeed = movementSpeed * 6f;
+			movementSpeed = movementSpeed * 8f;
 			Vector3 lockOnPosition = new Vector3(enemy.position.x,
 			                                     this.transform.position.y,
 			                                     enemy.position.z);
@@ -118,8 +118,8 @@ public class PlayerControl : MonoBehaviour {
 			}
 			isFrantic = true;
 		} else if (isFrantic){
-			if (enemy.lossyScale.y <= 4f* transform.lossyScale.y){
-				movementSpeed = movementSpeed / 6f;
+			if (enemy.lossyScale.y <= 2f* transform.lossyScale.y){
+				movementSpeed = movementSpeed / 8f;
 				anim.SetBool("Frantic", false);
 				if (ExclamationMark){
 					ExclamationMark.SetActive(false);
@@ -161,7 +161,7 @@ public class PlayerControl : MonoBehaviour {
 	bool checkFrantic(){
 		if (enemy){
 			return Vector3.Distance(enemy.position, transform.position) <= FranticThresholdDistance &&
-				   enemy.lossyScale.y >= 4f * transform.lossyScale.x;
+				   enemy.lossyScale.y >= 2f * transform.lossyScale.x;
 		}
 
 		return false;

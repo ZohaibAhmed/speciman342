@@ -29,9 +29,9 @@ public class HudHandler : MonoBehaviour {
 
 		pointsText.text = playerScore.getScore().ToString("D9");
 
-		if (playerHealth.getHealth() <= 0){
-			gameOver();
-		}
+//		if (playerHealth.getHealth() <= 0){
+//			gameOver();
+//		}
 
 		if (restart) {
 			if (screenOver){
@@ -55,11 +55,6 @@ public class HudHandler : MonoBehaviour {
 			);
 			
 			timeText.text = answer;
-
-			// times up
-			if (totalTime <= 0) {
-				gameOver ();
-			}
 		}
 
 	}
@@ -72,14 +67,15 @@ public class HudHandler : MonoBehaviour {
 	}
 
 	public void gameOver() {
-		Debug.Log("Game over");
-
 		anim.SetTrigger ("GameOver");
 		// stop the game...
 		//Time.timeScale = 0;
 		// set flag to true
 		//restart = true;
+	}
 
+	public void win(){
 
+		anim.SetTrigger("Win");
 	}
 }

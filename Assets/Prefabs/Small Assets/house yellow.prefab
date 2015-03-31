@@ -226,7 +226,7 @@ MonoBehaviour:
   points: 100
   building: 0
   ShakeWhenHit: 1
-  MoveDownWhenHit: 0
+  MoveDownWhenHit: 1
   damagedMesh: {fileID: 0}
   damageTexture: {fileID: 2800000, guid: 27e49a3caf01545538e200b2ed09ff30, type: 3}
   smoke: {fileID: 199550, guid: 44c2661af077c42a9a68959f3ff37160, type: 2}

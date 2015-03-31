@@ -15,8 +15,9 @@ public class PlayerScoreCounter : MonoBehaviour {
 	
 	}
 
-	public void incrementScore(int score){
-		this.score += score;
+	public void incrementScore(int points){
+
+		this.score += points;
 	}
 
 	public int getScore(){
