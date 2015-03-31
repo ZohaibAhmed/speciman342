@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour {
 		startScreenTarget.SetActive(false);
 		FlyByTargets.SetActive(false);
 		startScreenGUI.SetActive(false);
+		LoadCity2();
 		Destroy(startCamera);
 		Destroy(startScreenTarget);
 		Destroy(FlyByTargets);

@@ -12,10 +12,10 @@ GameObject:
   - 199: {fileID: 19909146}
   m_Layer: 0
   m_Name: Particle System
-  m_TagString: Untagged
+  m_TagString: DamageParticle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &109148
 GameObject:
@@ -29,10 +29,10 @@ GameObject:
   - 199: {fileID: 19909148}
   m_Layer: 0
   m_Name: Hit particles
-  m_TagString: Untagged
+  m_TagString: DamageParticle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &109150
 GameObject:
@@ -46,10 +46,10 @@ GameObject:
   - 199: {fileID: 19909150}
   m_Layer: 0
   m_Name: Particle System
-  m_TagString: Untagged
+  m_TagString: DamageParticle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &109152
 GameObject:
@@ -63,10 +63,10 @@ GameObject:
   - 199: {fileID: 19909152}
   m_Layer: 0
   m_Name: Particle System
-  m_TagString: Untagged
+  m_TagString: DamageParticle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &109154
 GameObject:
@@ -80,10 +80,10 @@ GameObject:
   - 199: {fileID: 19909154}
   m_Layer: 0
   m_Name: Particle System
-  m_TagString: Untagged
+  m_TagString: DamageParticle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &109156
 GameObject:
@@ -97,10 +97,10 @@ GameObject:
   - 199: {fileID: 19909156}
   m_Layer: 0
   m_Name: Particle System
-  m_TagString: Untagged
+  m_TagString: DamageParticle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &143926
 GameObject:
@@ -115,7 +115,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &143928
 GameObject:
@@ -130,7 +130,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &143930
 GameObject:
@@ -145,7 +145,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &143932
 GameObject:
@@ -162,7 +162,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &143934
 GameObject:
@@ -177,7 +177,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &143936
 GameObject:
@@ -195,7 +195,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &409146
 Transform:
@@ -343,7 +343,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 143936}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -76.2951202, y: 0, z: 17.2831745}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 15, y: 17, z: 15}
   m_Children:
   - {fileID: 443934}
@@ -435,6 +435,8 @@ MonoBehaviour:
   damageTexture: {fileID: 2800000, guid: 27e49a3caf01545538e200b2ed09ff30, type: 3}
   smoke: {fileID: 199550, guid: 44c2661af077c42a9a68959f3ff37160, type: 2}
   smokeOffset: {x: -6, y: 0, z: 9}
+  explosionOffset: {x: -6, y: 0, z: 9}
+  explosionRotation: {x: -90, y: 0, z: 0}
   dropHeightOffset: 0
   hud: {fileID: 0}
   explosionSound: {fileID: 0}

@@ -15,7 +15,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &178308
 GameObject:
@@ -32,7 +32,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &178310
 GameObject:
@@ -50,7 +50,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &178312
 GameObject:
@@ -67,7 +67,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &478306
 Transform:
@@ -243,6 +243,15 @@ MonoBehaviour:
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
   dropProbability: .5
   points: 100
+  building: 0
+  ShakeWhenHit: 0
+  MoveDownWhenHit: 0
+  damagedMesh: {fileID: 0}
+  damageTexture: {fileID: 0}
+  smoke: {fileID: 0}
+  smokeOffset: {x: 0, y: 0, z: 0}
+  explosionOffset: {x: 0, y: 0, z: 0}
+  explosionRotation: {x: 0, y: 0, z: 0}
   dropHeightOffset: 0
   hud: {fileID: 0}
   explosionSound: {fileID: 8300000, guid: 6f1d0ad32a1ae418597f599a3187d5f3, type: 3}

@@ -17,7 +17,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &457704
 Transform:
@@ -86,6 +86,15 @@ MonoBehaviour:
   itemDrop: {fileID: 0}
   dropProbability: .5
   points: 100
+  building: 0
+  ShakeWhenHit: 0
+  MoveDownWhenHit: 0
+  damagedMesh: {fileID: 0}
+  damageTexture: {fileID: 0}
+  smoke: {fileID: 0}
+  smokeOffset: {x: 0, y: 0, z: 0}
+  explosionOffset: {x: 0, y: 0, z: 0}
+  explosionRotation: {x: 0, y: 0, z: 0}
   dropHeightOffset: 0
   hud: {fileID: 0}
   explosionSound: {fileID: 0}

@@ -26,8 +26,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 170572}
-  m_LocalRotation: {x: 1, y: -0, z: 0, w: 6.12323426e-17}
-  m_LocalPosition: {x: 261.5, y: 45, z: 356.600006}
+  m_LocalRotation: {x: 1, y: 0, z: 0, w: 6.12323426e-17}
+  m_LocalPosition: {x: 238.899994, y: 45.7999992, z: -60.8000183}
   m_LocalScale: {x: 100, y: 70, z: 70}
   m_Children: []
   m_Father: {fileID: 0}
@@ -111,6 +111,15 @@ MonoBehaviour:
   itemDrop: {fileID: 0}
   dropProbability: .5
   points: 100
+  building: 0
+  ShakeWhenHit: 1
+  MoveDownWhenHit: 1
+  damagedMesh: {fileID: 4300000, guid: 47da422f88e5f4f97af8e3173ad7432d, type: 3}
+  damageTexture: {fileID: 2800000, guid: 27e49a3caf01545538e200b2ed09ff30, type: 3}
+  smoke: {fileID: 0}
+  smokeOffset: {x: 0, y: 0, z: 0}
+  explosionOffset: {x: 0, y: 0, z: 0}
+  explosionRotation: {x: 0, y: 0, z: 0}
   dropHeightOffset: 0
   hud: {fileID: 0}
   explosionSound: {fileID: 0}
