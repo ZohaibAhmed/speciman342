@@ -2057,7 +2057,7 @@ MonoBehaviour:
   smoke: {fileID: 0}
   smokeOffset: {x: 0, y: 0, z: 0}
   explosionOffset: {x: 0, y: 0, z: 0}
-  explosionRotation: {x: 0, y: 0, z: 0}
+  explosionRotation: {x: -90, y: 0, z: 0}
   dropHeightOffset: 0
   hud: {fileID: 0}
   explosionSound: {fileID: 0}
