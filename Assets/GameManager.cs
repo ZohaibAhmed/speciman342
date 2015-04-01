@@ -17,8 +17,14 @@ public class GameManager : MonoBehaviour {
 	public GameObject startScreenTarget;
 	public GameObject startScreenGUI;
 
+	public AudioClip background;
+
+
 	public string startInput;
 
+	private AudioSource source;
+	private float volLowRange = .5f;
+	private float volHighRange = 1.0f;
 
 	private float totalTime = 300f; // this is 300 seconds (5 mins)
 
@@ -33,8 +39,15 @@ public class GameManager : MonoBehaviour {
 
 	bool gameOver;
 
+	void Awake() {
+		source = GetComponent<AudioSource>();
+		source.Play ();
+
+	}
+
 	// Use this for initialization
 	void Start () {
+
 		p1Health = player1.GetComponent<PlayerHealth>();
 		p2Health = player2.GetComponent<PlayerHealth>();
 
