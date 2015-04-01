@@ -240,7 +240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 300
-  explosion: {fileID: 400004, guid: 169b10ce10f4327cb9f40f6b117ed8d7, type: 2}
+  explosion: {fileID: 488954, guid: da37e971a57b44d82a795dc4f6546de0, type: 2}
   itemDrop: {fileID: 0}
   dropProbability: .5
   points: 100
@@ -252,9 +252,12 @@ MonoBehaviour:
   smoke: {fileID: 199550, guid: 44c2661af077c42a9a68959f3ff37160, type: 2}
   smokeOffset: {x: 0, y: 0, z: 0}
   explosionOffset: {x: 0, y: 0, z: 0}
+  explosionRotation: {x: -90, y: 0, z: 0}
   dropHeightOffset: 0
   hud: {fileID: 0}
   explosionSound: {fileID: 8300000, guid: 89afab3f3b0be449c81ebcc52b5958ee, type: 3}
+  damageSound: {fileID: 0}
+  explosionSoundNormal: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
