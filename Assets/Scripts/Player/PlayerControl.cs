@@ -39,6 +39,10 @@ public class PlayerControl : MonoBehaviour {
 	public string mouseXInput;
 	public string lockOnInput;
 
+	AudioSource audioSource;
+	public AudioClip jump;
+	public AudioClip land;
+
 	float hardAttackDuration = 0f;
 
 	float speedShoeDuration = 0f;
@@ -66,6 +70,7 @@ public class PlayerControl : MonoBehaviour {
 		playerAttack = GetComponent<PlayerAttack> ();
 		playerHealth = GetComponent<PlayerHealth> ();
 		currentScale = this.transform.localScale;
+		audioSource = gameObject.AddComponent<AudioSource>();
 	}
 
 	void FixedUpdate(){
@@ -201,6 +206,9 @@ public class PlayerControl : MonoBehaviour {
 
 	// set hardattackduration so movement is disabled while its happening!
 	public void hardAttack(float duration){
+		// TODO: jump?
+		AudioSource.PlayClipAtPoint(jump, transform.position);
+
 		hardAttackDuration = duration;
 		cameraControl.Shake(0.06f, 0.006f, 0.7f); // shake the camera
 	}

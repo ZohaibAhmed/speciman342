@@ -10,6 +10,13 @@ public class PlayerAttack : MonoBehaviour
 	public string hardAttackInput;
 	public float hardAttackMultiplier = 4f;
 
+	// sounds
+	AudioSource audioSource;
+	public AudioClip[] slaps;
+	public AudioClip land;
+	public AudioClip swooshSmall;
+	public AudioClip swooshBig;
+
 	Animator anim;	
 	float timer;
 	float hardAttackDelay;
@@ -20,6 +27,8 @@ public class PlayerAttack : MonoBehaviour
 	PlayerControl playerControl;
 
 	CameraControl camControl;
+
+	private int slapIndex = 0;
 
 	// Use this for initialization
 	void Start ()
@@ -33,6 +42,7 @@ public class PlayerAttack : MonoBehaviour
 		scoreCounter = GetComponent<PlayerScoreCounter>();
 		playerControl = GetComponent<PlayerControl>();
 		timer = timeBetweenAttacks;
+		audioSource = gameObject.AddComponent<AudioSource>();
 	}
 
 	// Update is called once per frame
@@ -43,6 +53,7 @@ public class PlayerAttack : MonoBehaviour
 			Debug.Log("Attack!");
 			anim.SetTrigger("Attack");
 			Attack (attackDamage);
+
 		} else if (Input.GetButtonDown(hardAttackInput) && timer >= timeBetweenAttacks * 2f && Time.timeScale != 0) {
 			Debug.Log(timeBetweenAttacks * 4f);
 			anim.SetTrigger("HardAttack");
@@ -56,6 +67,11 @@ public class PlayerAttack : MonoBehaviour
 			hardAttackDelay -= Time.deltaTime;
 			if (hardAttackDelay <= 0){
 				Debug.Log("Attack delay over");
+
+				Debug.Log (playerControl.transform.lossyScale.y);
+				// Play hard attack land here
+				AudioSource.PlayClipAtPoint(land, transform.position, playerControl.transform.lossyScale.y/20.0f);
+
 				Attack(attackDamage * hardAttackMultiplier);
 			}
 		}
@@ -85,6 +101,8 @@ public class PlayerAttack : MonoBehaviour
 
 		int i = 0;
 		while (i < hits.Length){
+
+
 			RaycastHit hit = hits[i];
 			Debug.Log("hit: " + hit.collider.gameObject.ToString());
 			int layerMask = 1 << hit.collider.gameObject.layer;
@@ -109,8 +127,24 @@ public class PlayerAttack : MonoBehaviour
 					}
 
 					other.takeDamage(damageDealt);
+					if (audioSource) {
+						if (slapIndex >= slaps.Length) {
+							slapIndex = 0;
+						}
+						
+						AudioSource.PlayClipAtPoint(slaps[slapIndex], transform.position);
+						slapIndex++;
+					}	
 				}
 			} else if (hit.collider.tag == "Player" && hit.collider.gameObject.name != this.gameObject.name){
+				if (audioSource) {
+					if (slapIndex >= slaps.Length) {
+						slapIndex = 0;
+					}
+					
+					AudioSource.PlayClipAtPoint(slaps[slapIndex], transform.position);
+					slapIndex++;
+				}	
 				Debug.Log("HIT!!");
 				PlayerHealth otherPlayer = hit.collider.GetComponent<PlayerHealth>();
 				PlayerControl controlPlayer = hit.collider.GetComponent<PlayerControl>();
@@ -123,6 +157,13 @@ public class PlayerAttack : MonoBehaviour
 					playerControl.faceCamera();
 					playerControl.enabled = false;
 					this.enabled = false;
+				}
+			} else {
+				// we missed everything
+				if (playerControl.transform.lossyScale.y < 20.0f) {
+					AudioSource.PlayClipAtPoint(swooshSmall, transform.position);
+				} else {
+					AudioSource.PlayClipAtPoint(swooshBig, transform.position);
 				}
 			}
 			i++;

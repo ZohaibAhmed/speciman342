@@ -2,7 +2,17 @@ fileFormatVersion: 2
 guid: b135d5bafdd2c419ea7ad6d58e18258c
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - explosion: {instanceID: 0}
+  - itemDrop: {instanceID: 0}
+  - damagedMesh: {instanceID: 0}
+  - damageTexture: {instanceID: 0}
+  - smoke: {instanceID: 0}
+  - hud: {instanceID: 0}
+  - explosionSound: {fileID: 8300000, guid: 6829d718e5aba4f91b455045020fecb0, type: 3}
+  - damageSound: {instanceID: 0}
+  - explosionSoundNormal: {fileID: 8300000, guid: 89afab3f3b0be449c81ebcc52b5958ee,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
