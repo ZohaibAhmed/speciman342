@@ -25,14 +25,15 @@ public class Destructable : MonoBehaviour {
 	float maxHealth;
 	Color originalColor;
 		
-	AudioSource audioSource;
-	public AudioClip explosionSound; // use this for buildings
-	public AudioClip damageSound; // use this for attack?
-	public AudioClip explosionSoundNormal; // use this for houses
+	public AudioClip explosionSound; // use this for destruction
+	public AudioClip[] damageSounds; // use this for attack?
+	int damageSoundIndex;
 
 
 	Animator anim;
 	int destroyHash = Animator.StringToHash("destroy");
+
+	AudioManager audioManager;
 
 	Vector3 originalPosition;
 	Vector3 currentPosition;
@@ -47,11 +48,18 @@ public class Destructable : MonoBehaviour {
 	void Start () {
 		maxHealth = health;
 		hud = FindObjectOfType<HudHandler> ();
-		audioSource = gameObject.AddComponent<AudioSource>();
 		anim = GetComponent<Animator> ();
 		originalPosition = transform.position;
 		currentPosition = originalPosition;
 		hitParticles = GetComponentInChildren<ParticleSystem>();
+		damageSoundIndex = 0;
+	}
+
+	void Awake () {
+		GameObject AudioObject = GameObject.Find("Audio Manager");
+		if (AudioObject != null){
+			audioManager = AudioObject.GetComponent<AudioManager> ();
+		}
 	}
 	
 	// Update is called once per frame
@@ -150,6 +158,13 @@ public class Destructable : MonoBehaviour {
 			if (ShakeWhenHit){
 				Shake(damage);
 			}
+
+			if (audioManager){
+				if (damageSounds.Length > 0){
+					audioManager.PlayAudio(damageSounds[damageSoundIndex % damageSounds.Length]);
+					damageSoundIndex++;
+				}
+			}
 		}
 	}
 
@@ -160,31 +175,21 @@ public class Destructable : MonoBehaviour {
 		if (hitParticles){
 			hitParticles.Play();
 		}
-		
+
+		if (audioManager){
+			audioManager.PlayAudio(explosionSound);
+		}
 
 		if (explosion && !building) {
 			Debug.Log("Explode me");
 			Quaternion explosionQ = Quaternion.Euler(explosionRotation.x, explosionRotation.y, explosionRotation.z);
 			Instantiate (explosion, originalPosition + explosionOffset, explosionQ);
 
-			if (audioSource){
-				Debug.Log("AUDIO NOT BUILDING");
-				if (explosionSoundNormal) {
-					AudioSource.PlayClipAtPoint(explosionSoundNormal, transform.position);
-				}
-			}
-
 		} else if (building) {
 			anim.SetTrigger (destroyHash);
 			Instantiate (smoke, gameObject.transform.position + smokeOffset, Quaternion.identity);
-		
-			if (audioSource){
-				Debug.Log("AUDIO");
-				if (explosionSound){
-					AudioSource.PlayClipAtPoint(explosionSound, transform.position);
-				}
-			}
 		}
+
 
 		bool shouldDrop = Random.value < dropProbability;
 		if (itemDrop && shouldDrop){

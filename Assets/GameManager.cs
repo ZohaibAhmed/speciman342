@@ -17,12 +17,8 @@ public class GameManager : MonoBehaviour {
 	public GameObject startScreenTarget;
 	public GameObject startScreenGUI;
 
-	public AudioClip background;
-
-
 	public string startInput;
 
-	private AudioSource source;
 	private float volLowRange = .5f;
 	private float volHighRange = 1.0f;
 
@@ -40,9 +36,6 @@ public class GameManager : MonoBehaviour {
 	bool gameOver;
 
 	void Awake() {
-		source = GetComponent<AudioSource>();
-		source.Play ();
-
 	}
 
 	// Use this for initialization

@@ -133,6 +133,8 @@ MonoBehaviour:
   dropHeightOffset: 0
   hud: {fileID: 0}
   explosionSound: {fileID: 0}
+  damageSounds:
+  - {fileID: 8300000, guid: ed1a1c2576c974e4d9bf326adf3ffdf7, type: 3}
 --- !u!198 &19876980
 ParticleSystem:
   m_ObjectHideFlags: 1

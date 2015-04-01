@@ -1688,9 +1688,15 @@ MonoBehaviour:
   smoke: {fileID: 0}
   smokeOffset: {x: 0, y: 0, z: 0}
   explosionOffset: {x: 0, y: 0, z: 0}
+  explosionRotation: {x: 0, y: 0, z: 0}
   dropHeightOffset: 0
   hud: {fileID: 0}
   explosionSound: {fileID: 0}
+  damageSounds:
+  - {fileID: 8300000, guid: ed1a1c2576c974e4d9bf326adf3ffdf7, type: 3}
+  - {fileID: 8300000, guid: dd723254980cb4107b6ac90fb5b34f18, type: 3}
+  - {fileID: 8300000, guid: 25dbf48248fca447a90504919824dd69, type: 3}
+  - {fileID: 8300000, guid: 026a1add89fa7489d85021c93e7068a2, type: 3}
 --- !u!198 &19879660
 ParticleSystem:
   m_ObjectHideFlags: 1
