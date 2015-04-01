@@ -285,21 +285,27 @@ public class PlayerControl : MonoBehaviour {
 				shufflingLeft = h < 0;
 				anim.SetBool("IsShufflingLeft", shufflingLeft);
 				anim.SetBool("IsShufflingRight", !shufflingLeft);
+				anim.SetBool("IsWalkingForward", false);
+				anim.SetBool("IsWalkingBackward", false);
 			} else {
 				anim.SetBool("IsShufflingLeft", false);
 				anim.SetBool("IsShufflingRight", false);
+				anim.SetBool("IsWalkingForward", v > 0);
+				anim.SetBool("IsWalkingBackward", v < 0);
 			}
-			anim.SetBool("IsWalking", !shuffling);
+
 			anim.SetBool("IsTurningLeft", false);
 			anim.SetBool("IsTurningRight", false);
 		} else if (rotating){
-			anim.SetBool("IsWalking", false);
+			anim.SetBool("IsWalkingForward", false);
+			anim.SetBool("IsWalkingBackward", false);
 			anim.SetBool("IsShufflingLeft", false);
 			anim.SetBool("IsShufflingRight", false);
 			anim.SetBool("IsTurningLeft",  y < 0);
 			anim.SetBool("IsTurningRight", y > 0);
 		} else {
-			anim.SetBool("IsWalking", false);
+			anim.SetBool("IsWalkingForward", false);
+			anim.SetBool("IsWalkingBackward", false);
 			anim.SetBool("IsShufflingLeft", false);
 			anim.SetBool("IsShufflingRight", false);
 			anim.SetBool("IsTurningLeft", false);
