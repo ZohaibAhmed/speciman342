@@ -170,7 +170,6 @@ public class Destructable : MonoBehaviour {
 						audioManager.PlayAudio(damageSounds[damageSoundIndex % damageSounds.Length], 0.25f);
 
 					}
-
 					damageSoundIndex++;
 				}
 			}
