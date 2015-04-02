@@ -34,6 +34,9 @@ public class PlayerControl : MonoBehaviour {
 	public ChemicalSpawnManager chemicalSpawnManager;
 	public CameraControl cameraControl;
 
+	public AudioClip GrowthAudio;
+	public AudioManager audioManager;
+
 	public string horizontalInput;
 	public string verticalInput;
 	public string mouseXInput;
@@ -219,6 +222,7 @@ public class PlayerControl : MonoBehaviour {
 //			return;
 //			
 //		}
+		audioManager.PlayAudio(GrowthAudio);
 
 		growing = true;
 		nextScale = new Vector3(currentScale.x + growthAmount,

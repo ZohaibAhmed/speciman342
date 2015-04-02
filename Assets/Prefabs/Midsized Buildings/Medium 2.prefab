@@ -147,9 +147,11 @@ MonoBehaviour:
   explosionRotation: {x: -90, y: 0, z: 0}
   dropHeightOffset: 0
   hud: {fileID: 0}
-  explosionSound: {fileID: 0}
+  explosionSound: {fileID: 8300000, guid: 2f9e18a3c3c5342da9ccbfd29bba07a2, type: 3}
   damageSounds:
   - {fileID: 8300000, guid: 6556b9a124c8448ce95c2c7b6c93a4a6, type: 3}
+  - {fileID: 8300000, guid: 5b716acd8bbd2490695a5dabb3dd4ea4, type: 3}
+  - {fileID: 8300000, guid: 7349d0d9f938d4ec3b83993e5bd1b839, type: 3}
 --- !u!198 &19804380
 ParticleSystem:
   m_ObjectHideFlags: 1
