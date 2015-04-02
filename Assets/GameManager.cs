@@ -22,10 +22,11 @@ public class GameManager : MonoBehaviour {
 
 	public string startInput;
 
-	private float volLowRange = .5f;
-	private float volHighRange = 1.0f;
+	public GameObject StartToRestart;
 
 	private float totalTime = 300f; // this is 300 seconds (5 mins)
+
+
 
 	PlayerHealth p1Health;
 	PlayerHealth p2Health;
@@ -67,6 +68,11 @@ public class GameManager : MonoBehaviour {
 
 		p1Hud = canvasP1.GetComponent<HudHandler>();
 		p2Hud = canvasP2.GetComponent<HudHandler>();
+
+		p1Control.enabled = false;
+		p1Attack.enabled = false;
+		p2Control.enabled = false;
+		p2Attack.enabled = false;
 	}
 
 	void Update(){
@@ -79,10 +85,12 @@ public class GameManager : MonoBehaviour {
 			p1Hud.gameOver();
 			p2Hud.win();
 			gameOver = true;
+			StartToRestart.SetActive(true);
 		} else if (p2Health.getHealth() <= 0){
 			p1Hud.win();
 			p2Hud.gameOver();
 			gameOver = true;
+			StartToRestart.SetActive(true);
 		} 
 
 		if (totalTime <= 0){
@@ -90,16 +98,19 @@ public class GameManager : MonoBehaviour {
 				p1Hud.win();
 				p2Hud.gameOver();
 				gameOver = true;
+				StartToRestart.SetActive(true);
 			} else {
 				p1Hud.gameOver();
 				p2Hud.win();
 				gameOver = true;
+				StartToRestart.SetActive(true);
 			}
 		}
 
 		if (gameOver){
 			if (Input.GetButtonDown(startInput)){
 				restartScreen.SetActive(true);
+				StartToRestart.SetActive(false);
 				Application.LoadLevel(Application.loadedLevel);
 			}
 		}
@@ -143,6 +154,11 @@ public class GameManager : MonoBehaviour {
 		Destroy(startScreenTarget);
 		Destroy(FlyByTargets);
 		Destroy(startScreenGUI);
+
+		p1Control.enabled = true;
+		p1Attack.enabled = true;
+		p2Control.enabled = true;
+		p2Attack.enabled = true;
 
 		gameStarted = true;
 	}
