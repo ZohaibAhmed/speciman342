@@ -16,6 +16,9 @@ public class GameManager : MonoBehaviour {
 	public GameObject startCamera;
 	public GameObject startScreenTarget;
 	public GameObject startScreenGUI;
+	public GameObject restartScreen;
+
+	public GameObject PauseScreen;
 
 	public string startInput;
 
@@ -27,6 +30,12 @@ public class GameManager : MonoBehaviour {
 	PlayerHealth p1Health;
 	PlayerHealth p2Health;
 
+	PlayerControl p1Control;
+	PlayerControl p2Control;
+
+	PlayerAttack p1Attack;
+	PlayerAttack p2Attack;
+
 	PlayerScoreCounter p1Score;
 	PlayerScoreCounter p2Score;
 
@@ -34,8 +43,11 @@ public class GameManager : MonoBehaviour {
 	HudHandler p2Hud;
 
 	bool gameOver;
+	bool paused = true; // quick hack
+	bool gameStarted = false;
 
 	void Awake() {
+		restartScreen.SetActive(false);
 	}
 
 	// Use this for initialization
@@ -46,6 +58,12 @@ public class GameManager : MonoBehaviour {
 
 		p1Score = player1.GetComponent<PlayerScoreCounter>();
 		p2Score = player2.GetComponent<PlayerScoreCounter>();
+
+		p1Attack = player1.GetComponent<PlayerAttack>();
+		p2Attack = player2.GetComponent<PlayerAttack>();
+
+		p1Control = player1.GetComponent<PlayerControl>();
+		p2Control = player2.GetComponent<PlayerControl>();
 
 		p1Hud = canvasP1.GetComponent<HudHandler>();
 		p2Hud = canvasP2.GetComponent<HudHandler>();
@@ -81,7 +99,29 @@ public class GameManager : MonoBehaviour {
 
 		if (gameOver){
 			if (Input.GetButtonDown(startInput)){
+				restartScreen.SetActive(true);
 				Application.LoadLevel(Application.loadedLevel);
+			}
+		}
+
+		if (!gameOver && Input.GetButtonDown(startInput) && gameStarted){
+			Debug.Log("hello");
+			if (paused){
+				Time.timeScale = 1;
+				paused = false;
+				p1Control.enabled = true;
+				p1Attack.enabled = true;
+				p2Control.enabled = true;
+				p2Attack.enabled = true;
+				PauseScreen.SetActive(false);
+			} else {
+				paused = true;
+				Time.timeScale = 0;
+				p1Control.enabled = false;
+				p1Attack.enabled = false;
+				p2Control.enabled = false;
+				p2Attack.enabled = false;
+				PauseScreen.SetActive(true);
 			}
 		}
 
@@ -103,6 +143,8 @@ public class GameManager : MonoBehaviour {
 		Destroy(startScreenTarget);
 		Destroy(FlyByTargets);
 		Destroy(startScreenGUI);
+
+		gameStarted = true;
 	}
 
 	public void UnloadCity2(){

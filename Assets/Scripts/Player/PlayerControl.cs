@@ -222,7 +222,7 @@ public class PlayerControl : MonoBehaviour {
 //			return;
 //			
 //		}
-		audioManager.PlayAudio(GrowthAudio);
+		audioManager.PlayAudio(GrowthAudio, 0.10f);
 
 		growing = true;
 		nextScale = new Vector3(currentScale.x + growthAmount,

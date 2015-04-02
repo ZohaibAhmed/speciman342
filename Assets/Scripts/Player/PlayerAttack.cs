@@ -110,7 +110,7 @@ public class PlayerAttack : MonoBehaviour
 
 		hits = Physics.CapsuleCastAll(transform.position, 
 		                              transform.position + Vector3.up * transform.localScale.y,
-		                              transform.lossyScale.z * 0.35f, 
+		                              transform.lossyScale.z * 0.2f, 
 		                              direction,
 		                              range);
 		Debug.DrawRay(transform.position , direction * range, Color.red, 2, false);
@@ -143,7 +143,7 @@ public class PlayerAttack : MonoBehaviour
 						}
 					}
 
-					other.takeDamage(damageDealt);
+					other.takeDamage(damageDealt, this.transform.lossyScale.y);
 					success = true;
 
 

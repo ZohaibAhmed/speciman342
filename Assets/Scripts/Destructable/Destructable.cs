@@ -77,12 +77,14 @@ public class Destructable : MonoBehaviour {
 		}
 	}
 
-	public void takeDamage(float damage){
+	// other scale is the scale of the thing which attacked this. it is 0 if not passed in. used for
+	// scaling audio
+	public void takeDamage(float damage, float otherScale = 0f){
 		Debug.Log ("ouch");
 		Debug.Log (health);
 		this.health -= damage;
 		if (this.health <= 0){
-			destruct();
+			destruct(otherScale);
 		}
 
 		if (this.health < maxHealth){
@@ -161,14 +163,21 @@ public class Destructable : MonoBehaviour {
 
 			if (audioManager){
 				if (damageSounds.Length > 0){
-					audioManager.PlayAudio(damageSounds[damageSoundIndex % damageSounds.Length]);
+					if (otherScale > 0){
+						audioManager.PlayAudio(damageSounds[damageSoundIndex % damageSounds.Length],
+						                       Mathf.Lerp(0, 0.25f, this.transform.lossyScale.y / otherScale));
+					}else {
+						audioManager.PlayAudio(damageSounds[damageSoundIndex % damageSounds.Length], 0.25f);
+
+					}
+
 					damageSoundIndex++;
 				}
 			}
 		}
 	}
 
-	public void destruct(){
+	public void destruct(float otherScale = 0f){
 		// TODO: increment the score according to what we destroy?
 		//hud.incrementPoints (points);
 
@@ -177,7 +186,17 @@ public class Destructable : MonoBehaviour {
 		}
 
 		if (audioManager){
-			audioManager.PlayAudio(explosionSound);
+			if (this.health == this.maxHealth){
+				audioManager.PlayAudio(explosionSound, 0.01f);
+			} else {
+				if (otherScale > 0){
+					audioManager.PlayAudio(explosionSound, 
+					                       Mathf.Lerp(0, 0.5f, this.transform.lossyScale.y / otherScale));
+				} else {
+					audioManager.PlayAudio(explosionSound, 0.5f);
+				}
+
+			}
 		}
 
 		if (explosion && !building) {

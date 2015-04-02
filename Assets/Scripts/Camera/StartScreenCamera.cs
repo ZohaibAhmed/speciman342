@@ -161,7 +161,7 @@ public class StartScreenCamera : MonoBehaviour {
 				trans4 = !trans3;
 				if (trans4){
 					transition4 = new Transition(Time.time + DisplayTextTime, ChemPickupCamPos, WasteFacilCamPos, WasteFacilTarget);
-					timeBetweenTransitions = DisplayTextTime;
+					timeBetweenTransitions = DisplayTextTime / 2;
 				}
 			}
 		}
@@ -182,7 +182,7 @@ public class StartScreenCamera : MonoBehaviour {
 				trans5 = !trans4;
 				if (trans5){
 					transition5 = new Transition(Time.time + DisplayTextTime, WasteFacilCamPos, RadioTruckCamPos, RadioTruckTarget);
-					timeBetweenTransitions = DisplayTextTime;
+					timeBetweenTransitions = DisplayTextTime / 2;
 				}
 			}
 		}
@@ -205,7 +205,7 @@ public class StartScreenCamera : MonoBehaviour {
 				trans6 = !trans5;
 				if (trans6){
 					transition6 = new Transition(Time.time + DisplayTextTime, RadioTruckCamPos, NuclearPlantCamPos, NuclearPlantTarget);
-					timeBetweenTransitions = DisplayTextTime;
+					timeBetweenTransitions = DisplayTextTime / 2;
 				}
 			}
 		}
@@ -227,7 +227,7 @@ public class StartScreenCamera : MonoBehaviour {
 				if (trans7){
 					gameManager.LoadCity2();
 					transition7 = new Transition(Time.time + DisplayTextTime, NuclearPlantCamPos, CityCamPos, CityTarget);
-					timeBetweenTransitions = DisplayTextTime;
+					timeBetweenTransitions = DisplayTextTime / 2;
 				}
 			}
 		}
@@ -247,7 +247,7 @@ public class StartScreenCamera : MonoBehaviour {
 				                                    transition7.journeyLength);
 				trans8 = !trans7;
 				if (trans8){
-					timeBetweenTransitions = DisplayTextTime;
+					timeBetweenTransitions = DisplayTextTime / 2;
 				}
 			}
 		}
