@@ -12,7 +12,7 @@ public class StartScreenCamera : MonoBehaviour {
 		public Transform targetPosition;
 		public Transform target;
 
-		public Transition(float startTime, Transform startPos, Transform targetPos, Transform target, float s = 25.0f){
+		public Transition(float startTime, Transform startPos, Transform targetPos, Transform target, float s = 100.0f){
 			this.startTime = startTime;
 			startPosition = startPos;
 			targetPosition = targetPos;
@@ -42,6 +42,7 @@ public class StartScreenCamera : MonoBehaviour {
 	public Transform CityTarget;
 	public Text tutorialText;
 	public Text startToSkip;
+	public Image tutorialTextBg;
 	public float DisplayTextTime = 5f;
 
 	public GameManager gameManager;
@@ -63,7 +64,7 @@ public class StartScreenCamera : MonoBehaviour {
 	
 	// private variables for first transition to top of player
 	// refer to this as transition 1
-	private float transition1speed = 100.0F;
+	private float transition1speed = 200.0F;
 	private float transition1StartTime;
 	private float transition1JourneyLength;
 	private Vector3 transition1StartPosition;
@@ -72,7 +73,7 @@ public class StartScreenCamera : MonoBehaviour {
 	private Vector3 transition1TargetRotation;
 
 	// transition from sky down to player
-	private float transition2speed = 100.0F;
+	private float transition2speed = 200.0F;
 	private float transition2StartTime;
 	private float transition2JourneyLength;
 	private Vector3 transition2StartPosition;
@@ -160,7 +161,7 @@ public class StartScreenCamera : MonoBehaviour {
 				                                    transition3.journeyLength);
 				trans4 = !trans3;
 				if (trans4){
-					transition4 = new Transition(Time.time + DisplayTextTime, ChemPickupCamPos, WasteFacilCamPos, WasteFacilTarget);
+					transition4 = new Transition(Time.time + DisplayTextTime / 2, ChemPickupCamPos, WasteFacilCamPos, WasteFacilTarget);
 					timeBetweenTransitions = DisplayTextTime / 2;
 				}
 			}
@@ -169,10 +170,12 @@ public class StartScreenCamera : MonoBehaviour {
 		if (trans4){
 			if (timeBetweenTransitions > 0){
 				tutorialText.enabled = true;
+				tutorialTextBg.enabled = true;
 				tutorialText.text = "Pick up radioactive barrels to grow larger!";
 				timeBetweenTransitions -= Time.deltaTime;
 			} else {
 				tutorialText.enabled = false;
+				tutorialTextBg.enabled = false;
 				trans4 = !TransitionAndLookAtTarget(transition4.startPosition.position,
 				                                    transition4.targetPosition.position,
 				                                    transition4.target.position,
@@ -181,7 +184,7 @@ public class StartScreenCamera : MonoBehaviour {
 				                                    transition4.journeyLength);
 				trans5 = !trans4;
 				if (trans5){
-					transition5 = new Transition(Time.time + DisplayTextTime, WasteFacilCamPos, RadioTruckCamPos, RadioTruckTarget);
+					transition5 = new Transition(Time.time + DisplayTextTime / 2, WasteFacilCamPos, RadioTruckCamPos, RadioTruckTarget);
 					timeBetweenTransitions = DisplayTextTime / 2;
 				}
 			}
@@ -192,10 +195,12 @@ public class StartScreenCamera : MonoBehaviour {
 		if (trans5){
 			if (timeBetweenTransitions > 0){
 				tutorialText.enabled = true;
+				tutorialTextBg.enabled = true;
 				tutorialText.text = "Destroy the radioactive waste facility to grow really big!";
 				timeBetweenTransitions -= Time.deltaTime;
 			} else {
 				tutorialText.enabled = false;
+				tutorialTextBg.enabled = false;
 				trans5 = !TransitionAndLookAtTarget(transition5.startPosition.position,
 				                                    transition5.targetPosition.position,
 				                                    transition5.target.position,
@@ -204,7 +209,7 @@ public class StartScreenCamera : MonoBehaviour {
 				                                    transition5.journeyLength);
 				trans6 = !trans5;
 				if (trans6){
-					transition6 = new Transition(Time.time + DisplayTextTime, RadioTruckCamPos, NuclearPlantCamPos, NuclearPlantTarget);
+					transition6 = new Transition(Time.time + DisplayTextTime / 2, RadioTruckCamPos, NuclearPlantCamPos, NuclearPlantTarget);
 					timeBetweenTransitions = DisplayTextTime / 2;
 				}
 			}
@@ -213,10 +218,12 @@ public class StartScreenCamera : MonoBehaviour {
 		if (trans6){
 			if (timeBetweenTransitions > 0){
 				tutorialText.enabled = true;
+				tutorialTextBg.enabled = true;
 				tutorialText.text = "Destroy the radioactive trucks to grow bigger!";
 				timeBetweenTransitions -= Time.deltaTime;
 			} else {
 				tutorialText.enabled = false;
+				tutorialTextBg.enabled = false;
 				trans6 = !TransitionAndLookAtTarget(transition6.startPosition.position,
 				                                    transition6.targetPosition.position,
 				                                    transition6.target.position,
@@ -226,7 +233,7 @@ public class StartScreenCamera : MonoBehaviour {
 				trans7 = !trans6;
 				if (trans7){
 					gameManager.LoadCity2();
-					transition7 = new Transition(Time.time + DisplayTextTime, NuclearPlantCamPos, CityCamPos, CityTarget);
+					transition7 = new Transition(Time.time + DisplayTextTime / 2, NuclearPlantCamPos, CityCamPos, CityTarget);
 					timeBetweenTransitions = DisplayTextTime / 2;
 				}
 			}
@@ -235,10 +242,12 @@ public class StartScreenCamera : MonoBehaviour {
 		if (trans7){
 			if (timeBetweenTransitions > 0){
 				tutorialText.enabled = true;
+				tutorialTextBg.enabled = true;
 				tutorialText.text = "Destroy the nuclear power plant to grow REALLY big!";
 				timeBetweenTransitions -= Time.deltaTime;
 			}  else {
 				tutorialText.enabled = false;
+				tutorialTextBg.enabled = false;
 				trans7 = !TransitionAndLookAtTarget(transition7.startPosition.position,
 				                                    transition7.targetPosition.position,
 				                                    transition7.target.position,
@@ -255,6 +264,7 @@ public class StartScreenCamera : MonoBehaviour {
 		if (trans8){
 			if (timeBetweenTransitions > 0){
 				tutorialText.enabled = true;
+				tutorialTextBg.enabled = true;
 				tutorialText.text = "Defeat your opponent!";
 				timeBetweenTransitions -= Time.deltaTime;
 			} else {

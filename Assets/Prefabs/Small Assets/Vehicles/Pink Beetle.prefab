@@ -12,7 +12,7 @@ GameObject:
   - 199: {fileID: 19921326}
   m_Layer: 8
   m_Name: Pink Beetle Explosion
-  m_TagString: Untagged
+  m_TagString: DamageParticle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,7 +31,7 @@ GameObject:
   - 64: {fileID: 6421326}
   m_Layer: 8
   m_Name: Pink Beetle
-  m_TagString: DamageParticle
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
