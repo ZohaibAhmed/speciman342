@@ -33,29 +33,21 @@ public class HudHandler : MonoBehaviour {
 //			gameOver();
 //		}
 
-		if (restart) {
-			if (screenOver){
-				screenOver.enabled = true;
-				screenOver.FadeToBlack();
-			}
-			if (Input.GetKeyDown (KeyCode.R)) {
-				Application.LoadLevel (Application.loadedLevel);
-			}
-		} else {
+	
 
 			// subtract Time.deltaTime from totalTime
 			totalTime = totalTime - Time.deltaTime;
 
 			// convert totalTime to minutes and seconds
-			System.TimeSpan t = System.TimeSpan.FromSeconds (totalTime);
+//			System.TimeSpan t = System.TimeSpan.FromSeconds (totalTime);
+//
+//			string answer = string.Format ("{0:D2}:{1:D2}", 
+//			                              t.Minutes, 
+//			                              t.Seconds
+//			);
+//			
+//			timeText.text = answer;
 
-			string answer = string.Format ("{0:D2}:{1:D2}", 
-			                              t.Minutes, 
-			                              t.Seconds
-			);
-			
-			timeText.text = answer;
-		}
 
 	}
 

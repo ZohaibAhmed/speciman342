@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour {
 	HudHandler p1Hud;
 	HudHandler p2Hud;
 
-	bool gameOver;
+	bool gameOver = false;
 	bool paused = true; // quick hack
 	bool gameStarted = false;
 
@@ -93,19 +93,19 @@ public class GameManager : MonoBehaviour {
 			StartToRestart.SetActive(true);
 		} 
 
-		if (totalTime <= 0){
-			if (p1Score.getScore() > p2Score.getScore()){
-				p1Hud.win();
-				p2Hud.gameOver();
-				gameOver = true;
-				StartToRestart.SetActive(true);
-			} else {
-				p1Hud.gameOver();
-				p2Hud.win();
-				gameOver = true;
-				StartToRestart.SetActive(true);
-			}
-		}
+//		if (totalTime <= 0){
+//			if (p1Score.getScore() > p2Score.getScore()){
+//				p1Hud.win();
+//				p2Hud.gameOver();
+//				gameOver = true;
+//				StartToRestart.SetActive(true);
+//			} else {
+//				p1Hud.gameOver();
+//				p2Hud.win();
+//				gameOver = true;
+//				StartToRestart.SetActive(true);
+//			}
+//		}
 
 		if (gameOver){
 			if (Input.GetButtonDown(startInput)){

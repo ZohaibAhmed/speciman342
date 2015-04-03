@@ -121,7 +121,7 @@ public class PlayerControl : MonoBehaviour {
 			}
 			isFrantic = true;
 		} else if (isFrantic){
-			if (enemy.lossyScale.y <= 2f* transform.lossyScale.y){
+			if (enemy.lossyScale.y <= 1.3f * transform.lossyScale.y){
 				movementSpeed = movementSpeed / 8f;
 				anim.SetBool("Frantic", false);
 				if (ExclamationMark){

@@ -222,7 +222,7 @@ MonoBehaviour:
   health: 15
   explosion: {fileID: 419730, guid: 18ee5b0e919f74e31914f0758d8318f4, type: 2}
   itemDrop: {fileID: 453642, guid: 35111308efb5248138b6bc91667dc2df, type: 2}
-  dropProbability: .100000001
+  dropProbability: .200000003
   points: 100
   building: 0
   ShakeWhenHit: 1
